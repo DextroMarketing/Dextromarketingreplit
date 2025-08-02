@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Lightbulb } from "lucide-react";
 import { motion } from "framer-motion";
+import dxmLogo from "@assets/DXM Logo_1754139841655.jpg";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -44,7 +45,7 @@ export default function Navigation() {
           <Link href="/">
             <span className="flex items-center space-x-3 cursor-pointer">
               <img 
-                src="@assets/DXM Logo_1754139841655.jpg" 
+                src={dxmLogo} 
                 alt="DXM Logo" 
                 className="w-12 h-12 rounded-full object-cover"
               />

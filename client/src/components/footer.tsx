@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Linkedin, Twitter, Github } from "lucide-react";
 import { motion } from "framer-motion";
+import dxmLogo from "@assets/DXM Logo_1754139841655.jpg";
 
 const footerSections = [
   {
@@ -51,7 +52,7 @@ export default function Footer() {
             <Link href="/">
               <span className="flex items-center space-x-3 mb-6 cursor-pointer">
                 <img 
-                  src="@assets/DXM Logo_1754139841655.jpg" 
+                  src={dxmLogo} 
                   alt="DXM Logo" 
                   className="w-12 h-12 rounded-full object-cover"
                 />
