@@ -71,7 +71,7 @@ export default function AIChatbotDemo() {
         <div className="w-3 h-3 bg-red-400 rounded-full"></div>
         <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
         <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-        <span className="text-white text-sm ml-4 font-medium">AI Design Assistant</span>
+        <span className="text-white text-sm ml-4 font-medium">AI Lead Generation Assistant</span>
       </div>
       {/* Chat Messages */}
       <div className="space-y-3 max-h-64 overflow-y-auto mb-4 scrollbar-thin scrollbar-thumb-white/20">
@@ -91,8 +91,8 @@ export default function AIChatbotDemo() {
               )}
               <div className={`max-w-xs rounded-lg p-3 ${
                 message.isBot 
-                  ? 'bg-dxm-orange/20 text-white' 
-                  : 'bg-white/10 text-white'
+                  ? 'bg-dxm-orange/90 text-white' 
+                  : 'bg-white/90 text-navy'
               }`}>
                 <p className="text-sm">{message.text}</p>
               </div>
@@ -129,11 +129,11 @@ export default function AIChatbotDemo() {
       <div className="flex space-x-2">
         <Input
           type="text"
-          placeholder="Ask AI about your website..."
+          placeholder="Ask about lead generation..."
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyPress={handleKeyPress}
-          className="flex-1 bg-white/10 border-white/20 text-white placeholder-gray-400"
+          className="flex-1 bg-white/90 border-gray-300 text-navy placeholder-gray-600"
         />
         <Button
           onClick={handleSend}

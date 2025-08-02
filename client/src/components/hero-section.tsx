@@ -26,7 +26,7 @@ export default function HeroSection() {
                 <span className="text-dxm-orange">24/7 Lead Machine</span>
               </motion.h1>
               <motion.p 
-                className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl"
+                className="text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-2xl"
                 {...fadeInUp}
                 transition={{ delay: 0.4 }}
               >
@@ -48,7 +48,7 @@ export default function HeroSection() {
               <Button 
                 variant="outline"
                 size="lg"
-                className="border-2 border-white text-white text-[#1e3d9c] px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-navy transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                className="border-2 border-white text-white bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-navy transition-all duration-300 hover:scale-105 flex items-center gap-2"
               >
                 <Play className="w-5 h-5" />
                 Watch Demo
@@ -61,7 +61,7 @@ export default function HeroSection() {
               {...fadeInUp}
               transition={{ delay: 0.8 }}
             >
-              <p className="text-gray-400 text-sm mb-4">Trusted by 200+ construction and home improvement businesses</p>
+              <p className="text-gray-200 text-sm mb-4">Trusted by 200+ construction and home improvement businesses</p>
               <div className="flex items-center space-x-8 opacity-60">
                 <div className="text-white font-semibold">Premier Roofing</div>
                 <div className="text-white font-semibold">BuildRight Contractors</div>

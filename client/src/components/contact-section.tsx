@@ -105,7 +105,7 @@ export default function ContactSection() {
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to Dominate Your Local Market?
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto">
             Let's discuss how we can help your construction business generate more qualified leads and convert more estimates into signed contracts.
           </p>
         </motion.div>

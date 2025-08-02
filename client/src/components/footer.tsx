@@ -59,7 +59,7 @@ export default function Footer() {
                 <span className="text-2xl font-bold">Dextro Marketing</span>
               </span>
             </Link>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-300 mb-6">
               The digital marketing agency that speaks construction. We help contractors and home improvement businesses dominate their local markets.
             </p>
             <div className="flex space-x-4">
@@ -88,7 +88,7 @@ export default function Footer() {
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <Link href={link.href}>
-                      <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                      <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">
                         {link.label}
                       </span>
                     </Link>
@@ -101,8 +101,8 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 DXM Agency. All rights reserved.
+            <p className="text-gray-300 text-sm mb-4 md:mb-0">
+              © 2024 Dextro Marketing. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">
