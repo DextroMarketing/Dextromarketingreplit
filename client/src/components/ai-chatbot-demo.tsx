@@ -65,7 +65,7 @@ export default function AIChatbotDemo() {
   };
 
   return (
-    <div className="glass-effect rounded-3xl p-6 relative">
+    <div className="glass-effect rounded-3xl p-6 relative text-[#ee9d2b]">
       {/* Window Controls */}
       <div className="flex items-center space-x-2 mb-4">
         <div className="w-3 h-3 bg-red-400 rounded-full"></div>
@@ -73,7 +73,6 @@ export default function AIChatbotDemo() {
         <div className="w-3 h-3 bg-green-400 rounded-full"></div>
         <span className="text-white text-sm ml-4 font-medium">AI Design Assistant</span>
       </div>
-
       {/* Chat Messages */}
       <div className="space-y-3 max-h-64 overflow-y-auto mb-4 scrollbar-thin scrollbar-thumb-white/20">
         <AnimatePresence>
@@ -126,7 +125,6 @@ export default function AIChatbotDemo() {
           </motion.div>
         )}
       </div>
-
       {/* Input */}
       <div className="flex space-x-2">
         <Input
