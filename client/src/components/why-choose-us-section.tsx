@@ -5,31 +5,31 @@ import { fadeInUp, fadeInLeft, fadeInRight, staggerChildren } from "@/lib/animat
 const features = [
   {
     icon: Zap,
-    title: "Lightning Fast Performance",
-    description: "Our websites load in under 2 seconds, ensuring your visitors stay engaged and convert at higher rates."
+    title: "Emergency Service Optimization",
+    description: "Capture after-hours emergency calls 24/7 with smart routing and automated responses that never miss a lead."
   },
   {
     icon: Lightbulb,
-    title: "AI-Powered Intelligence",
-    description: "Every website includes smart features like chatbots, personalization, and automated analytics to drive growth."
+    title: "Local SEO Domination",
+    description: "Rank #1 for 'contractor near me' searches in your service area and dominate local competition."
   },
   {
     icon: DollarSign,
-    title: "ROI-Focused Design",
-    description: "Every design decision is backed by data and optimized for conversions, ensuring measurable business results."
+    title: "Lead Quality Improvement",
+    description: "Pre-qualify prospects automatically and focus your time on high-value leads ready to sign contracts."
   },
   {
     icon: Users,
-    title: "Dedicated Support Team",
-    description: "Get ongoing support, updates, and optimization from our expert team to ensure continued success."
+    title: "Construction Industry Expertise",
+    description: "We understand seasonal business, trust barriers, and lead generation challenges specific to construction."
   }
 ];
 
 const stats = [
-  { label: "Projects Completed", value: "500+", color: "text-dxm-orange" },
-  { label: "Avg. Conversion Increase", value: "340%", color: "text-dxm-gold" },
-  { label: "Client Satisfaction", value: "98%", color: "text-dxm-orange" },
-  { label: "Avg. Load Time", value: "1.8s", color: "text-dxm-gold" }
+  { label: "Construction Projects", value: "200+", color: "text-dxm-orange" },
+  { label: "Avg. Lead Increase", value: "300%", color: "text-dxm-gold" },
+  { label: "Client Retention", value: "95%", color: "text-dxm-orange" },
+  { label: "Emergency Calls Captured", value: "24/7", color: "text-dxm-gold" }
 ];
 
 export default function WhyChooseUsSection() {

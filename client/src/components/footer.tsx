@@ -56,11 +56,11 @@ export default function Footer() {
                   alt="DXM Logo" 
                   className="w-12 h-12 rounded-full object-cover"
                 />
-                <span className="text-2xl font-bold">DXM</span>
+                <span className="text-2xl font-bold">Dextro Marketing</span>
               </span>
             </Link>
             <p className="text-gray-400 mb-6">
-              Transforming businesses through cutting-edge web design and AI integration.
+              The digital marketing agency that speaks construction. We help contractors and home improvement businesses dominate their local markets.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => {

@@ -49,7 +49,7 @@ export default function Navigation() {
                 alt="DXM Logo" 
                 className="w-12 h-12 rounded-full object-cover"
               />
-              <span className="text-2xl font-bold text-navy">DXM</span>
+              <span className="text-2xl font-bold text-navy">Dextro Marketing</span>
             </span>
           </Link>
 

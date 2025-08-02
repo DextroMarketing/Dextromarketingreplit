@@ -46,16 +46,15 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <span className="gradient-text">AI-Powered</span><br />
-                Web Design<br />
-                <span className="text-dxm-orange">Revolution</span>
+                Turn Your Website Into A<br />
+                <span className="text-dxm-orange">24/7 Lead Machine</span>
               </motion.h1>
               <motion.p 
                 className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl"
                 {...fadeInUp}
                 transition={{ delay: 0.4 }}
               >
-                Transform your digital presence with cutting-edge web design and intelligent AI integration. We create websites that think, adapt, and convert.
+                The digital marketing agency that speaks construction. We help contractors dominate local search and convert more estimates into signed contracts.
               </motion.p>
             </div>
 
@@ -68,7 +67,7 @@ export default function HeroSection() {
                 size="lg"
                 className="bg-dxm-orange text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-dxm-gold hover:text-navy transition-all duration-300 hover:scale-105 transform"
               >
-                Get Your AI Website
+                Get Your Free Consultation
               </Button>
               <Button 
                 variant="outline"
@@ -86,12 +85,12 @@ export default function HeroSection() {
               {...fadeInUp}
               transition={{ delay: 0.8 }}
             >
-              <p className="text-gray-400 text-sm mb-4">Trusted by 500+ companies worldwide</p>
+              <p className="text-gray-400 text-sm mb-4">Trusted by 200+ construction and home improvement businesses</p>
               <div className="flex items-center space-x-8 opacity-60">
-                <div className="text-white font-semibold">Google</div>
-                <div className="text-white font-semibold">Microsoft</div>
-                <div className="text-white font-semibold">Shopify</div>
-                <div className="text-white font-semibold">Stripe</div>
+                <div className="text-white font-semibold">Premier Roofing</div>
+                <div className="text-white font-semibold">BuildRight Contractors</div>
+                <div className="text-white font-semibold">HomePro Remodeling</div>
+                <div className="text-white font-semibold">Elite Plumbing</div>
               </div>
             </motion.div>
           </motion.div>

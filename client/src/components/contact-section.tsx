@@ -29,7 +29,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    value: "hello@nexusagency.com",
+    value: "hello@dextromarketing.com",
     description: "We respond within 4 hours",
     color: "bg-dxm-orange"
   },
@@ -203,10 +203,11 @@ export default function ContactSection() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="web-design">Web Design</SelectItem>
-                            <SelectItem value="ai-integration">AI Integration</SelectItem>
-                            <SelectItem value="digital-strategy">Digital Strategy</SelectItem>
-                            <SelectItem value="all">Complete Solution</SelectItem>
+                            <SelectItem value="website">New Website</SelectItem>
+                            <SelectItem value="local-seo">Local SEO</SelectItem>
+                            <SelectItem value="lead-generation">Lead Generation</SelectItem>
+                            <SelectItem value="emergency-service">Emergency Service Setup</SelectItem>
+                            <SelectItem value="complete">Complete Marketing Solution</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -228,10 +229,10 @@ export default function ContactSection() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
-                          <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
-                          <SelectItem value="50k-100k">$50,000 - $100,000</SelectItem>
-                          <SelectItem value="100k+">$100,000+</SelectItem>
+                          <SelectItem value="2k-5k">$2,000 - $5,000/month</SelectItem>
+                          <SelectItem value="5k-10k">$5,000 - $10,000/month</SelectItem>
+                          <SelectItem value="10k-20k">$10,000 - $20,000/month</SelectItem>
+                          <SelectItem value="20k+">$20,000+/month</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -248,7 +249,7 @@ export default function ContactSection() {
                       <FormControl>
                         <Textarea
                           rows={4}
-                          placeholder="Tell us about your project goals, timeline, and any specific requirements..."
+                          placeholder="Tell us about your construction business, service area, and biggest lead generation challenges..."
                           className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-dxm-orange resize-none"
                           {...field}
                         />

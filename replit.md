@@ -1,6 +1,6 @@
 # Overview
 
-Nexus Agency is a modern marketing agency website that specializes in web design and AI integration services. The application is built as a full-stack web platform showcasing the agency's portfolio, services, and capabilities through an interactive, engaging interface. The site demonstrates cutting-edge design trends with AI-powered features and focuses on lead generation, portfolio presentation, and establishing brand authority in the web design and AI space.
+Dextro Marketing is a specialized digital marketing agency website focused exclusively on construction and home improvement businesses. The application is built as a full-stack web platform that helps contractors dominate local search results and convert more estimates into signed contracts. The site features construction-specific design elements, local SEO optimization, emergency service capture systems, and lead generation tools tailored for contractors, plumbers, roofers, and home improvement professionals.
 
 # User Preferences
 
@@ -45,13 +45,13 @@ The frontend follows a well-structured component hierarchy:
 - **Custom Hooks**: Reusable logic for mobile detection and toast notifications
 
 ## Design System
-The application implements a comprehensive design system:
+The application implements a construction-focused design system:
 
-- **Color Palette**: Navy blue, electric blue, and purple accent colors with full dark mode support
-- **Typography**: Inter font family for modern, readable text
-- **Animation Library**: Consistent animation patterns using Framer Motion
-- **Responsive Design**: Mobile-first approach with Tailwind's responsive utilities
-- **Theme System**: CSS custom properties for easy theme switching
+- **Color Palette**: Navy blue primary with golden orange and gold accents based on DXM logo branding
+- **Typography**: Inter font family for modern, readable text that conveys trust and professionalism
+- **Animation Library**: Consistent animation patterns using Framer Motion with construction-appropriate timing
+- **Responsive Design**: Mobile-first approach optimized for contractors searching on job sites
+- **Construction Elements**: Professional color scheme reflecting reliability and expertise in construction industry
 
 # External Dependencies
 

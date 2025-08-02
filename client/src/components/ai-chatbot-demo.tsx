@@ -14,18 +14,18 @@ interface ChatMessage {
 const initialMessages: ChatMessage[] = [
   {
     id: '1',
-    text: "I've analyzed your industry and suggest a modern, conversion-focused design with integrated chatbot.",
+    text: "Hi! I help contractors like you generate more leads. What type of construction business do you run?",
     isBot: true,
     timestamp: new Date()
   }
 ];
 
 const botResponses = [
-  "Here are AI-recommended palettes based on conversion data.",
-  "I can help you optimize your website for better user engagement and conversion rates.",
-  "Would you like me to analyze your current website performance?",
-  "I recommend implementing progressive web app features for better mobile experience.",
-  "Let me suggest some AI-powered personalization features for your site."
+  "Great! I can help you capture more emergency service calls and pre-qualify leads automatically.",
+  "Our contractors typically see 300% more qualified leads within 90 days. What's your biggest challenge right now?",
+  "Would you like to see how we help plumbers capture after-hours emergency calls?",
+  "I can show you examples of contractor websites that dominate local search results.",
+  "Let me help you set up automated quote systems for your most common services."
 ];
 
 export default function AIChatbotDemo() {

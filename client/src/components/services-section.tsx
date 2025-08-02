@@ -6,26 +6,26 @@ import { fadeInUp, staggerChildren } from "@/lib/animations";
 const services = [
   {
     id: "web-design",
-    title: "Modern Web Design",
-    description: "Responsive, user-focused designs that convert visitors into customers. We create stunning websites that work flawlessly across all devices.",
+    title: "Construction-Focused Web Design",
+    description: "Websites that work as hard as you do. Mobile-first designs built for contractors, featuring project galleries, service area maps, and lead capture systems.",
     icon: Monitor,
-    features: ["Responsive Design", "Performance Optimization", "SEO Optimization"],
+    features: ["Mobile-First Design", "Project Galleries", "Lead Capture Forms"],
     gradient: "from-dxm-orange to-dxm-gold"
   },
   {
-    id: "ai-integration",
-    title: "AI Integration",
-    description: "Intelligent automation and personalization that enhances user experience and drives business growth through smart technology.",
+    id: "local-seo",
+    title: "Local SEO Domination",
+    description: "Dominate local search when customers need you most. We help contractors rank #1 for 'near me' searches and capture emergency service calls.",
     icon: Lightbulb,
-    features: ["AI Chatbots", "Personalization Engine", "Automated Analytics"],
+    features: ["Google My Business", "Local Keywords", "Review Management"],
     gradient: "from-dxm-gold to-dxm-orange"
   },
   {
-    id: "digital-strategy",
-    title: "Digital Strategy",
-    description: "Comprehensive digital transformation consulting to help your business thrive in the digital age with data-driven strategies.",
+    id: "ai-automation",
+    title: "AI Lead Automation",
+    description: "Automate quotes, scheduling, and customer communication. Our AI systems pre-qualify leads, book appointments, and follow up automatically.",
     icon: BarChart3,
-    features: ["Growth Strategy", "Conversion Optimization", "Marketing Automation"],
+    features: ["Smart Lead Qualification", "Automated Scheduling", "Follow-up Sequences"],
     gradient: "from-dxm-orange to-navy"
   }
 ];
@@ -38,9 +38,9 @@ export default function ServicesSection() {
           className="text-center mb-16"
           {...fadeInUp}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">Our Services</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">Services Built for Construction</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We blend cutting-edge design with intelligent automation to create digital experiences that drive results.
+            From mobile-first websites to local SEO domination, we deliver digital solutions specifically designed to help contractors and home improvement businesses grow.
           </p>
         </motion.div>
 
