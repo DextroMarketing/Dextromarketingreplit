@@ -34,34 +34,7 @@ const stats = [
 
 export default function WhyChooseUsSection() {
   return (
-    <section className="py-20 bg-navy text-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <motion.div 
-          className="absolute top-10 right-10 w-64 h-64 bg-dxm-orange/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3]
-          }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-10 left-10 w-96 h-96 bg-dxm-gold/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.2, 0.4]
-          }}
-          transition={{ 
-            duration: 10, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-        />
-      </div>
+    <section className="py-20 text-white relative overflow-hidden bg-black/20 backdrop-blur-sm">
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -69,10 +42,10 @@ export default function WhyChooseUsSection() {
           {...fadeInUp}
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Why Choose <span className="gradient-text">Nexus</span>?
+            Why Choose <span className="gradient-text">Dextro Marketing</span>?
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We're not just another web design agency. We're your partners in digital transformation, combining creativity with cutting-edge AI technology.
+            We're the only digital marketing agency that exclusively serves construction businesses. We understand your industry, your challenges, and how to get you results.
           </p>
         </motion.div>
 

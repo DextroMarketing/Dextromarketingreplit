@@ -6,31 +6,7 @@ import { fadeInUp, fadeInLeft, fadeInRight, floatAnimation } from "@/lib/animati
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-navy via-navy to-dark overflow-hidden flex items-center pt-20">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <motion.div 
-          className="absolute top-20 left-10 w-72 h-72 bg-dxm-orange/10 rounded-full blur-3xl"
-          {...floatAnimation}
-        />
-        <motion.div 
-          className="absolute bottom-20 right-10 w-96 h-96 bg-dxm-gold/10 rounded-full blur-3xl"
-          {...floatAnimation}
-          transition={{ ...floatAnimation.animate.transition, delay: 3 }}
-        />
-        <motion.div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-2xl"
-          animate={{ 
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.6, 0.3]
-          }}
-          transition={{ 
-            duration: 3, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-        />
-      </div>
+    <section className="relative min-h-screen overflow-hidden flex items-center pt-20">
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

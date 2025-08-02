@@ -95,19 +95,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-navy to-purple relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <motion.div 
-          className="absolute top-20 left-20 w-72 h-72 bg-electric/10 rounded-full blur-3xl"
-          {...floatAnimation}
-        />
-        <motion.div 
-          className="absolute bottom-20 right-20 w-96 h-96 bg-white/5 rounded-full blur-3xl"
-          {...floatAnimation}
-          transition={{ ...floatAnimation.animate.transition, delay: 3 }}
-        />
-      </div>
+    <section className="py-20 text-white relative overflow-hidden bg-black/20 backdrop-blur-sm">
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -115,10 +103,10 @@ export default function ContactSection() {
           {...fadeInUp}
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Ready to Transform Your Digital Presence?
+            Ready to Dominate Your Local Market?
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Let's discuss how we can bring your vision to life with cutting-edge design and AI-powered solutions.
+            Let's discuss how we can help your construction business generate more qualified leads and convert more estimates into signed contracts.
           </p>
         </motion.div>
 
