@@ -146,7 +146,7 @@ export default function PortfolioSection() {
                     
                     <Button 
                       variant="ghost" 
-                      className="text-electric hover:text-white transition-colors p-0 h-auto"
+                      className="text-dxm-orange hover:text-white transition-colors p-0 h-auto"
                     >
                       View Case Study <ExternalLink className="w-4 h-4 ml-1" />
                     </Button>
@@ -164,7 +164,7 @@ export default function PortfolioSection() {
         >
           <Button 
             size="lg"
-            className="bg-navy text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-electric transition-all duration-300 hover:scale-105"
+            className="bg-navy text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-dxm-orange transition-all duration-300 hover:scale-105"
           >
             View All Projects
           </Button>

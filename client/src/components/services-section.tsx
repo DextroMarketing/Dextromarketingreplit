@@ -10,7 +10,7 @@ const services = [
     description: "Responsive, user-focused designs that convert visitors into customers. We create stunning websites that work flawlessly across all devices.",
     icon: Monitor,
     features: ["Responsive Design", "Performance Optimization", "SEO Optimization"],
-    gradient: "from-electric to-purple"
+    gradient: "from-dxm-orange to-dxm-gold"
   },
   {
     id: "ai-integration",
@@ -18,7 +18,7 @@ const services = [
     description: "Intelligent automation and personalization that enhances user experience and drives business growth through smart technology.",
     icon: Lightbulb,
     features: ["AI Chatbots", "Personalization Engine", "Automated Analytics"],
-    gradient: "from-purple to-electric"
+    gradient: "from-dxm-gold to-dxm-orange"
   },
   {
     id: "digital-strategy",
@@ -26,7 +26,7 @@ const services = [
     description: "Comprehensive digital transformation consulting to help your business thrive in the digital age with data-driven strategies.",
     icon: BarChart3,
     features: ["Growth Strategy", "Conversion Optimization", "Marketing Automation"],
-    gradient: "from-electric to-navy"
+    gradient: "from-dxm-orange to-navy"
   }
 ];
 
@@ -72,14 +72,14 @@ export default function ServicesSection() {
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-gray-700">
-                      <Check className="w-5 h-5 text-electric mr-3" />
+                      <Check className="w-5 h-5 text-dxm-orange mr-3" />
                       {feature}
                     </li>
                   ))}
                 </ul>
                 
                 <Button 
-                  className="w-full bg-navy text-white hover:bg-electric transition-colors duration-300"
+                  className="w-full bg-navy text-white hover:bg-dxm-orange transition-colors duration-300"
                 >
                   Learn More
                 </Button>

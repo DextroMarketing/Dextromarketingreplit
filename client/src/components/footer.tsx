@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Lightbulb, Linkedin, Twitter, Github } from "lucide-react";
+import { Linkedin, Twitter, Github } from "lucide-react";
 import { motion } from "framer-motion";
 
 const footerSections = [
@@ -49,12 +49,14 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <Link href="/">
-              <a className="flex items-center space-x-2 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-electric to-purple rounded-lg flex items-center justify-center">
-                  <Lightbulb className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-2xl font-bold">Nexus</span>
-              </a>
+              <span className="flex items-center space-x-3 mb-6 cursor-pointer">
+                <img 
+                  src="@assets/DXM Logo_1754139841655.jpg" 
+                  alt="DXM Logo" 
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <span className="text-2xl font-bold">DXM</span>
+              </span>
             </Link>
             <p className="text-gray-400 mb-6">
               Transforming businesses through cutting-edge web design and AI integration.
@@ -66,7 +68,7 @@ export default function Footer() {
                   <motion.a
                     key={social.label}
                     href={social.href}
-                    className="text-gray-400 hover:text-electric transition-colors"
+                    className="text-gray-400 hover:text-dxm-orange transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -85,9 +87,9 @@ export default function Footer() {
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <Link href={link.href}>
-                      <a className="text-gray-400 hover:text-white transition-colors">
+                      <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">
                         {link.label}
-                      </a>
+                      </span>
                     </Link>
                   </li>
                 ))}
@@ -99,18 +101,18 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 Nexus Agency. All rights reserved.
+              © 2024 DXM Agency. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              </span>
+              <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">
                 Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              </span>
+              <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">
                 Cookie Policy
-              </a>
+              </span>
             </div>
           </div>
         </div>

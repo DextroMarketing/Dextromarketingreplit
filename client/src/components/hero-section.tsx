@@ -6,15 +6,15 @@ import { fadeInUp, fadeInLeft, fadeInRight, floatAnimation } from "@/lib/animati
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-navy via-navy to-purple overflow-hidden flex items-center pt-20">
+    <section className="relative min-h-screen bg-gradient-to-br from-navy via-navy to-dark overflow-hidden flex items-center pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-20 left-10 w-72 h-72 bg-electric/10 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-72 h-72 bg-dxm-orange/10 rounded-full blur-3xl"
           {...floatAnimation}
         />
         <motion.div 
-          className="absolute bottom-20 right-10 w-96 h-96 bg-purple/10 rounded-full blur-3xl"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-dxm-gold/10 rounded-full blur-3xl"
           {...floatAnimation}
           transition={{ ...floatAnimation.animate.transition, delay: 3 }}
         />
@@ -48,7 +48,7 @@ export default function HeroSection() {
               >
                 <span className="gradient-text">AI-Powered</span><br />
                 Web Design<br />
-                <span className="text-electric">Revolution</span>
+                <span className="text-dxm-orange">Revolution</span>
               </motion.h1>
               <motion.p 
                 className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl"
@@ -66,7 +66,7 @@ export default function HeroSection() {
             >
               <Button 
                 size="lg"
-                className="bg-electric text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-navy transition-all duration-300 hover:scale-105 transform"
+                className="bg-dxm-orange text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-dxm-gold hover:text-navy transition-all duration-300 hover:scale-105 transform"
               >
                 Get Your AI Website
               </Button>

@@ -31,21 +31,21 @@ const contactInfo = [
     title: "Email Us",
     value: "hello@nexusagency.com",
     description: "We respond within 4 hours",
-    color: "bg-electric"
+    color: "bg-dxm-orange"
   },
   {
     icon: Phone,
     title: "Call Us",
     value: "+1 (555) 123-4567",
     description: "Mon-Fri 9AM-6PM PST",
-    color: "bg-purple"
+    color: "bg-dxm-gold"
   },
   {
     icon: MapPin,
     title: "Visit Us",
     value: "123 Innovation Street\nSan Francisco, CA 94102",
     description: "By appointment only",
-    color: "bg-electric"
+    color: "bg-dxm-orange"
   }
 ];
 
@@ -142,7 +142,7 @@ export default function ContactSection() {
                         <FormControl>
                           <Input
                             placeholder="Your full name"
-                            className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-electric"
+                            className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-dxm-orange"
                             {...field}
                           />
                         </FormControl>
@@ -161,7 +161,7 @@ export default function ContactSection() {
                           <Input
                             type="email"
                             placeholder="your@email.com"
-                            className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-electric"
+                            className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-dxm-orange"
                             {...field}
                           />
                         </FormControl>
@@ -181,7 +181,7 @@ export default function ContactSection() {
                         <FormControl>
                           <Input
                             placeholder="Your company name"
-                            className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-electric"
+                            className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-dxm-orange"
                             {...field}
                           />
                         </FormControl>
@@ -198,7 +198,7 @@ export default function ContactSection() {
                         <FormLabel className="text-gray-300 font-medium">Project Type</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-electric">
+                            <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-dxm-orange">
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                           </FormControl>
@@ -223,7 +223,7 @@ export default function ContactSection() {
                       <FormLabel className="text-gray-300 font-medium">Budget Range</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-electric">
+                          <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-dxm-orange">
                             <SelectValue placeholder="Select budget range" />
                           </SelectTrigger>
                         </FormControl>
@@ -249,7 +249,7 @@ export default function ContactSection() {
                         <Textarea
                           rows={4}
                           placeholder="Tell us about your project goals, timeline, and any specific requirements..."
-                          className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-electric resize-none"
+                          className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-dxm-orange resize-none"
                           {...field}
                         />
                       </FormControl>
@@ -261,7 +261,7 @@ export default function ContactSection() {
                 <Button
                   type="submit"
                   disabled={submitMutation.isPending}
-                  className="w-full bg-electric text-navy py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-navy transition-all duration-300 hover:scale-105 transform"
+                  className="w-full bg-dxm-orange text-white py-4 rounded-lg font-bold text-lg hover:bg-dxm-gold hover:text-navy transition-all duration-300 hover:scale-105 transform"
                 >
                   {submitMutation.isPending ? "Sending..." : "Get My Free Consultation"}
                 </Button>

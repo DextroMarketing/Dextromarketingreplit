@@ -18,16 +18,16 @@ export default function Navigation() {
 
   const NavLink = ({ href, label, mobile = false }: { href: string; label: string; mobile?: boolean }) => (
     <Link href={href}>
-      <a 
+      <span 
         className={`${
           mobile ? 'block py-2 px-4' : ''
-        } text-gray-700 hover:text-electric transition-colors duration-200 font-medium ${
-          location === href ? 'text-electric' : ''
+        } text-gray-700 hover:text-dxm-orange transition-colors duration-200 font-medium cursor-pointer ${
+          location === href ? 'text-dxm-orange' : ''
         }`}
         onClick={() => mobile && setIsOpen(false)}
       >
         {label}
-      </a>
+      </span>
     </Link>
   );
 
@@ -42,12 +42,14 @@ export default function Navigation() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/">
-            <a className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-electric to-purple rounded-lg flex items-center justify-center">
-                <Lightbulb className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold text-navy">Nexus</span>
-            </a>
+            <span className="flex items-center space-x-3 cursor-pointer">
+              <img 
+                src="@assets/DXM Logo_1754139841655.jpg" 
+                alt="DXM Logo" 
+                className="w-12 h-12 rounded-full object-cover"
+              />
+              <span className="text-2xl font-bold text-navy">DXM</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -56,7 +58,7 @@ export default function Navigation() {
               <NavLink key={item.href} href={item.href} label={item.label} />
             ))}
             <Link href="/contact">
-              <Button className="bg-navy text-white hover:bg-electric transition-all duration-300 hover:scale-105">
+              <Button className="bg-navy text-white hover:bg-dxm-orange transition-all duration-300 hover:scale-105">
                 Get Started
               </Button>
             </Link>
@@ -75,7 +77,7 @@ export default function Navigation() {
                   <NavLink key={item.href} href={item.href} label={item.label} mobile />
                 ))}
                 <Link href="/contact">
-                  <Button className="w-full bg-navy text-white hover:bg-electric transition-all duration-300" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full bg-navy text-white hover:bg-dxm-orange transition-all duration-300" onClick={() => setIsOpen(false)}>
                     Get Started
                   </Button>
                 </Link>

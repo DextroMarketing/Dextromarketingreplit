@@ -26,10 +26,10 @@ const features = [
 ];
 
 const stats = [
-  { label: "Projects Completed", value: "500+", color: "text-electric" },
-  { label: "Avg. Conversion Increase", value: "340%", color: "text-purple" },
-  { label: "Client Satisfaction", value: "98%", color: "text-electric" },
-  { label: "Avg. Load Time", value: "1.8s", color: "text-purple" }
+  { label: "Projects Completed", value: "500+", color: "text-dxm-orange" },
+  { label: "Avg. Conversion Increase", value: "340%", color: "text-dxm-gold" },
+  { label: "Client Satisfaction", value: "98%", color: "text-dxm-orange" },
+  { label: "Avg. Load Time", value: "1.8s", color: "text-dxm-gold" }
 ];
 
 export default function WhyChooseUsSection() {
@@ -38,7 +38,7 @@ export default function WhyChooseUsSection() {
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-10 right-10 w-64 h-64 bg-electric/10 rounded-full blur-3xl"
+          className="absolute top-10 right-10 w-64 h-64 bg-dxm-orange/10 rounded-full blur-3xl"
           animate={{ 
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3]
@@ -50,7 +50,7 @@ export default function WhyChooseUsSection() {
           }}
         />
         <motion.div 
-          className="absolute bottom-10 left-10 w-96 h-96 bg-purple/10 rounded-full blur-3xl"
+          className="absolute bottom-10 left-10 w-96 h-96 bg-dxm-gold/10 rounded-full blur-3xl"
           animate={{ 
             scale: [1.2, 1, 1.2],
             opacity: [0.4, 0.2, 0.4]
@@ -87,7 +87,7 @@ export default function WhyChooseUsSection() {
           >
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
-              const bgColor = index % 2 === 0 ? "bg-electric" : "bg-purple";
+              const bgColor = index % 2 === 0 ? "bg-dxm-orange" : "bg-dxm-gold";
               
               return (
                 <motion.div
