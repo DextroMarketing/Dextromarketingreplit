@@ -182,10 +182,10 @@ export default function ContactSection() {
                     name="projectType"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white font-medium">Project Type</FormLabel>
+                        <FormLabel className="text-gray-900 font-medium">Project Type</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger className="bg-white/20 border-white/40 text-white focus:border-dxm-orange focus:bg-white/30">
+                            <SelectTrigger className="bg-white border-gray-300 text-gray-900 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange">
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                           </FormControl>
@@ -208,10 +208,10 @@ export default function ContactSection() {
                   name="budget"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white font-medium">Budget Range</FormLabel>
+                      <FormLabel className="text-gray-900 font-medium">Budget Range</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger className="bg-white/20 border-white/40 text-white focus:border-dxm-orange focus:bg-white/30">
+                          <SelectTrigger className="bg-white border-gray-300 text-gray-900 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange">
                             <SelectValue placeholder="Select budget range" />
                           </SelectTrigger>
                         </FormControl>
@@ -232,12 +232,12 @@ export default function ContactSection() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white font-medium">Project Details</FormLabel>
+                      <FormLabel className="text-gray-900 font-medium">Project Details</FormLabel>
                       <FormControl>
                         <Textarea
                           rows={4}
                           placeholder="Tell us about your construction business, service area, and biggest lead generation challenges..."
-                          className="bg-white/20 border-white/40 text-white placeholder-gray-300 focus:border-dxm-orange focus:bg-white/30 resize-none"
+                          className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange resize-none"
                           {...field}
                         />
                       </FormControl>
@@ -254,7 +254,7 @@ export default function ContactSection() {
                   {submitMutation.isPending ? "Sending..." : "Get My Free Consultation"}
                 </Button>
 
-                <p className="text-gray-200 text-sm text-center">
+                <p className="text-gray-600 text-sm text-center">
                   We'll respond within 24 hours with a custom proposal
                 </p>
               </form>
