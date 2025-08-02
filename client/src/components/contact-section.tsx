@@ -112,10 +112,10 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
           <motion.div
-            className="glass-effect rounded-3xl p-8 text-[#ee9d2b]"
+            className="bg-white/95 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-gray-200"
             {...fadeInLeft}
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Get Your Free Consultation</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Consultation</h3>
             
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -125,11 +125,11 @@ export default function ContactSection() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white font-medium">Name *</FormLabel>
+                        <FormLabel className="text-gray-900 font-medium">Name *</FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Your full name"
-                            className="bg-white/20 border-white/40 text-white placeholder-gray-300 focus:border-dxm-orange focus:bg-white/30"
+                            className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange"
                             {...field}
                           />
                         </FormControl>
@@ -143,12 +143,12 @@ export default function ContactSection() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white font-medium">Email *</FormLabel>
+                        <FormLabel className="text-gray-900 font-medium">Email *</FormLabel>
                         <FormControl>
                           <Input
                             type="email"
                             placeholder="your@email.com"
-                            className="bg-white/20 border-white/40 text-white placeholder-gray-300 focus:border-dxm-orange focus:bg-white/30"
+                            className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange"
                             {...field}
                           />
                         </FormControl>
@@ -164,11 +164,11 @@ export default function ContactSection() {
                     name="company"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white font-medium">Company</FormLabel>
+                        <FormLabel className="text-gray-900 font-medium">Company</FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Your company name"
-                            className="bg-white/20 border-white/40 text-white placeholder-gray-300 focus:border-dxm-orange focus:bg-white/30"
+                            className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange"
                             {...field}
                           />
                         </FormControl>
