@@ -53,7 +53,7 @@ export default function Footer() {
               <span className="flex items-center space-x-3 mb-6 cursor-pointer">
                 <img 
                   src={dxmLogo} 
-                  alt="DXM Logo" 
+                  alt="Dextro Marketing Logo" 
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <span className="text-2xl font-bold">Dextro Marketing</span>

@@ -6,42 +6,42 @@ const teamMembers = [
   {
     id: "1",
     name: "Alex Martinez",
-    role: "Creative Director",
+    role: "Construction Marketing Director",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300",
-    bio: "Leading design innovation with 8+ years in digital experiences",
-    color: "text-electric"
+    bio: "8+ years specializing in contractor lead generation and conversion optimization",
+    color: "text-dxm-orange"
   },
   {
     id: "2",
     name: "Jordan Kim",
-    role: "AI Tech Lead",
+    role: "Local SEO Specialist",
     image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300",
-    bio: "Specializing in machine learning and intelligent automation",
-    color: "text-purple"
+    bio: "Expert in construction local search domination and Google My Business optimization",
+    color: "text-dxm-gold"
   },
   {
     id: "3",
     name: "Sam Rivera",
     role: "Lead Developer",
     image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300",
-    bio: "Full-stack expert building scalable, high-performance applications",
-    color: "text-electric"
+    bio: "Builds high-performance websites optimized for construction business workflows",
+    color: "text-dxm-orange"
   },
   {
     id: "4",
     name: "Taylor Foster",
-    role: "Strategy Director",
+    role: "Construction Business Strategist",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300",
-    bio: "Digital transformation expert with proven ROI optimization",
-    color: "text-purple"
+    bio: "Former contractor turned digital strategist, understands the industry inside-out",
+    color: "text-dxm-gold"
   }
 ];
 
 const achievements = [
-  "500+ Projects Delivered",
-  "Award-Winning Design Team",
-  "AI & Machine Learning Certified",
-  "24/7 Support & Maintenance"
+  "200+ Construction Businesses Served",
+  "300% Average Lead Increase",
+  "Construction Industry Specialists",
+  "24/7 Emergency Service Support"
 ];
 
 export default function AboutSection() {
@@ -55,10 +55,10 @@ export default function AboutSection() {
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">About Dextro Marketing</h2>
             <p className="text-xl text-gray-600 mb-6">
-              We're a team of passionate designers, developers, and AI specialists who believe that every business deserves a digital presence that not only looks amazing but also drives real results.
+              We're a specialized team of digital marketing experts who exclusively serve construction and home improvement businesses. We understand the unique challenges contractors face in generating quality leads and building trust online.
             </p>
             <p className="text-gray-600 mb-8">
-              Founded in 2020, we've grown from a small startup to a leading agency by focusing on one thing: combining beautiful design with intelligent technology to create websites that truly work for our clients.
+              Founded in 2020 with a focus on the construction industry, we've helped over 200 contractors dominate their local markets by combining proven marketing strategies with cutting-edge technology designed specifically for construction businesses.
             </p>
             
             <motion.div 

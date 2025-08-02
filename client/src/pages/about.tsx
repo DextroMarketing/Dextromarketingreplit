@@ -17,10 +17,10 @@ export default function About() {
             {...fadeInUp}
           >
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-              About <span className="gradient-text">Nexus</span>
+              About <span className="gradient-text">Dextro Marketing</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We're pioneers in the fusion of creative design and artificial intelligence, dedicated to transforming how businesses connect with their audiences in the digital world.
+              We're the only digital marketing agency exclusively focused on construction and home improvement businesses, helping contractors dominate local search and convert more leads into contracts.
             </p>
           </motion.div>
         </div>

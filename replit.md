@@ -47,7 +47,7 @@ The frontend follows a well-structured component hierarchy:
 ## Design System
 The application implements a construction-focused design system:
 
-- **Color Palette**: Navy blue primary with golden orange and gold accents based on DXM logo branding
+- **Color Palette**: Navy blue primary with golden orange and gold accents based on Dextro Marketing logo branding
 - **Typography**: Inter font family for modern, readable text that conveys trust and professionalism
 - **Animation Library**: Consistent animation patterns using Framer Motion with construction-appropriate timing
 - **Responsive Design**: Mobile-first approach optimized for contractors searching on job sites
