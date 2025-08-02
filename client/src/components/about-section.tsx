@@ -53,7 +53,7 @@ export default function AboutSection() {
           <motion.div
             {...fadeInLeft}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">About Nexus</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">About Dextro Marketing</h2>
             <p className="text-xl text-gray-600 mb-6">
               We're a team of passionate designers, developers, and AI specialists who believe that every business deserves a digital presence that not only looks amazing but also drives real results.
             </p>
