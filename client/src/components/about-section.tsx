@@ -104,52 +104,7 @@ export default function AboutSection() {
           </motion.div>
         </div>
 
-        {/* Team Section */}
-        <motion.div 
-          className="text-center mb-16"
-          {...fadeInUp}
-        >
-          <h3 className="text-3xl font-bold text-navy mb-6">Meet Our Team</h3>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            The creative minds and technical experts behind every successful project.
-          </p>
-        </motion.div>
 
-        <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-          variants={staggerChildren}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-        >
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={member.id}
-              className="text-center group"
-              variants={fadeInUp}
-            >
-              <motion.div 
-                className="relative mb-6"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                <img 
-                  src={member.image} 
-                  alt={member.name}
-                  className="w-32 h-32 rounded-full mx-auto object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                />
-              </motion.div>
-              <h4 className="text-xl font-bold text-navy mb-2">{member.name}</h4>
-              <p className={`${member.color} font-semibold mb-2`}>{member.role}</p>
-              <p className="text-gray-600 text-sm">{member.bio}</p>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
