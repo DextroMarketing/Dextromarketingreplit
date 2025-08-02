@@ -96,7 +96,6 @@ export default function ContactSection() {
 
   return (
     <section className="py-20 text-white relative overflow-hidden bg-black/20 backdrop-blur-sm">
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -113,7 +112,7 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
           <motion.div
-            className="glass-effect rounded-3xl p-8"
+            className="glass-effect rounded-3xl p-8 text-[#ee9d2b]"
             {...fadeInLeft}
           >
             <h3 className="text-2xl font-bold text-white mb-6">Get Your Free Consultation</h3>
