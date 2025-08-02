@@ -48,7 +48,7 @@ export default function HeroSection() {
               <Button 
                 variant="outline"
                 size="lg"
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-navy transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                className="border-2 border-white text-white text-[#1e3d9c] px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-navy transition-all duration-300 hover:scale-105 flex items-center gap-2"
               >
                 <Play className="w-5 h-5" />
                 Watch Demo
