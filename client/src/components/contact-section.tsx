@@ -126,11 +126,11 @@ export default function ContactSection() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-300 font-medium">Name *</FormLabel>
+                        <FormLabel className="text-white font-medium">Name *</FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Your full name"
-                            className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-dxm-orange"
+                            className="bg-white/20 border-white/40 text-white placeholder-gray-300 focus:border-dxm-orange focus:bg-white/30"
                             {...field}
                           />
                         </FormControl>
@@ -144,12 +144,12 @@ export default function ContactSection() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-300 font-medium">Email *</FormLabel>
+                        <FormLabel className="text-white font-medium">Email *</FormLabel>
                         <FormControl>
                           <Input
                             type="email"
                             placeholder="your@email.com"
-                            className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-dxm-orange"
+                            className="bg-white/20 border-white/40 text-white placeholder-gray-300 focus:border-dxm-orange focus:bg-white/30"
                             {...field}
                           />
                         </FormControl>
@@ -165,11 +165,11 @@ export default function ContactSection() {
                     name="company"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-300 font-medium">Company</FormLabel>
+                        <FormLabel className="text-white font-medium">Company</FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Your company name"
-                            className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-dxm-orange"
+                            className="bg-white/20 border-white/40 text-white placeholder-gray-300 focus:border-dxm-orange focus:bg-white/30"
                             {...field}
                           />
                         </FormControl>
@@ -183,10 +183,10 @@ export default function ContactSection() {
                     name="projectType"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-300 font-medium">Project Type</FormLabel>
+                        <FormLabel className="text-white font-medium">Project Type</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-dxm-orange">
+                            <SelectTrigger className="bg-white/20 border-white/40 text-white focus:border-dxm-orange focus:bg-white/30">
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                           </FormControl>
@@ -209,10 +209,10 @@ export default function ContactSection() {
                   name="budget"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-gray-300 font-medium">Budget Range</FormLabel>
+                      <FormLabel className="text-white font-medium">Budget Range</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-dxm-orange">
+                          <SelectTrigger className="bg-white/20 border-white/40 text-white focus:border-dxm-orange focus:bg-white/30">
                             <SelectValue placeholder="Select budget range" />
                           </SelectTrigger>
                         </FormControl>
@@ -233,12 +233,12 @@ export default function ContactSection() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-gray-300 font-medium">Project Details</FormLabel>
+                      <FormLabel className="text-white font-medium">Project Details</FormLabel>
                       <FormControl>
                         <Textarea
                           rows={4}
                           placeholder="Tell us about your construction business, service area, and biggest lead generation challenges..."
-                          className="bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-dxm-orange resize-none"
+                          className="bg-white/20 border-white/40 text-white placeholder-gray-300 focus:border-dxm-orange focus:bg-white/30 resize-none"
                           {...field}
                         />
                       </FormControl>
@@ -255,7 +255,7 @@ export default function ContactSection() {
                   {submitMutation.isPending ? "Sending..." : "Get My Free Consultation"}
                 </Button>
 
-                <p className="text-gray-400 text-sm text-center">
+                <p className="text-gray-200 text-sm text-center">
                   We'll respond within 24 hours with a custom proposal
                 </p>
               </form>
@@ -269,7 +269,7 @@ export default function ContactSection() {
           >
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
-              <p className="text-gray-300 mb-8">
+              <p className="text-gray-100 mb-8">
                 Ready to start your project? We're here to help bring your vision to life with innovative design and cutting-edge technology.
               </p>
             </div>
@@ -295,8 +295,8 @@ export default function ContactSection() {
                     </motion.div>
                     <div>
                       <h4 className="text-white font-semibold mb-1">{info.title}</h4>
-                      <p className="text-gray-300 whitespace-pre-line">{info.value}</p>
-                      <p className="text-gray-400 text-sm">{info.description}</p>
+                      <p className="text-gray-100 whitespace-pre-line">{info.value}</p>
+                      <p className="text-gray-200 text-sm">{info.description}</p>
                     </div>
                   </motion.div>
                 );

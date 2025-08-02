@@ -66,12 +66,12 @@ export default function ServicesSection() {
                   <IconComponent className="w-8 h-8 text-white" />
                 </motion.div>
                 
-                <h3 className="text-2xl font-bold text-navy mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                <p className="text-gray-800 mb-6 font-medium">{service.description}</p>
                 
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-gray-700">
+                    <li key={idx} className="flex items-center text-gray-800 font-medium">
                       <Check className="w-5 h-5 text-dxm-orange mr-3" />
                       {feature}
                     </li>
