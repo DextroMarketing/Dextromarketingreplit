@@ -261,71 +261,7 @@ export default function ContactSection() {
             </Form>
           </motion.div>
 
-          {/* Contact Information */}
-          <motion.div 
-            className="space-y-8"
-            {...fadeInRight}
-          >
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
-              <p className="text-gray-100 mb-8">
-                Ready to start your project? We're here to help bring your vision to life with innovative design and cutting-edge technology.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => {
-                const IconComponent = info.icon;
-                return (
-                  <motion.div
-                    key={info.title}
-                    className="flex items-start space-x-4"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <motion.div 
-                      className={`w-12 h-12 ${info.color} rounded-lg flex items-center justify-center flex-shrink-0`}
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    >
-                      <IconComponent className="w-6 h-6 text-white" />
-                    </motion.div>
-                    <div>
-                      <h4 className="text-white font-semibold mb-1">{info.title}</h4>
-                      <p className="text-gray-100 whitespace-pre-line">{info.value}</p>
-                      <p className="text-gray-200 text-sm">{info.description}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            <div className="pt-8 border-t border-white/20">
-              <h4 className="text-white font-semibold mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => {
-                  const IconComponent = social.icon;
-                  return (
-                    <motion.a
-                      key={social.label}
-                      href={social.href}
-                      className="w-10 h-10 bg-white/10 hover:bg-electric rounded-lg flex items-center justify-center transition-colors"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <IconComponent className="w-5 h-5 text-white" />
-                    </motion.a>
-                  );
-                })}
-              </div>
-            </div>
-          </motion.div>
+          
         </div>
       </div>
     </section>
