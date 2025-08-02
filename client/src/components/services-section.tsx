@@ -38,7 +38,7 @@ export default function ServicesSection() {
           className="text-center mb-16"
           {...fadeInUp}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">Services Built for Construction</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-[#ee9d2b]">Services Built for Construction</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             From mobile-first websites to local SEO domination, we deliver digital solutions specifically designed to help contractors and home improvement businesses grow.
           </p>
