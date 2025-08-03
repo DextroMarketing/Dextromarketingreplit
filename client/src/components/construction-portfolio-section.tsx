@@ -208,24 +208,17 @@ export default function ConstructionPortfolioSection() {
                   
                   {project.challenge && (
                     <div className="mb-3">
-                      <p className="text-sm font-semibold text-dxm-orange mb-1">Challenge:</p>
                       <p className="text-sm">{project.challenge}</p>
                     </div>
                   )}
                   
                   {project.solution && (
                     <div className="mb-3">
-                      <p className="text-sm font-semibold text-dxm-gold mb-1">Solution:</p>
                       <p className="text-sm">{project.solution}</p>
                     </div>
                   )}
                   
-                  {project.results && (
-                    <div>
-                      <p className="text-sm font-semibold text-green-400 mb-1">Results:</p>
-                      <p className="text-sm">{project.results}</p>
-                    </div>
-                  )}
+                  
                 </div>
               </motion.div>
             ))}
