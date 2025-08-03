@@ -206,11 +206,7 @@ export default function ConstructionPortfolioSection() {
                 {/* Hover Overlay with Details */}
                 <div className="absolute inset-0 bg-navy/95 p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-white">
                   
-                  {project.challenge && (
-                    <div className="mb-3">
-                      <p className="text-sm">{project.challenge}</p>
-                    </div>
-                  )}
+                  
                   
                   {project.solution && (
                     <div className="mb-3">
