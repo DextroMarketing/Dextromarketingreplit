@@ -6,25 +6,25 @@ const testimonials = [
   {
     id: "1",
     name: "Michael Chen",
-    title: "CEO, TechFlow Solutions",
+    title: "Owner, Chen Home Improvements",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150",
-    quote: "Nexus transformed our entire digital presence. The AI chatbot alone increased our qualified leads by 200%, and the website design is absolutely stunning. Best investment we've made.",
+    quote: "Dextro Marketing transformed our entire digital presence. The AI chatbot alone increased our qualified leads by 200%, and the website design is absolutely stunning. Best investment we've made.",
     rating: 5
   },
   {
     id: "2",
     name: "Sarah Rodriguez",
-    title: "Founder, EcoLux Fashion",
+    title: "Owner, Rodriguez Roofing",
     image: "https://pixabay.com/get/gb9017780bc9f8c589cb016588a8261347c3ff75e7bb0969727c5ac3d3e0a5a0bef75d5aab0441749515d95ebf0068d9a5369ddcb5612667b4aaba1732ef4b7d1_1280.jpg",
-    quote: "The team's expertise in AI integration is unmatched. Our new e-commerce platform with personalized recommendations has tripled our online sales. Incredible results!",
+    quote: "Dextro Marketing's local SEO strategy brought us from page 3 to #1 for 'roofing contractors near me.' Our emergency calls tripled and we're booked out 6 weeks. Incredible results!",
     rating: 5
   },
   {
     id: "3",
-    name: "Dr. James Thompson",
-    title: "Director, HealthFirst Clinics",
+    name: "James Thompson",
+    title: "Founder, Thompson Construction",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150",
-    quote: "Professional, innovative, and results-driven. Nexus didn't just build us a website, they built us a digital growth engine. Our patient acquisition has never been better.",
+    quote: "Professional, innovative, and results-driven. Dextro Marketing didn't just build us a website, they built us a digital growth engine. Our contractor lead generation has never been better.",
     rating: 5
   }
 ];
@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">What Our Clients Say</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what industry leaders say about working with Nexus.
+            Don't just take our word for it. Here's what construction industry leaders say about working with Dextro Marketing.
           </p>
         </motion.div>
 
