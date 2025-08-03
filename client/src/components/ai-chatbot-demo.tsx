@@ -65,7 +65,7 @@ export default function AIChatbotDemo() {
   };
 
   return (
-    <div className="glass-effect rounded-3xl p-6 relative text-[#ee9d2b]">
+    <div className="glass-effect rounded-3xl p-6 relative text-white">
       {/* Window Controls */}
       <div className="flex items-center space-x-2 mb-4">
         <div className="w-3 h-3 bg-red-400 rounded-full"></div>

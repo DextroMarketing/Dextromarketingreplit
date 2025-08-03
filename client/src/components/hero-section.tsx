@@ -26,7 +26,7 @@ export default function HeroSection() {
                 <span className="text-dxm-orange">Let AI Handle Your Business Operations.</span>
               </motion.h1>
               <motion.p 
-                className="text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-2xl"
+                className="text-xl lg:text-2xl text-white/95 leading-relaxed max-w-2xl"
                 {...fadeInUp}
                 transition={{ delay: 0.4 }}
               >
@@ -61,8 +61,8 @@ export default function HeroSection() {
               {...fadeInUp}
               transition={{ delay: 0.8 }}
             >
-              <p className="text-gray-200 text-sm mb-4">Trusted by 200+ construction and home improvement businesses</p>
-              <div className="flex items-center space-x-8 opacity-60">
+              <p className="text-white/90 text-sm mb-4">Trusted by 200+ construction and home improvement businesses</p>
+              <div className="flex items-center space-x-8 opacity-80">
                 <div className="text-white font-semibold">Premier Roofing</div>
                 <div className="text-white font-semibold">BuildRight Contractors</div>
                 <div className="text-white font-semibold">HomePro Remodelling</div>

@@ -56,22 +56,8 @@ export default function DynamicBackground() {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Animated gradient background */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-navy via-navy/95 to-navy/90"
-        animate={{
-          background: [
-            "linear-gradient(45deg, #1e3a8a 0%, #1e40af 25%, #1e3a8a 50%, #1e40af 75%, #1e3a8a 100%)",
-            "linear-gradient(45deg, #1e40af 0%, #1e3a8a 25%, #1e40af 50%, #1e3a8a 75%, #1e40af 100%)",
-            "linear-gradient(45deg, #1e3a8a 0%, #1e40af 25%, #1e3a8a 50%, #1e40af 75%, #1e3a8a 100%)",
-          ],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
+      {/* Static gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy/95 to-navy/90" />
 
       {/* Floating geometric shapes */}
       <motion.div
@@ -126,26 +112,17 @@ export default function DynamicBackground() {
         }}
       />
 
-      {/* Animated particles */}
+      {/* Static particles */}
       {particles.map((particle) => (
-        <motion.div
+        <div
           key={particle.id}
-          className="absolute bg-dxm-orange/20 rounded-full"
+          className="absolute bg-dxm-orange/10 rounded-full"
           style={{
             left: particle.x,
             top: particle.y,
             width: particle.size,
             height: particle.size,
-            opacity: particle.opacity,
-          }}
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [particle.opacity, particle.opacity * 0.5, particle.opacity],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            ease: "easeInOut",
+            opacity: particle.opacity * 0.3,
           }}
         />
       ))}
@@ -164,59 +141,25 @@ export default function DynamicBackground() {
         }}
       />
 
-      {/* Diagonal lines */}
+      {/* Static diagonal lines */}
       <div className="absolute inset-0">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <motion.div
+        {Array.from({ length: 4 }).map((_, i) => (
+          <div
             key={i}
-            className="absolute h-px bg-gradient-to-r from-transparent via-dxm-gold/20 to-transparent"
+            className="absolute h-px bg-gradient-to-r from-transparent via-dxm-gold/10 to-transparent"
             style={{
-              width: '200%',
-              top: `${10 + i * 15}%`,
-              left: '-50%',
+              width: '150%',
+              top: `${20 + i * 25}%`,
+              left: '-25%',
               transform: 'rotate(-15deg)',
-            }}
-            animate={{
-              x: [-100, 100],
-              opacity: [0, 0.4, 0],
-            }}
-            transition={{
-              duration: 8 + i * 0.5,
-              repeat: Infinity,
-              delay: i * 0.5,
-              ease: "linear",
             }}
           />
         ))}
       </div>
 
-      {/* Pulsing corner elements */}
-      <motion.div
-        className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-dxm-orange/10 to-transparent rounded-full blur-2xl"
-        animate={{
-          scale: [1, 1.5, 1],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <motion.div
-        className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-dxm-gold/10 to-transparent rounded-full blur-2xl"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      />
+      {/* Static corner elements */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-dxm-orange/5 to-transparent rounded-full blur-2xl opacity-30" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-dxm-gold/5 to-transparent rounded-full blur-2xl opacity-30" />
 
       {/* Circuit-like connecting lines */}
       <svg className="absolute inset-0 w-full h-full opacity-10">
