@@ -8,27 +8,36 @@ import { fadeInUp, staggerChildren } from "@/lib/animations";
 const projects = [
   {
     id: "1",
-    title: "FinTech Dashboard",
-    description: "AI-powered financial analytics platform with real-time insights",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    categories: ["web-design", "ai-integration"],
-    technologies: ["React", "AI Analytics", "TypeScript"]
+    title: "Premier Roofing Company",
+    description: "How we generated 150+ qualified leads in 90 days",
+    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+    categories: ["local-seo", "lead-generation"],
+    technologies: ["Local SEO", "Google Ads", "Lead Nurturing"],
+    challenge: "Seasonal business, intense local competition",
+    solution: "Local SEO, Google Ads, automated lead nurturing",
+    results: "300% increase in qualified leads, 45% reduction in cost per lead"
   },
   {
-    id: "2",
-    title: "Smart E-commerce",
-    description: "AI-driven personalization increasing conversion by 340%",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    categories: ["e-commerce", "ai-integration"],
-    technologies: ["Next.js", "AI Recommendations", "Shopify"]
+    id: "2", 
+    title: "BuildRight Home Remodeling",
+    description: "From word-of-mouth to digital domination",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+    categories: ["web-design", "social-media"],
+    technologies: ["Portfolio Website", "Social Media", "Review Management"],
+    challenge: "Relied entirely on referrals, inconsistent lead flow",
+    solution: "Portfolio website, social media marketing, review management",
+    results: "200% increase in project inquiries, expanded service area"
   },
   {
     id: "3",
-    title: "Healthcare Platform",
-    description: "Patient-centered design improving appointment booking by 85%",
-    image: "https://pixabay.com/get/gdd83a9dcd7716af354c62e6eed9bd8a632cdddb4fc3c5877b378fb1e84a30a6e5cf002d6705a847bf5a02acc092a23e70c6465a4e4b1a0b9f437fa1286bbb413_1280.jpg",
-    categories: ["web-design"],
-    technologies: ["Vue.js", "HIPAA Compliant", "PWA"]
+    title: "Elite Plumbing Services",
+    description: "24/7 lead generation for emergency services",
+    image: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+    categories: ["ai-integration", "emergency"],
+    technologies: ["AI Chatbot", "Mobile Optimization", "Auto Scheduling"],
+    challenge: "Capturing emergency service calls outside business hours",
+    solution: "Mobile-optimized site, AI chatbot, automated scheduling",
+    results: "80% increase in emergency service calls, improved customer satisfaction"
   },
   {
     id: "4",
@@ -60,7 +69,8 @@ const filterButtons = [
   { id: "all", label: "All Projects" },
   { id: "web-design", label: "Web Design" },
   { id: "ai-integration", label: "AI Integration" },
-  { id: "e-commerce", label: "E-commerce" }
+  { id: "local-seo", label: "Local SEO" },
+  { id: "emergency", label: "Emergency Services" }
 ];
 
 export default function PortfolioSection() {
@@ -77,9 +87,9 @@ export default function PortfolioSection() {
           className="text-center mb-16"
           {...fadeInUp}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">Our Work</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">Construction Success Stories</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our portfolio of cutting-edge websites and AI integrations that have transformed businesses worldwide.
+            Real results from real contractors. See how our AI-powered systems have transformed construction and home improvement businesses.
           </p>
         </motion.div>
 

@@ -6,26 +6,26 @@ import { fadeInUp, staggerChildren } from "@/lib/animations";
 const services = [
   {
     id: "web-design",
-    title: "Construction-Focused Web Design",
-    description: "Websites that work as hard as you do. Mobile-first designs built for contractors, featuring project galleries, service area maps, and lead capture systems.",
+    title: "Never Miss Another Lead",
+    description: "Phone rings while you're on-site, potential customers hang up, competitors get the job. Our AI-powered lead capture system responds instantly, qualifies prospects, and books consultations automatically.",
     icon: Monitor,
-    features: ["Mobile-First Design", "Project Galleries", "Lead Capture Forms"],
+    features: ["24/7 Lead Capture", "Instant Response System", "3x More Leads"],
     gradient: "from-dxm-orange to-dxm-gold"
   },
   {
     id: "local-seo",
-    title: "Local SEO Domination",
-    description: "Dominate local search when customers need you most. We help contractors rank #1 for 'near me' searches and capture emergency service calls.",
+    title: "Eliminate Scheduling Chaos", 
+    description: "Stop playing phone tag with customers, eliminate double bookings, and reduce no-shows. Smart scheduling system handles appointments, sends reminders, and optimizes your calendar.",
     icon: Lightbulb,
-    features: ["Google My Business", "Local Keywords", "Review Management"],
+    features: ["Smart Scheduling", "Automated Reminders", "40% Fewer No-Shows"],
     gradient: "from-dxm-gold to-dxm-orange"
   },
   {
     id: "ai-automation",
-    title: "AI Lead Automation",
-    description: "Automate quotes, scheduling, and customer communication. Our AI systems pre-qualify leads, book appointments, and follow up automatically.",
+    title: "Instant Professional Communication",
+    description: "Delayed responses lose customers to faster competitors. AI chat systems provide immediate answers, collect project details, and maintain professional communication even when you're busy.",
     icon: BarChart3,
-    features: ["Smart Lead Qualification", "Automated Scheduling", "Follow-up Sequences"],
+    features: ["Instant Response", "Project Qualification", "Professional 24/7 Chat"],
     gradient: "from-dxm-orange to-navy"
   }
 ];
@@ -38,9 +38,9 @@ export default function ServicesSection() {
           className="text-center mb-16"
           {...fadeInUp}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">Services Built for Construction</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">Stop Losing Money to Manual Processes</h2>
           <p className="text-xl text-gray-100 max-w-3xl mx-auto">
-            From mobile-first websites to local SEO domination, we deliver digital solutions specifically designed to help contractors and home improvement businesses grow.
+            Every missed call, delayed response, and manual task costs you money. Our AI systems handle the business side automatically, so you can focus on building.
           </p>
         </motion.div>
 

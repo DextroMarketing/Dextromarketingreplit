@@ -22,15 +22,15 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Turn Your Website Into A<br />
-                <span className="text-dxm-orange">24/7 Lead Machine</span>
+                Build More. Stress Less.<br />
+                <span className="text-dxm-orange">Let AI Handle Your Business Operations.</span>
               </motion.h1>
               <motion.p 
                 className="text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-2xl"
                 {...fadeInUp}
                 transition={{ delay: 0.4 }}
               >
-                The digital marketing agency that speaks construction. We help contractors dominate local search and convert more estimates into signed contracts.
+                You started your business to build, create, and solve problems — not to chase paperwork, miss calls, or lose sleep over admin tasks. Our AI-powered systems handle the business side, so you can focus on what you do best.
               </motion.p>
             </div>
 
@@ -43,7 +43,7 @@ export default function HeroSection() {
                 size="lg"
                 className="bg-dxm-orange text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-dxm-gold hover:text-navy transition-all duration-300 hover:scale-105 transform"
               >
-                Get Your Free Consultation
+                Get Your Free Digital Assessment
               </Button>
               <Button 
                 variant="outline"
@@ -51,7 +51,7 @@ export default function HeroSection() {
                 className="border-2 border-white text-white bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-navy transition-all duration-300 hover:scale-105 flex items-center gap-2"
               >
                 <Play className="w-5 h-5" />
-                Watch Demo
+                See How It Works
               </Button>
             </motion.div>
 
