@@ -17,16 +17,16 @@ export default function HeroSection() {
           >
             <div className="space-y-4">
               <motion.h1 
-                className="text-5xl lg:text-7xl font-bold leading-tight"
+                className="text-5xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 Build More. Stress Less.<br />
-                <span className="text-dxm-orange">Let AI Handle Your Business Operations.</span>
+                <span className="text-dxm-orange drop-shadow-md">Let AI Handle Your Business Operations.</span>
               </motion.h1>
               <motion.p 
-                className="text-xl lg:text-2xl text-white/95 leading-relaxed max-w-2xl"
+                className="text-xl lg:text-2xl text-white leading-relaxed max-w-2xl drop-shadow-md"
                 {...fadeInUp}
                 transition={{ delay: 0.4 }}
               >
@@ -61,12 +61,12 @@ export default function HeroSection() {
               {...fadeInUp}
               transition={{ delay: 0.8 }}
             >
-              <p className="text-white/90 text-sm mb-4">Trusted by 200+ construction and home improvement businesses</p>
-              <div className="flex items-center space-x-8 opacity-80">
-                <div className="text-white font-semibold">Premier Roofing</div>
-                <div className="text-white font-semibold">BuildRight Contractors</div>
-                <div className="text-white font-semibold">HomePro Remodelling</div>
-                <div className="text-white font-semibold">Elite Plumbing</div>
+              <p className="text-white text-sm mb-4 drop-shadow-sm">Trusted by 200+ construction and home improvement businesses</p>
+              <div className="flex items-center space-x-8">
+                <div className="text-white font-semibold drop-shadow-sm">Premier Roofing</div>
+                <div className="text-white font-semibold drop-shadow-sm">BuildRight Contractors</div>
+                <div className="text-white font-semibold drop-shadow-sm">HomePro Remodelling</div>
+                <div className="text-white font-semibold drop-shadow-sm">Elite Plumbing</div>
               </div>
             </motion.div>
           </motion.div>

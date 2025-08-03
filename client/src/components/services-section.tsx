@@ -38,8 +38,8 @@ export default function ServicesSection() {
           className="text-center mb-16"
           {...fadeInUp}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">Stop Losing Money to Manual Processes</h2>
-          <p className="text-xl text-gray-100 max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white drop-shadow-lg">Stop Losing Money to Manual Processes</h2>
+          <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
             Every missed call, delayed response, and manual task costs you money. Our AI systems handle the business side automatically, so you can focus on building.
           </p>
         </motion.div>

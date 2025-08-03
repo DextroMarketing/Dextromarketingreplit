@@ -41,10 +41,10 @@ export default function WhyChooseUsSection() {
           className="text-center mb-16"
           {...fadeInUp}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white drop-shadow-lg">
             Why Choose <span className="gradient-text">Dextro Marketing</span>?
           </h2>
-          <p className="text-xl text-gray-100 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
             We're the only digital marketing agency that exclusively serves construction businesses. We understand your industry, your challenges, and how to get you results.
           </p>
         </motion.div>
@@ -76,8 +76,8 @@ export default function WhyChooseUsSection() {
                     <IconComponent className="w-6 h-6 text-white" />
                   </motion.div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                    <p className="text-gray-300">{feature.description}</p>
+                    <h3 className="text-xl font-bold mb-2 text-white drop-shadow-sm">{feature.title}</h3>
+                    <p className="text-white/90 drop-shadow-sm">{feature.description}</p>
                   </div>
                 </motion.div>
               );
