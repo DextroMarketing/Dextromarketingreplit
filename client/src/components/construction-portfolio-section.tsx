@@ -205,7 +205,6 @@ export default function ConstructionPortfolioSection() {
 
                 {/* Hover Overlay with Details */}
                 <div className="absolute inset-0 bg-navy/95 p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-white">
-                  <h4 className="text-lg font-bold mb-4">{project.title}</h4>
                   
                   {project.challenge && (
                     <div className="mb-3">
