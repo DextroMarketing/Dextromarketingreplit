@@ -208,11 +208,7 @@ export default function ConstructionPortfolioSection() {
                   
                   
                   
-                  {project.solution && (
-                    <div className="mb-3">
-                      <p className="text-sm">{project.solution}</p>
-                    </div>
-                  )}
+                  
                   
                   
                 </div>
