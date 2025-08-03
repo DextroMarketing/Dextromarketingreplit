@@ -56,8 +56,22 @@ export default function DynamicBackground() {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Static gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy/95 to-navy/90" />
+      {/* Animated gradient background */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-navy via-navy/95 to-navy/90"
+        animate={{
+          background: [
+            "linear-gradient(45deg, #1e3a8a 0%, #1e40af 25%, #1e3a8a 50%, #1e40af 75%, #1e3a8a 100%)",
+            "linear-gradient(45deg, #1e40af 0%, #1e3a8a 25%, #1e40af 50%, #1e3a8a 75%, #1e40af 100%)",
+            "linear-gradient(45deg, #1e3a8a 0%, #1e40af 25%, #1e3a8a 50%, #1e40af 75%, #1e3a8a 100%)",
+          ],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
 
       {/* Static geometric shapes */}
       <div className="absolute top-20 left-20 w-32 h-32 border-2 border-dxm-orange/20 rotate-45" />

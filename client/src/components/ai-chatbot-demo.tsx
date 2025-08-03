@@ -112,14 +112,14 @@ export default function AIChatbotDemo() {
             animate={{ opacity: 1 }}
             className="flex items-start space-x-3"
           >
-            <div className="w-8 h-8 bg-dxm-orange rounded-full flex items-center justify-center animate-pulse">
+            <div className="w-8 h-8 bg-dxm-orange rounded-full flex items-center justify-center">
               <Star className="w-4 h-4 text-white" />
             </div>
             <div className="bg-dxm-orange/20 rounded-lg p-3">
               <div className="flex space-x-1">
-                <div className="w-2 h-2 bg-white rounded-full animate-bounce"></div>
-                <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                <div className="w-2 h-2 bg-white rounded-full opacity-70"></div>
+                <div className="w-2 h-2 bg-white rounded-full opacity-50"></div>
+                <div className="w-2 h-2 bg-white rounded-full opacity-30"></div>
               </div>
             </div>
           </motion.div>
