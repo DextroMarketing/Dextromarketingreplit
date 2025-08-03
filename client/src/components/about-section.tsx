@@ -8,7 +8,7 @@ const teamMembers = [
     name: "Alex Martinez",
     role: "Construction Marketing Director",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300",
-    bio: "8+ years specializing in contractor lead generation and conversion optimization",
+    bio: "8+ years specialising in contractor lead generation and conversion optimisation",
     color: "text-dxm-orange"
   },
   {
@@ -16,7 +16,7 @@ const teamMembers = [
     name: "Jordan Kim",
     role: "Local SEO Specialist",
     image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300",
-    bio: "Expert in construction local search domination and Google My Business optimization",
+    bio: "Expert in construction local search domination and Google My Business optimisation",
     color: "text-dxm-gold"
   },
   {
@@ -24,7 +24,7 @@ const teamMembers = [
     name: "Sam Rivera",
     role: "Lead Developer",
     image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300",
-    bio: "Builds high-performance websites optimized for construction business workflows",
+    bio: "Builds high-performance websites optimised for construction business workflows",
     color: "text-dxm-orange"
   },
   {

@@ -15,8 +15,8 @@ const painPoints = [
     icon: Calendar,
     problem: "Eliminate Scheduling Chaos", 
     description: "Playing phone tag with customers, double bookings, no-shows eating into your profits",
-    solution: "Smart scheduling system that handles appointments, sends reminders, and optimizes your calendar",
-    result: "40% reduction in no-shows, perfectly organized schedule"
+    solution: "Smart scheduling system that handles appointments, sends reminders, and optimises your calendar",
+    result: "40% reduction in no-shows, perfectly organised schedule"
   },
   {
     icon: MessageCircle,

@@ -15,7 +15,7 @@ const services = [
   {
     id: "local-seo",
     title: "Eliminate Scheduling Chaos", 
-    description: "Stop playing phone tag with customers, eliminate double bookings, and reduce no-shows. Smart scheduling system handles appointments, sends reminders, and optimizes your calendar.",
+    description: "Stop playing phone tag with customers, eliminate double bookings, and reduce no-shows. Smart scheduling system handles appointments, sends reminders, and optimises your calendar.",
     icon: Lightbulb,
     features: ["Smart Scheduling", "Automated Reminders", "40% Fewer No-Shows"],
     gradient: "from-dxm-gold to-dxm-orange"

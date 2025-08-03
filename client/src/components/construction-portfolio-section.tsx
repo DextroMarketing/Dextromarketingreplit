@@ -19,14 +19,14 @@ const projects = [
   },
   {
     id: "2", 
-    title: "BuildRight Home Remodeling",
+    title: "BuildRight Home Remodelling",
     description: "From word-of-mouth to digital domination",
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     categories: ["web-design", "social-media"],
     technologies: ["Portfolio Website", "Social Media", "Review Management"],
     challenge: "Relied entirely on referrals, inconsistent lead flow",
     solution: "Portfolio website, social media marketing, review management",
-    results: "200% increase in project inquiries, expanded service area"
+    results: "200% increase in project enquiries, expanded service area"
   },
   {
     id: "3",
@@ -57,9 +57,9 @@ const projects = [
     image: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     categories: ["specialty-trade", "portfolio"],
     technologies: ["Visual Portfolio", "Before/After Galleries", "Local SEO"],
-    challenge: "Specialized service with limited local awareness, difficulty showcasing craftsmanship",
-    solution: "Visual portfolio website, before/after galleries, local SEO optimization",
-    results: "180% increase in residential inquiries, expanded into commercial projects"
+    challenge: "Specialised service with limited local awareness, difficulty showcasing craftsmanship",
+    solution: "Visual portfolio website, before/after galleries, local SEO optimisation",
+    results: "180% increase in residential enquiries, expanded into commercial projects"
   },
   {
     id: "6",
@@ -133,7 +133,7 @@ export default function ConstructionPortfolioSection() {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}

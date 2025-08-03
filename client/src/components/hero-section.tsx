@@ -65,7 +65,7 @@ export default function HeroSection() {
               <div className="flex items-center space-x-8 opacity-60">
                 <div className="text-white font-semibold">Premier Roofing</div>
                 <div className="text-white font-semibold">BuildRight Contractors</div>
-                <div className="text-white font-semibold">HomePro Remodeling</div>
+                <div className="text-white font-semibold">HomePro Remodelling</div>
                 <div className="text-white font-semibold">Elite Plumbing</div>
               </div>
             </motion.div>
