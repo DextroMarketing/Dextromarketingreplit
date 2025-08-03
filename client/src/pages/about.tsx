@@ -20,7 +20,7 @@ export default function About() {
               About <span className="gradient-text">Dextro Marketing</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We're the only digital marketing agency exclusively focused on construction and home improvement businesses, helping contractors dominate local search and convert more leads into contracts.
+              We're the only digital marketing agency exclusively focused on construction and home improvement businesses, helping contractors automate their processes and convert more leads into contracts.
             </p>
           </motion.div>
         </div>

@@ -56,63 +56,13 @@ export default function DynamicBackground() {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Animated gradient background */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-navy via-navy/95 to-navy/90"
-        animate={{
-          background: [
-            "linear-gradient(45deg, #1e3a8a 0%, #1e40af 25%, #1e3a8a 50%, #1e40af 75%, #1e3a8a 100%)",
-            "linear-gradient(45deg, #1e40af 0%, #1e3a8a 25%, #1e40af 50%, #1e3a8a 75%, #1e40af 100%)",
-            "linear-gradient(45deg, #1e3a8a 0%, #1e40af 25%, #1e3a8a 50%, #1e40af 75%, #1e3a8a 100%)",
-          ],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
+      {/* Static gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy/95 to-navy/90" />
 
-      {/* Floating geometric shapes */}
-      <motion.div
-        className="absolute top-20 left-20 w-32 h-32 border-2 border-dxm-orange/30 rotate-45"
-        animate={{
-          rotate: [45, 225, 45],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <motion.div
-        className="absolute bottom-40 right-32 w-24 h-24 bg-dxm-gold/10 rounded-full"
-        animate={{
-          y: [-20, 20, -20],
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.6, 0.3],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <motion.div
-        className="absolute top-1/2 right-20 w-16 h-16 border border-dxm-orange/40"
-        animate={{
-          rotate: [0, 360],
-          x: [-10, 10, -10],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
+      {/* Static geometric shapes */}
+      <div className="absolute top-20 left-20 w-32 h-32 border-2 border-dxm-orange/20 rotate-45" />
+      <div className="absolute bottom-40 right-32 w-24 h-24 bg-dxm-gold/8 rounded-full opacity-30" />
+      <div className="absolute top-1/2 right-20 w-16 h-16 border border-dxm-orange/20" />
 
       {/* Grid pattern overlay */}
       <div 
@@ -126,26 +76,17 @@ export default function DynamicBackground() {
         }}
       />
 
-      {/* Animated particles */}
+      {/* Static particles */}
       {particles.map((particle) => (
-        <motion.div
+        <div
           key={particle.id}
-          className="absolute bg-dxm-orange/10 rounded-full"
+          className="absolute bg-dxm-orange/8 rounded-full"
           style={{
             left: particle.x,
             top: particle.y,
             width: particle.size,
             height: particle.size,
-            opacity: particle.opacity * 0.4,
-          }}
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [particle.opacity * 0.4, particle.opacity * 0.2, particle.opacity * 0.4],
-          }}
-          transition={{
-            duration: 4 + Math.random() * 2,
-            repeat: Infinity,
-            ease: "easeInOut",
+            opacity: particle.opacity * 0.3,
           }}
         />
       ))}
@@ -181,8 +122,8 @@ export default function DynamicBackground() {
       </div>
 
       {/* Static corner elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-dxm-orange/5 to-transparent rounded-full blur-2xl opacity-30" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-dxm-gold/5 to-transparent rounded-full blur-2xl opacity-30" />
+      <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-dxm-orange/3 to-transparent rounded-full blur-2xl opacity-20" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-dxm-gold/3 to-transparent rounded-full blur-2xl opacity-20" />
 
       {/* Circuit-like connecting lines */}
       <svg className="absolute inset-0 w-full h-full opacity-10">

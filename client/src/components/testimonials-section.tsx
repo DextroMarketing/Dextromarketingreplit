@@ -16,7 +16,7 @@ const testimonials = [
     name: "Sarah Rodriguez",
     title: "Owner, Rodriguez Roofing",
     image: "https://pixabay.com/get/gb9017780bc9f8c589cb016588a8261347c3ff75e7bb0969727c5ac3d3e0a5a0bef75d5aab0441749515d95ebf0068d9a5369ddcb5612667b4aaba1732ef4b7d1_1280.jpg",
-    quote: "Dextro Marketing's local SEO strategy brought us from page 3 to #1 for 'roofing contractors near me.' Our emergency calls tripled and we're booked out 6 weeks. Incredible results!",
+    quote: "Dextro Marketing's AI automation systems transformed our business operations. Our emergency calls tripled, scheduling is automated, and we're booked out 6 weeks. Incredible results!",
     rating: 5
   },
   {

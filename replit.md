@@ -1,6 +1,6 @@
 # Overview
 
-Dextro Marketing is a specialized digital marketing agency website focused exclusively on construction and home improvement businesses. The application is built as a full-stack web platform that helps contractors dominate local search results and convert more estimates into signed contracts. The site features construction-specific design elements, local SEO optimization, emergency service capture systems, and lead generation tools tailored for contractors, plumbers, roofers, and home improvement professionals.
+Dextro Marketing is a specialized digital marketing agency website focused exclusively on construction and home improvement businesses. The application is built as a full-stack web platform that helps contractors automate their business processes and convert more estimates into signed contracts. The site features construction-specific design elements, AI automation systems, emergency service capture systems, and lead generation tools tailored for contractors, plumbers, roofers, and home improvement professionals.
 
 # User Preferences
 

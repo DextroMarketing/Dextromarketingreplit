@@ -11,10 +11,10 @@ const projects = [
     title: "Premier Roofing Company",
     description: "How we generated 150+ qualified leads in 90 days",
     image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    categories: ["local-seo", "lead-generation"],
-    technologies: ["Local SEO", "Google Ads", "Lead Nurturing"],
+    categories: ["ai-automation", "lead-generation"],
+    technologies: ["AI Lead Capture", "Automated Responses", "Lead Nurturing"],
     challenge: "Seasonal business, intense local competition",
-    solution: "Local SEO, Google Ads, automated lead nurturing",
+    solution: "AI-powered lead capture, automated responses, smart lead nurturing",
     results: "300% increase in qualified leads, 45% reduction in cost per lead"
   },
   {
@@ -55,10 +55,10 @@ const projects = [
     title: "Rodriguez Plastering & Textures",
     description: "From artisan craft to digital success",
     image: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    categories: ["specialty-trade", "portfolio"],
-    technologies: ["Visual Portfolio", "Before/After Galleries", "Local SEO"],
+    categories: ["specialty-trade", "ai-showcase"],
+    technologies: ["AI Portfolio Generator", "Smart Galleries", "Automated Marketing"],
     challenge: "Specialised service with limited local awareness, difficulty showcasing craftsmanship",
-    solution: "Visual portfolio website, before/after galleries, local SEO optimisation",
+    solution: "AI-generated portfolio content, smart before/after galleries, automated marketing campaigns",
     results: "180% increase in residential enquiries, expanded into commercial projects"
   },
   {
@@ -67,9 +67,9 @@ const projects = [
     description: "Franchise-level systems for independent contractor",
     image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     categories: ["multi-location", "ai-integration"],
-    technologies: ["Multi-Location SEO", "AI Lead Routing", "Unified Branding"],
+    technologies: ["AI Territory Management", "Smart Lead Routing", "Unified Automation"],
     challenge: "Competing with franchises, managing multiple service areas",
-    solution: "Multi-location SEO strategy, AI-powered lead routing, unified branding",
+    solution: "AI territory management, intelligent lead routing, unified automation systems",
     results: "Expanded to 3 new markets, 400% increase in qualified leads"
   }
 ];
@@ -78,7 +78,7 @@ const filterButtons = [
   { id: "all", label: "All Projects" },
   { id: "web-design", label: "Web Design" },
   { id: "ai-integration", label: "AI Integration" },
-  { id: "local-seo", label: "Local SEO" },
+  { id: "ai-automation", label: "AI Automation" },
   { id: "emergency", label: "Emergency Services" },
   { id: "specialty-trade", label: "Specialty Trades" }
 ];

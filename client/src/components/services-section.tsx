@@ -13,7 +13,7 @@ const services = [
     gradient: "from-dxm-orange to-dxm-gold"
   },
   {
-    id: "local-seo",
+    id: "smart-scheduling",
     title: "Eliminate Scheduling Chaos", 
     description: "Stop playing phone tag with customers, eliminate double bookings, and reduce no-shows. Smart scheduling system handles appointments, sends reminders, and optimises your calendar.",
     icon: Lightbulb,

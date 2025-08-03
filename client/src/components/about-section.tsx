@@ -14,9 +14,9 @@ const teamMembers = [
   {
     id: "2",
     name: "Jordan Kim",
-    role: "Local SEO Specialist",
+    role: "AI Systems Specialist",
     image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300",
-    bio: "Expert in construction local search domination and Google My Business optimisation",
+    bio: "Expert in AI automation systems and intelligent workflow optimisation for contractors",
     color: "text-dxm-gold"
   },
   {

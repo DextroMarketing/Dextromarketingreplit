@@ -10,8 +10,8 @@ const features = [
   },
   {
     icon: Lightbulb,
-    title: "Local SEO Domination",
-    description: "Rank #1 for 'contractor near me' searches in your service area and dominate local competition."
+    title: "AI Process Automation",
+    description: "Automate repetitive tasks like quote generation, follow-ups, and project scheduling to save hours daily."
   },
   {
     icon: DollarSign,

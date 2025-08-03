@@ -11,10 +11,10 @@ const projects = [
     title: "Premier Roofing Company",
     description: "How we generated 150+ qualified leads in 90 days",
     image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    categories: ["local-seo", "lead-generation"],
-    technologies: ["Local SEO", "Google Ads", "Lead Nurturing"],
+    categories: ["ai-automation", "lead-generation"],
+    technologies: ["AI Lead Capture", "Automated Responses", "Lead Nurturing"],
     challenge: "Seasonal business, intense local competition",
-    solution: "Local SEO, Google Ads, automated lead nurturing",
+    solution: "AI-powered lead capture, automated responses, smart lead nurturing",
     results: "300% increase in qualified leads, 45% reduction in cost per lead"
   },
   {
