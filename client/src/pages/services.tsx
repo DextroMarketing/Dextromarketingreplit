@@ -158,7 +158,7 @@ export default function Services() {
                         <h3 className="text-3xl font-black mb-6 uppercase tracking-wide border-b-4 border-purple pb-2 text-[#ee9d2b]">Benefits</h3>
                         <ul className="space-y-2">
                           {service.benefits.map((benefit) => (
-                            <li key={benefit} className="flex items-center text-black font-medium">
+                            <li key={benefit} className="flex items-center font-medium text-[#ffffff]">
                               <ArrowRight className="w-5 h-5 text-purple mr-3" />
                               {benefit}
                             </li>
