@@ -141,14 +141,14 @@ export default function Services() {
                       <h2 className="text-4xl font-bold text-navy">{service.title}</h2>
                     </div>
                     
-                    <p className="text-xl text-gray-800 mb-8">{service.description}</p>
+                    <p className="text-xl text-black font-medium mb-8">{service.description}</p>
                     
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
                       <div>
                         <h3 className="text-xl font-bold text-navy mb-4">Key Features</h3>
                         <ul className="space-y-2">
                           {service.features.map((feature) => (
-                            <li key={feature} className="flex items-center text-gray-900">
+                            <li key={feature} className="flex items-center text-black font-medium">
                               <Check className="w-5 h-5 text-electric mr-3" />
                               {feature}
                             </li>
@@ -160,7 +160,7 @@ export default function Services() {
                         <h3 className="text-xl font-bold text-navy mb-4">Benefits</h3>
                         <ul className="space-y-2">
                           {service.benefits.map((benefit) => (
-                            <li key={benefit} className="flex items-center text-gray-900">
+                            <li key={benefit} className="flex items-center text-black font-medium">
                               <ArrowRight className="w-5 h-5 text-purple mr-3" />
                               {benefit}
                             </li>
@@ -179,7 +179,7 @@ export default function Services() {
                     <Card className="shadow-xl">
                       <CardHeader>
                         <CardTitle className="text-2xl text-navy">Our Process</CardTitle>
-                        <CardDescription className="text-gray-800">How we deliver {service.title.toLowerCase()}</CardDescription>
+                        <CardDescription className="text-black font-medium">How we deliver {service.title.toLowerCase()}</CardDescription>
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
@@ -195,7 +195,7 @@ export default function Services() {
                               <div className="w-8 h-8 bg-electric text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">
                                 {stepIndex + 1}
                               </div>
-                              <span className="font-semibold text-gray-900">{step}</span>
+                              <span className="font-bold text-black">{step}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -210,11 +210,11 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-100">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div {...fadeInUp}>
             <h2 className="text-4xl font-bold text-navy mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-900 font-medium mb-8">
+            <p className="text-xl text-black font-bold mb-8">
               Let's discuss how our services can transform your digital presence and drive real business results.
             </p>
             <Button size="lg" className="bg-electric text-navy hover:bg-navy hover:text-white px-8 py-4 text-lg">
