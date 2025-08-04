@@ -94,7 +94,6 @@ export default function Services() {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-navy to-purple text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,7 +110,6 @@ export default function Services() {
           </motion.div>
         </div>
       </section>
-
       {/* Services Detail */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -138,7 +136,7 @@ export default function Services() {
                       <div className="w-16 h-16 bg-gradient-to-br from-electric to-purple rounded-2xl flex items-center justify-center mr-4">
                         <IconComponent className="w-8 h-8 text-white" />
                       </div>
-                      <h2 className="text-5xl font-black text-navy uppercase tracking-tight leading-tight">{service.title}</h2>
+                      <h2 className="text-5xl font-black uppercase tracking-tight leading-tight text-[#ee9d2b]">{service.title}</h2>
                     </div>
                     
                     <p className="text-xl text-black font-medium mb-8">{service.description}</p>
@@ -173,7 +171,6 @@ export default function Services() {
                       Get Started with {service.title}
                     </Button>
                   </div>
-                  
                   {/* Process Card */}
                   <div className={isEven ? '' : 'lg:col-start-1 lg:row-start-1'}>
                     <Card className="shadow-xl">
@@ -208,7 +205,6 @@ export default function Services() {
           </motion.div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -223,7 +219,6 @@ export default function Services() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
