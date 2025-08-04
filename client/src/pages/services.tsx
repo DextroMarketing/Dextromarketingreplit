@@ -138,14 +138,14 @@ export default function Services() {
                       <div className="w-16 h-16 bg-gradient-to-br from-electric to-purple rounded-2xl flex items-center justify-center mr-4">
                         <IconComponent className="w-8 h-8 text-white" />
                       </div>
-                      <h2 className="text-4xl font-bold text-navy">{service.title}</h2>
+                      <h2 className="text-5xl font-black text-navy uppercase tracking-tight leading-tight">{service.title}</h2>
                     </div>
                     
                     <p className="text-xl text-black font-medium mb-8">{service.description}</p>
                     
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
                       <div>
-                        <h3 className="text-xl font-bold text-navy mb-4">Key Features</h3>
+                        <h3 className="text-3xl font-black text-navy mb-6 uppercase tracking-wide border-b-4 border-electric pb-2">Key Features</h3>
                         <ul className="space-y-2">
                           {service.features.map((feature) => (
                             <li key={feature} className="flex items-center text-black font-medium">
@@ -157,7 +157,7 @@ export default function Services() {
                       </div>
                       
                       <div>
-                        <h3 className="text-xl font-bold text-navy mb-4">Benefits</h3>
+                        <h3 className="text-3xl font-black text-navy mb-6 uppercase tracking-wide border-b-4 border-purple pb-2">Benefits</h3>
                         <ul className="space-y-2">
                           {service.benefits.map((benefit) => (
                             <li key={benefit} className="flex items-center text-black font-medium">
@@ -178,7 +178,7 @@ export default function Services() {
                   <div className={isEven ? '' : 'lg:col-start-1 lg:row-start-1'}>
                     <Card className="shadow-xl">
                       <CardHeader>
-                        <CardTitle className="text-2xl text-navy">Our Process</CardTitle>
+                        <CardTitle className="text-4xl font-black text-navy uppercase tracking-wide border-b-4 border-dxm-orange pb-3 mb-4">Our Process</CardTitle>
                         <CardDescription className="text-black font-medium">How we deliver {service.title.toLowerCase()}</CardDescription>
                       </CardHeader>
                       <CardContent>
@@ -213,7 +213,7 @@ export default function Services() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div {...fadeInUp}>
-            <h2 className="text-4xl font-bold text-navy mb-6">Ready to Get Started?</h2>
+            <h2 className="text-6xl font-black text-navy mb-8 uppercase tracking-wide">Ready to Get Started?</h2>
             <p className="text-xl text-black font-bold mb-8">
               Let's discuss how our services can transform your digital presence and drive real business results.
             </p>
