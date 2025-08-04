@@ -146,7 +146,7 @@ export default function Services() {
                         <h3 className="text-3xl font-black mb-6 uppercase tracking-wide border-b-4 border-electric pb-2 text-[#ee9d2b]">Key Features</h3>
                         <ul className="space-y-2">
                           {service.features.map((feature) => (
-                            <li key={feature} className="flex items-center text-black font-medium">
+                            <li key={feature} className="flex items-center font-medium text-[#ffffff]">
                               <Check className="w-5 h-5 text-electric mr-3" />
                               {feature}
                             </li>
