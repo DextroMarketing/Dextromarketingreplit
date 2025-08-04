@@ -143,7 +143,7 @@ export default function Services() {
                     
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
                       <div>
-                        <h3 className="text-3xl font-black text-navy mb-6 uppercase tracking-wide border-b-4 border-electric pb-2">Key Features</h3>
+                        <h3 className="text-3xl font-black mb-6 uppercase tracking-wide border-b-4 border-electric pb-2 text-[#ee9d2b]">Key Features</h3>
                         <ul className="space-y-2">
                           {service.features.map((feature) => (
                             <li key={feature} className="flex items-center text-black font-medium">
