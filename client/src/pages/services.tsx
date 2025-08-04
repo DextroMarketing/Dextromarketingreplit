@@ -139,7 +139,7 @@ export default function Services() {
                       <h2 className="text-5xl font-black uppercase tracking-tight leading-tight text-[#ee9d2b]">{service.title}</h2>
                     </div>
                     
-                    <p className="text-xl text-black font-medium mb-8">{service.description}</p>
+                    <p className="text-xl font-medium mb-8 text-[#ffffff]">{service.description}</p>
                     
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
                       <div>
