@@ -179,14 +179,14 @@ export default function Services() {
                     <Card className="shadow-xl">
                       <CardHeader>
                         <CardTitle className="text-2xl text-navy">Our Process</CardTitle>
-                        <CardDescription>How we deliver {service.title.toLowerCase()}</CardDescription>
+                        <CardDescription className="text-gray-800">How we deliver {service.title.toLowerCase()}</CardDescription>
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
                           {service.process.map((step, stepIndex) => (
                             <motion.div
                               key={step}
-                              className="flex items-center p-4 bg-gray-50 rounded-lg"
+                              className="flex items-center p-4 bg-white border border-gray-200 rounded-lg"
                               initial={{ opacity: 0, x: -20 }}
                               whileInView={{ opacity: 1, x: 0 }}
                               viewport={{ once: true }}
@@ -195,7 +195,7 @@ export default function Services() {
                               <div className="w-8 h-8 bg-electric text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">
                                 {stepIndex + 1}
                               </div>
-                              <span className="font-medium text-gray-800">{step}</span>
+                              <span className="font-semibold text-gray-900">{step}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -210,11 +210,11 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div {...fadeInUp}>
             <h2 className="text-4xl font-bold text-navy mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-800 mb-8">
+            <p className="text-xl text-gray-900 font-medium mb-8">
               Let's discuss how our services can transform your digital presence and drive real business results.
             </p>
             <Button size="lg" className="bg-electric text-navy hover:bg-navy hover:text-white px-8 py-4 text-lg">
