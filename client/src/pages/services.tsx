@@ -105,7 +105,7 @@ export default function Services() {
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               Our <span className="gradient-text">Services</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Comprehensive digital solutions combining cutting-edge design with intelligent AI technology to transform your business.
             </p>
           </motion.div>
@@ -141,14 +141,14 @@ export default function Services() {
                       <h2 className="text-4xl font-bold text-navy">{service.title}</h2>
                     </div>
                     
-                    <p className="text-xl text-gray-600 mb-8">{service.description}</p>
+                    <p className="text-xl text-gray-800 mb-8">{service.description}</p>
                     
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
                       <div>
                         <h3 className="text-xl font-bold text-navy mb-4">Key Features</h3>
                         <ul className="space-y-2">
                           {service.features.map((feature) => (
-                            <li key={feature} className="flex items-center text-gray-700">
+                            <li key={feature} className="flex items-center text-gray-900">
                               <Check className="w-5 h-5 text-electric mr-3" />
                               {feature}
                             </li>
@@ -160,7 +160,7 @@ export default function Services() {
                         <h3 className="text-xl font-bold text-navy mb-4">Benefits</h3>
                         <ul className="space-y-2">
                           {service.benefits.map((benefit) => (
-                            <li key={benefit} className="flex items-center text-gray-700">
+                            <li key={benefit} className="flex items-center text-gray-900">
                               <ArrowRight className="w-5 h-5 text-purple mr-3" />
                               {benefit}
                             </li>
@@ -214,7 +214,7 @@ export default function Services() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div {...fadeInUp}>
             <h2 className="text-4xl font-bold text-navy mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-800 mb-8">
               Let's discuss how our services can transform your digital presence and drive real business results.
             </p>
             <Button size="lg" className="bg-electric text-navy hover:bg-navy hover:text-white px-8 py-4 text-lg">
