@@ -73,10 +73,69 @@ export default function DynamicBackground() {
         }}
       />
 
-      {/* Static geometric shapes */}
-      <div className="absolute top-20 left-20 w-32 h-32 border-2 border-dxm-orange/20 rotate-45" />
-      <div className="absolute bottom-40 right-32 w-24 h-24 bg-dxm-gold/8 rounded-full opacity-30" />
-      <div className="absolute top-1/2 right-20 w-16 h-16 border border-dxm-orange/20" />
+      {/* Animated geometric shapes */}
+      <motion.div 
+        className="absolute top-20 left-20 w-32 h-32 border-2 border-dxm-orange/20"
+        animate={{ 
+          rotate: [0, 360],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+          scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+        }}
+      />
+      <motion.div 
+        className="absolute bottom-40 right-32 w-24 h-24 bg-dxm-gold/8 rounded-full opacity-30"
+        animate={{ 
+          y: [0, -20, 0],
+          opacity: [0.3, 0.6, 0.3],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      <motion.div 
+        className="absolute top-1/2 right-20 w-16 h-16 border border-dxm-orange/20"
+        animate={{ 
+          rotate: [0, -180, 0],
+          x: [0, 10, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      
+      {/* Additional floating shapes */}
+      <motion.div 
+        className="absolute top-1/3 left-1/4 w-20 h-20 border border-dxm-gold/15 rounded-full"
+        animate={{ 
+          rotate: [0, 360],
+          scale: [1, 1.2, 1],
+          x: [0, 30, 0],
+        }}
+        transition={{
+          rotate: { duration: 15, repeat: Infinity, ease: "linear" },
+          scale: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+          x: { duration: 7, repeat: Infinity, ease: "easeInOut" }
+        }}
+      />
+      <motion.div 
+        className="absolute bottom-1/4 left-1/3 w-12 h-12 bg-dxm-orange/10 transform rotate-45"
+        animate={{ 
+          rotate: [45, 405],
+          y: [0, -15, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
 
       {/* Grid pattern overlay */}
       <div 
@@ -90,9 +149,9 @@ export default function DynamicBackground() {
         }}
       />
 
-      {/* Static particles */}
+      {/* Animated particles */}
       {particles.map((particle) => (
-        <div
+        <motion.div
           key={particle.id}
           className="absolute bg-dxm-orange/8 rounded-full"
           style={{
@@ -100,7 +159,16 @@ export default function DynamicBackground() {
             top: particle.y,
             width: particle.size,
             height: particle.size,
-            opacity: particle.opacity * 0.3,
+          }}
+          animate={{
+            opacity: [particle.opacity * 0.2, particle.opacity * 0.8, particle.opacity * 0.2],
+            scale: [1, 1.5, 1],
+          }}
+          transition={{
+            duration: Math.random() * 3 + 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: Math.random() * 2,
           }}
         />
       ))}
@@ -119,10 +187,10 @@ export default function DynamicBackground() {
         }}
       />
 
-      {/* Static diagonal lines */}
+      {/* Animated diagonal lines */}
       <div className="absolute inset-0">
         {Array.from({ length: 4 }).map((_, i) => (
-          <div
+          <motion.div
             key={i}
             className="absolute h-px bg-gradient-to-r from-transparent via-dxm-gold/10 to-transparent"
             style={{
@@ -131,13 +199,50 @@ export default function DynamicBackground() {
               left: '-25%',
               transform: 'rotate(-15deg)',
             }}
+            animate={{
+              opacity: [0.3, 0.8, 0.3],
+              scaleX: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 6 + i * 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.5,
+            }}
           />
         ))}
       </div>
 
-      {/* Static corner elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-dxm-orange/3 to-transparent rounded-full blur-2xl opacity-20" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-dxm-gold/3 to-transparent rounded-full blur-2xl opacity-20" />
+      {/* Animated corner elements */}
+      <motion.div 
+        className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-dxm-orange/3 to-transparent rounded-full blur-2xl opacity-20"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.4, 0.2],
+          x: [0, 20, 0],
+          y: [0, 20, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div 
+        className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-dxm-gold/3 to-transparent rounded-full blur-2xl opacity-20"
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.2, 0.5, 0.2],
+          x: [0, -30, 0],
+          y: [0, -30, 0],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
+      />
 
       {/* Circuit-like connecting lines */}
       <svg className="absolute inset-0 w-full h-full opacity-10">
@@ -181,6 +286,80 @@ export default function DynamicBackground() {
           </linearGradient>
         </defs>
       </svg>
+
+      {/* Orbiting elements */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <motion.div
+          className="absolute w-4 h-4 bg-dxm-orange/20 rounded-full"
+          animate={{
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          style={{
+            transformOrigin: "0 200px",
+          }}
+        />
+        <motion.div
+          className="absolute w-3 h-3 bg-dxm-gold/15 rounded-full"
+          animate={{
+            rotate: [0, -360],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          style={{
+            transformOrigin: "0 150px",
+          }}
+        />
+      </div>
+
+      {/* Pulsing dots */}
+      <motion.div
+        className="absolute top-1/4 left-3/4 w-2 h-2 bg-dxm-orange/30 rounded-full"
+        animate={{
+          scale: [1, 2, 1],
+          opacity: [0.3, 0.8, 0.3],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-1/3 left-1/6 w-3 h-3 bg-dxm-gold/25 rounded-full"
+        animate={{
+          scale: [1, 1.8, 1],
+          opacity: [0.25, 0.7, 0.25],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+      />
+
+      {/* Floating geometric elements */}
+      <motion.div
+        className="absolute top-3/4 right-1/4 w-8 h-8 border border-dxm-orange/15"
+        animate={{
+          rotate: [0, 180, 360],
+          y: [0, -25, 0],
+          opacity: [0.15, 0.4, 0.15],
+        }}
+        transition={{
+          duration: 9,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
     </div>
   );
 }
