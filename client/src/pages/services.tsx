@@ -34,7 +34,33 @@ const services = [
       "Professional brand image"
     ]
   },
-
+  {
+    id: "ai-integration",
+    title: "AI Integration",
+    description: "Intelligent automation that enhances user experience and drives growth",
+    icon: Lightbulb,
+    features: [
+      "AI Chatbots",
+      "Personalization Engine",
+      "Automated Analytics",
+      "Machine Learning Models",
+      "Natural Language Processing",
+      "Predictive Analytics"
+    ],
+    process: [
+      "AI Strategy Planning",
+      "Data Analysis & Preparation",
+      "Model Development",
+      "Integration & Testing",
+      "Monitoring & Optimization"
+    ],
+    benefits: [
+      "24/7 customer support",
+      "Personalized user experiences",
+      "Automated business processes",
+      "Data-driven insights"
+    ]
+  },
   {
     id: "digital-strategy",
     title: "Digital Strategy",
