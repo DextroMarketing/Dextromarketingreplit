@@ -167,18 +167,7 @@ export default function PortfolioSection() {
           </AnimatePresence>
         </motion.div>
 
-        <motion.div 
-          className="text-center mt-12"
-          {...fadeInUp}
-          transition={{ delay: 0.4 }}
-        >
-          <Button 
-            size="lg"
-            className="bg-navy text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-dxm-orange transition-all duration-300 hover:scale-105"
-          >
-            View All Projects
-          </Button>
-        </motion.div>
+        
       </div>
     </section>
   );
