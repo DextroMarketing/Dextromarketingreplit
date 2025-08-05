@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
-import AIChatbotDemo from "./ai-chatbot-demo";
+
 import { fadeInUp, fadeInLeft, fadeInRight, floatAnimation } from "@/lib/animations";
 
 export default function HeroSection() {
@@ -71,13 +71,7 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* AI Demo Widget */}
-          <motion.div
-            {...fadeInRight}
-            transition={{ delay: 0.4 }}
-          >
-            <AIChatbotDemo />
-          </motion.div>
+
         </div>
       </div>
     </section>
