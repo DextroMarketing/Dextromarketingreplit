@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { z } from "zod";
 import { insertContactSubmissionSchema } from "@shared/schema";
 import { storage } from "./storage";
+import { analyzeText, generateContent, analyzeBusinessScenario } from "./ai";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -47,6 +48,93 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ 
         success: false, 
         message: "Internal server error" 
+      });
+    }
+  });
+
+  // AI Text Analysis
+  app.post("/api/ai/analyze-text", async (req, res) => {
+    try {
+      const { text } = req.body;
+      
+      if (!text || typeof text !== "string" || text.trim().length === 0) {
+        return res.status(400).json({ 
+          success: false, 
+          error: "Text content is required for analysis" 
+        });
+      }
+
+      if (!process.env.OPENAI_API_KEY) {
+        return res.status(500).json({ 
+          success: false, 
+          error: "OpenAI API key not configured. Please add your API key to enable AI features." 
+        });
+      }
+
+      const analysis = await analyzeText(text);
+      res.json(analysis);
+    } catch (error: any) {
+      res.status(500).json({ 
+        success: false, 
+        error: error.message || "Failed to analyze text" 
+      });
+    }
+  });
+
+  // AI Content Generation
+  app.post("/api/ai/generate-content", async (req, res) => {
+    try {
+      const { prompt } = req.body;
+      
+      if (!prompt || typeof prompt !== "string" || prompt.trim().length === 0) {
+        return res.status(400).json({ 
+          success: false, 
+          error: "Prompt is required for content generation" 
+        });
+      }
+
+      if (!process.env.OPENAI_API_KEY) {
+        return res.status(500).json({ 
+          success: false, 
+          error: "OpenAI API key not configured. Please add your API key to enable AI features." 
+        });
+      }
+
+      const content = await generateContent(prompt);
+      res.json(content);
+    } catch (error: any) {
+      res.status(500).json({ 
+        success: false, 
+        error: error.message || "Failed to generate content" 
+      });
+    }
+  });
+
+  // AI Business Analysis
+  app.post("/api/ai/analyze-business", async (req, res) => {
+    try {
+      const { description } = req.body;
+      
+      if (!description || typeof description !== "string" || description.trim().length === 0) {
+        return res.status(400).json({ 
+          success: false, 
+          error: "Business description is required for analysis" 
+        });
+      }
+
+      if (!process.env.OPENAI_API_KEY) {
+        return res.status(500).json({ 
+          success: false, 
+          error: "OpenAI API key not configured. Please add your API key to enable AI features." 
+        });
+      }
+
+      const analysis = await analyzeBusinessScenario(description);
+      res.json(analysis);
+    } catch (error: any) {
+      res.status(500).json({ 
+        success: false, 
+        error: error.message || "Failed to analyze business scenario" 
       });
     }
   });

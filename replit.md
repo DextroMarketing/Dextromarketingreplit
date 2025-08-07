@@ -2,6 +2,14 @@
 
 Dextro Marketing is a specialized digital marketing agency website focused exclusively on construction and home improvement businesses. The application is built as a full-stack web platform that helps contractors automate their business processes and convert more estimates into signed contracts. The site features construction-specific design elements, AI automation systems, emergency service capture systems, and lead generation tools tailored for contractors, plumbers, roofers, and home improvement professionals.
 
+## Recent Changes
+
+- **Try Our AI Page**: Added comprehensive AI demonstration page with interactive features including text analysis, content generation, and business intelligence tools
+- **OpenAI Integration**: Integrated OpenAI GPT-4o for real-time AI capabilities showcase
+- **Navigation Update**: Added "Try AI" link in main navigation between About and Contact pages
+- **Backend API**: Created three AI-powered endpoints for client demonstrations
+- **Interactive Background**: Enhanced with mouse force field effect that pushes particles away from cursor
+
 # User Preferences
 
 Preferred communication style: Simple, everyday language.

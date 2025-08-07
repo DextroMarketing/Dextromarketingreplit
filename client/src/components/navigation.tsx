@@ -15,6 +15,7 @@ export default function Navigation() {
     { href: "/services", label: "Services" },
     { href: "/portfolio", label: "Portfolio" },
     { href: "/about", label: "About" },
+    { href: "/try-ai", label: "Try AI" },
   ];
 
   const NavLink = ({ href, label, mobile = false }: { href: string; label: string; mobile?: boolean }) => (
