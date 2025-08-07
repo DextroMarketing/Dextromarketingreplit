@@ -84,7 +84,7 @@ export default function TryAI() {
           >
             <h1 className="text-6xl font-black uppercase tracking-wider mb-6 text-white">
               Try Our
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-dxm-orange to-dxm-gold">
+              <span className="block bg-clip-text bg-gradient-to-r from-dxm-orange to-dxm-gold text-[#ee9d2b]">
                 AI Systems
               </span>
               <div className="h-2 bg-gradient-to-r from-dxm-orange to-dxm-gold rounded-full mt-4 mx-auto max-w-md"></div>
@@ -96,7 +96,6 @@ export default function TryAI() {
           </motion.div>
         </div>
       </section>
-
       {/* AI Showcase Tabs */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
@@ -329,7 +328,6 @@ export default function TryAI() {
           </Tabs>
         </div>
       </section>
-
       {/* Features Overview */}
       <section className="py-16 px-4 bg-white/5">
         <div className="max-w-6xl mx-auto">
