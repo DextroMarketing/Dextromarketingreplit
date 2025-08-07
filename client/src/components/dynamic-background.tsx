@@ -73,9 +73,42 @@ export default function DynamicBackground() {
         }}
       />
 
+      {/* Interactive particles with mouse force field */}
+      {particles.map((particle) => {
+        const distance = Math.sqrt(
+          Math.pow(mousePosition.x - particle.x, 2) + 
+          Math.pow(mousePosition.y - particle.y, 2)
+        );
+        const forceRadius = 150;
+        const force = Math.max(0, (forceRadius - distance) / forceRadius);
+        const pushX = force * (particle.x - mousePosition.x) * 0.5;
+        const pushY = force * (particle.y - mousePosition.y) * 0.5;
+        
+        return (
+          <motion.div
+            key={particle.id}
+            className="absolute w-2 h-2 bg-black/40 rounded-full pointer-events-none"
+            style={{
+              x: particle.x + pushX,
+              y: particle.y + pushY,
+            }}
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.4, 0.6, 0.4],
+            }}
+            transition={{
+              duration: 3 + (particle.id % 4),
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: particle.id * 0.1,
+            }}
+          />
+        );
+      })}
+
       {/* Animated geometric shapes - moved away from headline */}
       <motion.div 
-        className="absolute bottom-32 left-16 w-32 h-32 border-2 border-black/15"
+        className="absolute bottom-32 left-16 w-32 h-32 border-2 border-black/35"
         animate={{ 
           rotate: [0, 360],
           scale: [1, 1.1, 1],
@@ -86,7 +119,7 @@ export default function DynamicBackground() {
         }}
       />
       <motion.div 
-        className="absolute bottom-20 right-20 w-24 h-24 bg-black/8 rounded-full opacity-30"
+        className="absolute bottom-20 right-20 w-24 h-24 bg-black/25 rounded-full opacity-60"
         animate={{ 
           y: [0, -20, 0],
         }}
@@ -97,7 +130,7 @@ export default function DynamicBackground() {
         }}
       />
       <motion.div 
-        className="absolute bottom-1/3 right-16 w-16 h-16 border border-black/18"
+        className="absolute bottom-1/3 right-16 w-16 h-16 border border-black/40"
         animate={{ 
           rotate: [0, -180, 0],
           x: [0, 10, 0],
@@ -111,7 +144,7 @@ export default function DynamicBackground() {
       
       {/* Additional floating shapes - repositioned */}
       <motion.div 
-        className="absolute bottom-2/3 left-12 w-20 h-20 border border-black/12 rounded-full"
+        className="absolute bottom-2/3 left-12 w-20 h-20 border border-black/30 rounded-full"
         animate={{ 
           rotate: [0, 360],
           scale: [1, 1.2, 1],
@@ -124,7 +157,7 @@ export default function DynamicBackground() {
         }}
       />
       <motion.div 
-        className="absolute top-3/4 left-24 w-12 h-12 bg-black/10 transform rotate-45"
+        className="absolute top-3/4 left-24 w-12 h-12 bg-black/25 transform rotate-45"
         animate={{ 
           rotate: [45, 405],
           y: [0, -15, 0],
@@ -217,7 +250,7 @@ export default function DynamicBackground() {
         {Array.from({ length: 4 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-32 h-32 border-2 border-black/12 rounded-full"
+            className="absolute w-32 h-32 border-2 border-black/35 rounded-full"
             style={{
               left: '-4rem',
               top: '-4rem',
@@ -293,7 +326,7 @@ export default function DynamicBackground() {
         <defs>
           <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" style={{ stopColor: '#000000', stopOpacity: 0 }} />
-            <stop offset="50%" style={{ stopColor: '#000000', stopOpacity: 0.2 }} />
+            <stop offset="50%" style={{ stopColor: '#000000', stopOpacity: 0.4 }} />
             <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0 }} />
           </linearGradient>
         </defs>
@@ -306,7 +339,7 @@ export default function DynamicBackground() {
         {Array.from({ length: 6 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-24 h-24 border border-black/10"
+            className="absolute w-24 h-24 border border-black/30"
             style={{
               clipPath: "polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)",
               left: `${10 + i * 15}%`,
@@ -330,7 +363,7 @@ export default function DynamicBackground() {
 
       {/* Floating geometric elements - moved away from headline */}
       <motion.div
-        className="absolute top-4/5 right-12 w-8 h-8 border border-black/15"
+        className="absolute top-4/5 right-12 w-8 h-8 border border-black/35"
         animate={{
           rotate: [0, 180, 360],
           y: [0, -25, 0],
