@@ -89,7 +89,6 @@ export default function DynamicBackground() {
         className="absolute bottom-20 right-20 w-24 h-24 bg-red-400/8 rounded-full opacity-30"
         animate={{ 
           y: [0, -20, 0],
-          opacity: [0.3, 0.6, 0.3],
         }}
         transition={{
           duration: 6,
@@ -300,39 +299,7 @@ export default function DynamicBackground() {
         </defs>
       </svg>
 
-      {/* Floating wave particles - constrained to bottom half */}
-      <div className="absolute inset-0">
-        {Array.from({ length: 12 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-3 h-3 bg-red-500/20 rounded-full"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: window.innerHeight * 0.6 + Math.random() * (window.innerHeight * 0.4),
-            }}
-            animate={{
-              x: [
-                Math.random() * window.innerWidth,
-                Math.random() * window.innerWidth,
-                Math.random() * window.innerWidth,
-              ],
-              y: [
-                window.innerHeight * 0.6 + Math.random() * (window.innerHeight * 0.4),
-                window.innerHeight * 0.6 + Math.random() * (window.innerHeight * 0.4),
-                window.innerHeight * 0.6 + Math.random() * (window.innerHeight * 0.4),
-              ],
-              scale: [1, 1.5, 1],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: 15 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.5,
-            }}
-          />
-        ))}
-      </div>
+
 
       {/* Hexagonal grid pattern - moved to bottom area */}
       <div className="absolute inset-0">
@@ -348,7 +315,6 @@ export default function DynamicBackground() {
             animate={{
               rotate: [0, 360],
               scale: [1, 1.2, 1],
-              opacity: [0.1, 0.3, 0.1],
             }}
             transition={{
               duration: 20 + i * 3,
@@ -368,7 +334,6 @@ export default function DynamicBackground() {
         animate={{
           rotate: [0, 180, 360],
           y: [0, -25, 0],
-          opacity: [0.15, 0.4, 0.15],
         }}
         transition={{
           duration: 9,
