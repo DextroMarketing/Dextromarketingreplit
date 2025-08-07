@@ -348,9 +348,9 @@ export default function TryAI() {
               <div className="bg-dxm-orange/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MessageSquare className="w-8 h-8 text-dxm-orange" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Smart Analysis</h3>
+              <h3 className="text-xl font-bold text-white mb-3">Customer Support Agent</h3>
               <p className="text-gray-300">
-                Analyse customer feedback, reviews, and communications to understand sentiment and extract actionable insights.
+                AI-powered customer support that handles enquiries, provides instant responses, and maintains professional communication with your construction clients 24/7.
               </p>
             </motion.div>
 
@@ -363,9 +363,9 @@ export default function TryAI() {
               <div className="bg-dxm-orange/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <PenTool className="w-8 h-8 text-dxm-orange" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Content Creation</h3>
+              <h3 className="text-xl font-bold text-white mb-3">Appointment Setting Agent</h3>
               <p className="text-gray-300">
-                Generate marketing materials, project proposals, estimates, and professional content tailored to construction industry.
+                Automated appointment scheduling that manages your calendar, handles booking requests, and coordinates site visits with potential construction clients.
               </p>
             </motion.div>
 
@@ -378,9 +378,9 @@ export default function TryAI() {
               <div className="bg-dxm-orange/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <BarChart3 className="w-8 h-8 text-dxm-orange" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Business Intelligence</h3>
+              <h3 className="text-xl font-bold text-white mb-3">Lead Capture & CRM Integration</h3>
               <p className="text-gray-300">
-                Get strategic insights, market analysis, and data-driven recommendations for your construction business growth.
+                Intelligent lead capture system that automatically identifies potential clients, qualifies leads, and integrates seamlessly with your CRM for construction projects.
               </p>
             </motion.div>
           </div>
