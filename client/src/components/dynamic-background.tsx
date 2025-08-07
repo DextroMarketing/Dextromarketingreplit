@@ -73,9 +73,9 @@ export default function DynamicBackground() {
         }}
       />
 
-      {/* Animated geometric shapes */}
+      {/* Animated geometric shapes - moved away from headline */}
       <motion.div 
-        className="absolute top-20 left-20 w-32 h-32 border-2 border-dxm-orange/20"
+        className="absolute bottom-32 left-16 w-32 h-32 border-2 border-red-500/20"
         animate={{ 
           rotate: [0, 360],
           scale: [1, 1.1, 1],
@@ -86,7 +86,7 @@ export default function DynamicBackground() {
         }}
       />
       <motion.div 
-        className="absolute bottom-40 right-32 w-24 h-24 bg-dxm-gold/8 rounded-full opacity-30"
+        className="absolute bottom-20 right-20 w-24 h-24 bg-red-400/8 rounded-full opacity-30"
         animate={{ 
           y: [0, -20, 0],
           opacity: [0.3, 0.6, 0.3],
@@ -98,7 +98,7 @@ export default function DynamicBackground() {
         }}
       />
       <motion.div 
-        className="absolute top-1/2 right-20 w-16 h-16 border border-dxm-orange/20"
+        className="absolute bottom-1/3 right-16 w-16 h-16 border border-red-500/20"
         animate={{ 
           rotate: [0, -180, 0],
           x: [0, 10, 0],
@@ -110,9 +110,9 @@ export default function DynamicBackground() {
         }}
       />
       
-      {/* Additional floating shapes */}
+      {/* Additional floating shapes - repositioned */}
       <motion.div 
-        className="absolute top-1/3 left-1/4 w-20 h-20 border border-dxm-gold/15 rounded-full"
+        className="absolute bottom-2/3 left-12 w-20 h-20 border border-red-400/15 rounded-full"
         animate={{ 
           rotate: [0, 360],
           scale: [1, 1.2, 1],
@@ -125,7 +125,7 @@ export default function DynamicBackground() {
         }}
       />
       <motion.div 
-        className="absolute bottom-1/4 left-1/3 w-12 h-12 bg-dxm-orange/10 transform rotate-45"
+        className="absolute top-3/4 left-24 w-12 h-12 bg-red-500/10 transform rotate-45"
         animate={{ 
           rotate: [45, 405],
           y: [0, -15, 0],
@@ -360,36 +360,11 @@ export default function DynamicBackground() {
         ))}
       </div>
 
-      {/* Pulsing dots */}
-      <motion.div
-        className="absolute top-1/4 left-3/4 w-2 h-2 bg-red-500/30 rounded-full"
-        animate={{
-          scale: [1, 2, 1],
-          opacity: [0.3, 0.8, 0.3],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-1/3 left-1/6 w-3 h-3 bg-red-400/25 rounded-full"
-        animate={{
-          scale: [1, 1.8, 1],
-          opacity: [0.25, 0.7, 0.25],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      />
 
-      {/* Floating geometric elements */}
+
+      {/* Floating geometric elements - moved away from headline */}
       <motion.div
-        className="absolute top-3/4 right-1/4 w-8 h-8 border border-red-500/15"
+        className="absolute top-4/5 right-12 w-8 h-8 border border-red-500/15"
         animate={{
           rotate: [0, 180, 360],
           y: [0, -25, 0],
