@@ -9,6 +9,7 @@ import Services from "@/pages/services";
 import Portfolio from "@/pages/portfolio";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
+import TryAI from "@/pages/try-ai";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/try-ai" component={TryAI} />
       <Route component={NotFound} />
     </Switch>
   );
