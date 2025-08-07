@@ -213,158 +213,151 @@ export default function DynamicBackground() {
         ))}
       </div>
 
-      {/* Central gradient elements */}
-      <motion.div 
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-dxm-orange/4 to-transparent rounded-full blur-3xl opacity-20"
+      {/* Ripple effect waves */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-32 h-32 border-2 border-dxm-orange/15 rounded-full"
+            style={{
+              left: '-4rem',
+              top: '-4rem',
+            }}
+            animate={{
+              scale: [1, 3 + i, 1],
+              opacity: [0.3, 0, 0.3],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeOut",
+              delay: i * 1.5,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Morphing blob shapes */}
+      <motion.div
+        className="absolute top-1/3 right-1/4 w-40 h-40 bg-dxm-gold/8 rounded-full blur-xl"
         animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.2, 0.5, 0.2],
-          x: [0, 40, 0],
-          y: [0, 40, 0],
+          scale: [1, 1.5, 0.8, 1.2, 1],
+          x: [0, 50, -30, 20, 0],
+          y: [0, -20, 40, -10, 0],
+          rotate: [0, 90, 180, 270, 360],
         }}
         transition={{
-          duration: 12,
+          duration: 16,
           repeat: Infinity,
           ease: "easeInOut",
-        }}
-      />
-      <motion.div 
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-tl from-dxm-gold/4 to-transparent rounded-full blur-3xl opacity-20"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.2, 0.6, 0.2],
-          x: [0, -50, 0],
-          y: [0, -50, 0],
-        }}
-        transition={{
-          duration: 14,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 3,
         }}
       />
       
-      {/* Additional central circular gradient */}
-      <motion.div 
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-electric/5 via-transparent to-electric/5 rounded-full blur-2xl opacity-30"
+      <motion.div
+        className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-electric/6 rounded-full blur-2xl"
         animate={{
-          scale: [1, 1.4, 1],
-          opacity: [0.3, 0.1, 0.3],
-          rotate: [0, 180, 360],
+          scale: [1, 0.7, 1.4, 0.9, 1],
+          x: [0, -40, 60, -20, 0],
+          y: [0, 30, -50, 20, 0],
+          rotate: [360, 270, 180, 90, 0],
         }}
         transition={{
-          duration: 20,
+          duration: 18,
           repeat: Infinity,
           ease: "easeInOut",
+          delay: 2,
         }}
       />
 
-      {/* Circuit-like connecting lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-10">
-        <motion.path
-          d="M 0,50 Q 200,100 400,50 T 800,50"
-          stroke="url(#gradient1)"
-          strokeWidth="2"
-          fill="none"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.path
-          d="M 100,200 Q 300,150 500,200 T 900,200"
-          stroke="url(#gradient2)"
-          strokeWidth="1.5"
-          fill="none"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-        />
+      {/* Constellation connecting lines */}
+      <svg className="absolute inset-0 w-full h-full opacity-8">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <motion.path
+            key={i}
+            d={`M ${50 + i * 150},${100 + i * 80} L ${200 + i * 100},${150 + i * 60} L ${350 + i * 80},${80 + i * 100}`}
+            stroke="url(#starGradient)"
+            strokeWidth="1"
+            fill="none"
+            strokeDasharray="5,10"
+            animate={{
+              strokeDashoffset: [0, -30, 0],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 8 + i * 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 1,
+            }}
+          />
+        ))}
         <defs>
-          <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style={{ stopColor: '#f97316', stopOpacity: 0 }} />
-            <stop offset="50%" style={{ stopColor: '#f97316', stopOpacity: 0.6 }} />
-            <stop offset="100%" style={{ stopColor: '#f97316', stopOpacity: 0 }} />
-          </linearGradient>
-          <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style={{ stopColor: '#fbbf24', stopOpacity: 0 }} />
-            <stop offset="50%" style={{ stopColor: '#fbbf24', stopOpacity: 0.4 }} />
-            <stop offset="100%" style={{ stopColor: '#fbbf24', stopOpacity: 0 }} />
+          <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style={{ stopColor: '#00d4ff', stopOpacity: 0 }} />
+            <stop offset="50%" style={{ stopColor: '#00d4ff', stopOpacity: 0.8 }} />
+            <stop offset="100%" style={{ stopColor: '#00d4ff', stopOpacity: 0 }} />
           </linearGradient>
         </defs>
       </svg>
 
-      {/* Central circular animations */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        {/* Large orbit */}
-        <motion.div
-          className="absolute w-6 h-6 bg-dxm-orange/25 rounded-full"
-          animate={{
-            rotate: [0, 360],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          style={{
-            transformOrigin: "0 250px",
-          }}
-        />
-        
-        {/* Medium orbit */}
-        <motion.div
-          className="absolute w-4 h-4 bg-dxm-gold/20 rounded-full"
-          animate={{
-            rotate: [0, -360],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          style={{
-            transformOrigin: "0 180px",
-          }}
-        />
-        
-        {/* Small orbit */}
-        <motion.div
-          className="absolute w-3 h-3 bg-electric/15 rounded-full"
-          animate={{
-            rotate: [0, 360],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          style={{
-            transformOrigin: "0 120px",
-          }}
-        />
-        
-        {/* Central pulsing core */}
-        <motion.div
-          className="absolute w-8 h-8 bg-dxm-orange/10 rounded-full transform -translate-x-1/2 -translate-y-1/2"
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.1, 0.3, 0.1],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
+      {/* Floating wave particles */}
+      <div className="absolute inset-0">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-3 h-3 bg-dxm-orange/20 rounded-full"
+            initial={{
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+            }}
+            animate={{
+              x: [
+                Math.random() * window.innerWidth,
+                Math.random() * window.innerWidth,
+                Math.random() * window.innerWidth,
+              ],
+              y: [
+                Math.random() * window.innerHeight,
+                Math.random() * window.innerHeight,
+                Math.random() * window.innerHeight,
+              ],
+              scale: [1, 1.5, 1],
+              opacity: [0.2, 0.8, 0.2],
+            }}
+            transition={{
+              duration: 15 + i * 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.5,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Hexagonal grid pattern */}
+      <div className="absolute inset-0">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-24 h-24 border border-dxm-gold/8"
+            style={{
+              clipPath: "polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)",
+              left: `${20 + i * 15}%`,
+              top: `${10 + (i % 2) * 30}%`,
+            }}
+            animate={{
+              rotate: [0, 360],
+              scale: [1, 1.2, 1],
+              opacity: [0.1, 0.3, 0.1],
+            }}
+            transition={{
+              duration: 20 + i * 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 1.2,
+            }}
+          />
+        ))}
       </div>
 
       {/* Pulsing dots */}
