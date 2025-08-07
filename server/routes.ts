@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { z } from "zod";
 import { insertContactSubmissionSchema } from "@shared/schema";
 import { storage } from "./storage";
-import { analyzeText, generateContent, analyzeBusinessScenario } from "./ai";
+import { analyseText, generateContent, analyseBusinessScenario } from "./ai";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -53,7 +53,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // AI Text Analysis
-  app.post("/api/ai/analyze-text", async (req, res) => {
+  app.post("/api/ai/analyse-text", async (req, res) => {
     try {
       const { text } = req.body;
       
@@ -71,12 +71,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      const analysis = await analyzeText(text);
+      const analysis = await analyseText(text);
       res.json(analysis);
     } catch (error: any) {
       res.status(500).json({ 
         success: false, 
-        error: error.message || "Failed to analyze text" 
+        error: error.message || "Failed to analyse text" 
       });
     }
   });
@@ -111,7 +111,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // AI Business Analysis
-  app.post("/api/ai/analyze-business", async (req, res) => {
+  app.post("/api/ai/analyse-business", async (req, res) => {
     try {
       const { description } = req.body;
       
@@ -129,12 +129,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      const analysis = await analyzeBusinessScenario(description);
+      const analysis = await analyseBusinessScenario(description);
       res.json(analysis);
     } catch (error: any) {
       res.status(500).json({ 
         success: false, 
-        error: error.message || "Failed to analyze business scenario" 
+        error: error.message || "Failed to analyse business scenario" 
       });
     }
   });

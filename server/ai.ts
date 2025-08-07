@@ -10,7 +10,7 @@ function getOpenAIClient() {
   });
 }
 
-export async function analyzeText(text: string) {
+export async function analyseText(text: string) {
   try {
     const openai = getOpenAIClient();
     const response = await openai.chat.completions.create({
@@ -18,7 +18,7 @@ export async function analyzeText(text: string) {
       messages: [
         {
           role: "system",
-          content: "You are a sentiment analysis expert specializing in construction industry feedback. Analyze the sentiment of the text and provide a rating from 1 to 5 stars, a confidence score between 0 and 1, and a brief summary of key insights. Respond with JSON in this format: { 'rating': number, 'confidence': number, 'summary': string }",
+          content: "You are a sentiment analysis expert specialising in construction industry feedback. Analyse the sentiment of the text and provide a rating from 1 to 5 stars, a confidence score between 0 and 1, and a brief summary of key insights. Respond with JSON in this format: { 'rating': number, 'confidence': number, 'summary': string }",
         },
         {
           role: "user",
@@ -37,7 +37,7 @@ export async function analyzeText(text: string) {
       sentiment: Math.max(1, Math.min(5, Math.round(result.rating || 3)))
     };
   } catch (error) {
-    throw new Error("Failed to analyze text: " + (error as Error).message);
+    throw new Error("Failed to analyse text: " + (error as Error).message);
   }
 }
 
@@ -49,7 +49,7 @@ export async function generateContent(prompt: string) {
       messages: [
         {
           role: "system",
-          content: "You are a professional content writer specializing in the construction industry. Create high-quality, engaging content tailored for construction businesses including contractors, roofers, plumbers, and home improvement professionals. Focus on practical value, professionalism, and industry-specific terminology.",
+          content: "You are a professional content writer specialising in the construction industry. Create high-quality, engaging content tailored for construction businesses including contractors, roofers, plumbers, and home improvement professionals. Focus on practical value, professionalism, and industry-specific terminology.",
         },
         {
           role: "user",
@@ -67,7 +67,7 @@ export async function generateContent(prompt: string) {
   }
 }
 
-export async function analyzeBusinessScenario(description: string) {
+export async function analyseBusinessScenario(description: string) {
   try {
     const openai = getOpenAIClient();
     const response = await openai.chat.completions.create({
@@ -75,11 +75,11 @@ export async function analyzeBusinessScenario(description: string) {
       messages: [
         {
           role: "system",
-          content: "You are a business consultant specializing in the construction industry. Provide strategic insights, market analysis, and actionable recommendations for construction businesses. Focus on practical advice for contractors, roofers, plumbers, and home improvement professionals. Provide insights as a string and up to 5 key recommendations as an array.",
+          content: "You are a business consultant specialising in the construction industry. Provide strategic insights, market analysis, and actionable recommendations for construction businesses. Focus on practical advice for contractors, roofers, plumbers, and home improvement professionals. Provide insights as a string and up to 5 key recommendations as an array.",
         },
         {
           role: "user",
-          content: `Analyze this business scenario for a construction professional: ${description}. Provide detailed insights and specific recommendations.`,
+          content: `Analyse this business scenario for a construction professional: ${description}. Provide detailed insights and specific recommendations.`,
         },
       ],
       response_format: { type: "json_object" },
@@ -94,6 +94,6 @@ export async function analyzeBusinessScenario(description: string) {
         : ["Focus on customer satisfaction", "Invest in quality tools", "Build strong referral networks"]
     };
   } catch (error) {
-    throw new Error("Failed to analyze business scenario: " + (error as Error).message);
+    throw new Error("Failed to analyse business scenario: " + (error as Error).message);
   }
 }

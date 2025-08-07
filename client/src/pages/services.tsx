@@ -14,8 +14,8 @@ const services = [
     icon: Monitor,
     features: [
       "Responsive Design",
-      "Performance Optimization",
-      "SEO Optimization",
+      "Performance Optimisation",
+      "SEO Optimisation",
       "User Experience Design",
       "Cross-browser Compatibility",
       "Mobile-first Approach"
@@ -25,7 +25,7 @@ const services = [
       "Wireframing & Prototyping",
       "Visual Design",
       "Development & Testing",
-      "Launch & Optimization"
+      "Launch & Optimisation"
     ],
     benefits: [
       "Increased user engagement",
@@ -52,11 +52,11 @@ const services = [
       "Data Analysis & Preparation",
       "Model Development",
       "Integration & Testing",
-      "Monitoring & Optimization"
+      "Monitoring & Optimisation"
     ],
     benefits: [
       "24/7 customer support",
-      "Personalized user experiences",
+      "Personalised user experiences",
       "Automated business processes",
       "Data-driven insights"
     ]
@@ -68,18 +68,18 @@ const services = [
     icon: BarChart3,
     features: [
       "Growth Strategy",
-      "Conversion Optimization",
+      "Conversion Optimisation",
       "Marketing Automation",
       "Analytics & Reporting",
       "Competitive Analysis",
-      "ROI Optimization"
+      "ROI Optimisation"
     ],
     process: [
       "Business Analysis",
       "Strategy Development",
       "Implementation Planning",
       "Execution & Monitoring",
-      "Performance Optimization"
+      "Performance Optimisation"
     ],
     benefits: [
       "Increased online visibility",

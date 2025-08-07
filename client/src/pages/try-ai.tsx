@@ -20,7 +20,7 @@ export default function TryAI() {
   // Text Analysis Mutation
   const textAnalysisMutation = useMutation({
     mutationFn: async (text: string) => {
-      const response = await fetch('/api/ai/analyze-text', {
+      const response = await fetch('/api/ai/analyse-text', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text })
@@ -46,7 +46,7 @@ export default function TryAI() {
   // Business Analysis Mutation
   const businessAnalysisMutation = useMutation({
     mutationFn: async (description: string) => {
-      const response = await fetch('/api/ai/analyze-business', {
+      const response = await fetch('/api/ai/analyse-business', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ description })

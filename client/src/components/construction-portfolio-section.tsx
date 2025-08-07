@@ -34,9 +34,9 @@ const projects = [
     description: "24/7 lead generation for emergency services",
     image: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     categories: ["ai-integration", "emergency"],
-    technologies: ["AI Chatbot", "Mobile Optimization", "Auto Scheduling"],
+    technologies: ["AI Chatbot", "Mobile Optimisation", "Auto Scheduling"],
     challenge: "Capturing emergency service calls outside business hours",
-    solution: "Mobile-optimized site, AI chatbot, automated scheduling",
+    solution: "Mobile-optimised site, AI chatbot, automated scheduling",
     results: "80% increase in emergency service calls, improved customer satisfaction"
   },
   {

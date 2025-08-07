@@ -17,12 +17,12 @@ Preferred communication style: Simple, everyday language.
 # System Architecture
 
 ## Frontend Architecture
-The client-side is built with **React** and **TypeScript** using a modern component-based architecture. The application leverages **Vite** as the build tool for fast development and optimized production builds. Key architectural decisions include:
+The client-side is built with **React** and **TypeScript** using a modern component-based architecture. The application leverages **Vite** as the build tool for fast development and optimised production builds. Key architectural decisions include:
 
 - **Routing**: Uses **Wouter** for lightweight client-side routing instead of React Router, providing a smaller bundle size and simpler API
 - **Styling**: Implements **Tailwind CSS** with custom CSS variables for theming, supporting both light and dark modes
-- **Component Library**: Built on **shadcn/ui** components with **Radix UI** primitives for accessible, customizable UI components
-- **Animations**: Utilizes **Framer Motion** for smooth animations and micro-interactions throughout the interface
+- **Component Library**: Built on **shadcn/ui** components with **Radix UI** primitives for accessible, customisable UI components
+- **Animations**: Utilises **Framer Motion** for smooth animations and micro-interactions throughout the interface
 - **State Management**: Uses **TanStack Query** (React Query) for server state management and API data fetching
 - **Form Handling**: Implements **React Hook Form** with **Zod** validation for type-safe form processing
 
@@ -58,7 +58,7 @@ The application implements a construction-focused design system:
 - **Color Palette**: Navy blue primary with golden orange and gold accents based on Dextro Marketing logo branding
 - **Typography**: Inter font family for modern, readable text that conveys trust and professionalism
 - **Animation Library**: Consistent animation patterns using Framer Motion with construction-appropriate timing
-- **Responsive Design**: Mobile-first approach optimized for contractors searching on job sites
+- **Responsive Design**: Mobile-first approach optimised for contractors searching on job sites
 - **Construction Elements**: Professional color scheme reflecting reliability and expertise in construction industry
 
 # External Dependencies
@@ -68,7 +68,7 @@ The application implements a construction-focused design system:
 - **TypeScript**: Type safety and enhanced developer experience
 - **Vite**: Fast build tool and development server
 - **Tailwind CSS**: Utility-first CSS framework
-- **Framer Motion**: Animation and gesture library
+- **Framer Motion**: Animation and gesture library  
 - **TanStack Query**: Server state management
 - **React Hook Form**: Form state management and validation
 - **Zod**: Runtime type validation
@@ -88,7 +88,7 @@ The application implements a construction-focused design system:
 - **Drizzle Kit**: Database migration and schema management tools
 
 ## Third-Party Services
-- **Replit Integration**: Development environment optimization
+- **Replit Integration**: Development environment optimisation
 - **PostgreSQL**: Production database system (configured but not yet connected)
 - **Font Services**: Google Fonts for Inter typography
 - **Image Services**: Unsplash and Pixabay for placeholder images
