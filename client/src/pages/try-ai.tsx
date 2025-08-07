@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, MessageSquare, PenTool, BarChart3, Image, Zap } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
+import Navigation from "@/components/navigation";
 
 export default function TryAI() {
   const [textAnalysisInput, setTextAnalysisInput] = useState("");
@@ -74,8 +75,9 @@ export default function TryAI() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-navy via-navy/95 to-navy/90">
+      <Navigation />
       {/* Hero Section */}
-      <section className="relative py-20 px-4">
+      <section className="relative py-20 px-4 mt-20">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -103,15 +105,15 @@ export default function TryAI() {
             <TabsList className="grid w-full grid-cols-3 mb-8">
               <TabsTrigger value="text-analysis" className="text-sm font-semibold">
                 <MessageSquare className="w-4 h-4 mr-2" />
-                Text Analysis
+                Customer Support Agent
               </TabsTrigger>
               <TabsTrigger value="content-generation" className="text-sm font-semibold">
                 <PenTool className="w-4 h-4 mr-2" />
-                Content Creation
+                Appointment Setting Agent
               </TabsTrigger>
               <TabsTrigger value="business-analysis" className="text-sm font-semibold">
                 <BarChart3 className="w-4 h-4 mr-2" />
-                Business Insights
+                Lead Capture & CRM Integration
               </TabsTrigger>
             </TabsList>
 
@@ -120,20 +122,20 @@ export default function TryAI() {
               <Card className="bg-white/95 backdrop-blur-sm">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Zap className="w-5 h-5 text-dxm-orange" />
-                    Intelligent Text Analysis
+                    <MessageSquare className="w-5 h-5 text-dxm-orange" />
+                    Customer Support Agent
                   </CardTitle>
                   <CardDescription>
-                    Analyse customer reviews, feedback, or any text content to extract insights, 
-                    sentiment, and key themes relevant to your construction business.
+                    AI-powered customer support that handles enquiries, provides instant responses, 
+                    and maintains professional communication with your construction clients 24/7.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="text-analysis-input">Enter text to analyse</Label>
+                    <Label htmlFor="text-analysis-input">Customer enquiry or message</Label>
                     <Textarea
                       id="text-analysis-input"
-                      placeholder="Paste customer review, feedback, or any text content here..."
+                      placeholder="Type a customer enquiry like: 'I need a quote for roofing repair' or 'When can you start my kitchen renovation?'..."
                       value={textAnalysisInput}
                       onChange={(e) => setTextAnalysisInput(e.target.value)}
                       className="min-h-[120px]"
@@ -150,7 +152,7 @@ export default function TryAI() {
                         Analysing...
                       </>
                     ) : (
-                      'Analyse Text'
+                      'Generate Support Response'
                     )}
                   </Button>
 
@@ -197,19 +199,19 @@ export default function TryAI() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <PenTool className="w-5 h-5 text-dxm-orange" />
-                    AI Content Generator
+                    Appointment Setting Agent
                   </CardTitle>
                   <CardDescription>
-                    Generate marketing content, project descriptions, estimates, or any text 
-                    content tailored for your construction business needs.
+                    Automated appointment scheduling that manages your calendar, handles booking requests, 
+                    and coordinates site visits with potential construction clients.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="content-prompt">Describe what you need</Label>
+                    <Label htmlFor="content-prompt">Appointment request details</Label>
                     <Input
                       id="content-prompt"
-                      placeholder="e.g., Write a marketing email for roofing services, Create a project proposal for kitchen renovation..."
+                      placeholder="e.g., 'Schedule kitchen renovation consultation for next Tuesday' or 'Available for roofing quote this week?'..."
                       value={contentGenerationInput}
                       onChange={(e) => setContentGenerationInput(e.target.value)}
                     />
@@ -225,7 +227,7 @@ export default function TryAI() {
                         Generating...
                       </>
                     ) : (
-                      'Generate Content'
+                      'Schedule Appointment'
                     )}
                   </Button>
 
@@ -235,7 +237,7 @@ export default function TryAI() {
                       animate={{ opacity: 1, y: 0 }}
                       className="mt-6 p-4 bg-gray-50 rounded-lg"
                     >
-                      <h4 className="font-semibold mb-3">Generated Content:</h4>
+                      <h4 className="font-semibold mb-3">Appointment Response:</h4>
                       <div className="prose max-w-none">
                         <p className="text-gray-700 whitespace-pre-wrap">{contentGenerationMutation.data.content}</p>
                       </div>
@@ -259,19 +261,19 @@ export default function TryAI() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <BarChart3 className="w-5 h-5 text-dxm-orange" />
-                    Business Intelligence
+                    Lead Capture & CRM Integration
                   </CardTitle>
                   <CardDescription>
-                    Get AI-powered insights and recommendations for your construction projects, 
-                    market analysis, and business optimization strategies.
+                    Intelligent lead capture system that automatically identifies potential clients, 
+                    qualifies leads, and integrates seamlessly with your CRM for construction projects.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="business-input">Describe your business scenario</Label>
+                    <Label htmlFor="business-input">Lead information and requirements</Label>
                     <Textarea
                       id="business-input"
-                      placeholder="e.g., I'm a roofing contractor looking to expand into kitchen renovations. What should I consider? Or describe a current project challenge..."
+                      placeholder="e.g., 'Potential client interested in bathroom renovation, budget £15k' or 'Lead from website form: kitchen extension enquiry, family of 4'..."
                       value={businessAnalysisInput}
                       onChange={(e) => setBusinessAnalysisInput(e.target.value)}
                       className="min-h-[120px]"
@@ -288,7 +290,7 @@ export default function TryAI() {
                         Analysing...
                       </>
                     ) : (
-                      'Get AI Insights'
+                      'Process Lead & Generate CRM Entry'
                     )}
                   </Button>
 
@@ -298,13 +300,13 @@ export default function TryAI() {
                       animate={{ opacity: 1, y: 0 }}
                       className="mt-6 p-4 bg-gray-50 rounded-lg"
                     >
-                      <h4 className="font-semibold mb-3">AI Business Insights:</h4>
+                      <h4 className="font-semibold mb-3">Lead Analysis & CRM Data:</h4>
                       <div className="prose max-w-none">
                         <p className="text-gray-700 whitespace-pre-wrap">{businessAnalysisMutation.data.insights}</p>
                       </div>
                       {businessAnalysisMutation.data.recommendations && (
                         <div className="mt-4">
-                          <h5 className="font-medium mb-2">Key Recommendations:</h5>
+                          <h5 className="font-medium mb-2">Follow-up Actions:</h5>
                           <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
                             {businessAnalysisMutation.data.recommendations.map((rec: string, index: number) => (
                               <li key={index}>{rec}</li>
@@ -318,7 +320,7 @@ export default function TryAI() {
                   {businessAnalysisMutation.error && (
                     <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
                       <p className="text-red-700">
-                        Business analysis failed. Please try rephrasing your scenario.
+                        Lead processing failed. Please check the lead information and try again.
                       </p>
                     </div>
                   )}
