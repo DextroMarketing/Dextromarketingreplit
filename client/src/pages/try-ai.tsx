@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Loader2, MessageSquare, PenTool, BarChart3, Image, Zap } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 
 export default function TryAI() {
   const [textAnalysisInput, setTextAnalysisInput] = useState("");
@@ -386,6 +387,7 @@ export default function TryAI() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
