@@ -213,34 +213,49 @@ export default function DynamicBackground() {
         ))}
       </div>
 
-      {/* Animated corner elements */}
+      {/* Central gradient elements */}
       <motion.div 
-        className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-dxm-orange/3 to-transparent rounded-full blur-2xl opacity-20"
+        className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-dxm-orange/4 to-transparent rounded-full blur-3xl opacity-20"
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.2, 0.4, 0.2],
-          x: [0, 20, 0],
-          y: [0, 20, 0],
+          scale: [1, 1.3, 1],
+          opacity: [0.2, 0.5, 0.2],
+          x: [0, 40, 0],
+          y: [0, 40, 0],
         }}
         transition={{
-          duration: 8,
+          duration: 12,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
       <motion.div 
-        className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-dxm-gold/3 to-transparent rounded-full blur-2xl opacity-20"
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-tl from-dxm-gold/4 to-transparent rounded-full blur-3xl opacity-20"
         animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.2, 0.5, 0.2],
-          x: [0, -30, 0],
-          y: [0, -30, 0],
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.6, 0.2],
+          x: [0, -50, 0],
+          y: [0, -50, 0],
         }}
         transition={{
-          duration: 10,
+          duration: 14,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 2,
+          delay: 3,
+        }}
+      />
+      
+      {/* Additional central circular gradient */}
+      <motion.div 
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-electric/5 via-transparent to-electric/5 rounded-full blur-2xl opacity-30"
+        animate={{
+          scale: [1, 1.4, 1],
+          opacity: [0.3, 0.1, 0.3],
+          rotate: [0, 180, 360],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut",
         }}
       />
 
@@ -287,34 +302,67 @@ export default function DynamicBackground() {
         </defs>
       </svg>
 
-      {/* Orbiting elements */}
+      {/* Central circular animations */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        {/* Large orbit */}
         <motion.div
-          className="absolute w-4 h-4 bg-dxm-orange/20 rounded-full"
+          className="absolute w-6 h-6 bg-dxm-orange/25 rounded-full"
           animate={{
             rotate: [0, 360],
           }}
           transition={{
-            duration: 20,
+            duration: 25,
             repeat: Infinity,
             ease: "linear",
           }}
           style={{
-            transformOrigin: "0 200px",
+            transformOrigin: "0 250px",
           }}
         />
+        
+        {/* Medium orbit */}
         <motion.div
-          className="absolute w-3 h-3 bg-dxm-gold/15 rounded-full"
+          className="absolute w-4 h-4 bg-dxm-gold/20 rounded-full"
           animate={{
             rotate: [0, -360],
           }}
           transition={{
-            duration: 15,
+            duration: 18,
             repeat: Infinity,
             ease: "linear",
           }}
           style={{
-            transformOrigin: "0 150px",
+            transformOrigin: "0 180px",
+          }}
+        />
+        
+        {/* Small orbit */}
+        <motion.div
+          className="absolute w-3 h-3 bg-electric/15 rounded-full"
+          animate={{
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          style={{
+            transformOrigin: "0 120px",
+          }}
+        />
+        
+        {/* Central pulsing core */}
+        <motion.div
+          className="absolute w-8 h-8 bg-dxm-orange/10 rounded-full transform -translate-x-1/2 -translate-y-1/2"
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.1, 0.3, 0.1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
         />
       </div>
