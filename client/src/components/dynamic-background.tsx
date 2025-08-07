@@ -213,8 +213,8 @@ export default function DynamicBackground() {
         ))}
       </div>
 
-      {/* Ripple effect waves */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      {/* Ripple effect waves - moved to bottom right */}
+      <div className="absolute bottom-1/4 right-1/4 transform -translate-x-1/2 -translate-y-1/2">
         {Array.from({ length: 4 }).map((_, i) => (
           <motion.div
             key={i}
@@ -224,7 +224,7 @@ export default function DynamicBackground() {
               top: '-4rem',
             }}
             animate={{
-              scale: [1, 3 + i, 1],
+              scale: [1, 2 + i * 0.5, 1],
               opacity: [0.3, 0, 0.3],
             }}
             transition={{
@@ -300,7 +300,7 @@ export default function DynamicBackground() {
         </defs>
       </svg>
 
-      {/* Floating wave particles */}
+      {/* Floating wave particles - constrained to bottom half */}
       <div className="absolute inset-0">
         {Array.from({ length: 12 }).map((_, i) => (
           <motion.div
@@ -308,7 +308,7 @@ export default function DynamicBackground() {
             className="absolute w-3 h-3 bg-red-500/20 rounded-full"
             initial={{
               x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              y: window.innerHeight * 0.6 + Math.random() * (window.innerHeight * 0.4),
             }}
             animate={{
               x: [
@@ -317,9 +317,9 @@ export default function DynamicBackground() {
                 Math.random() * window.innerWidth,
               ],
               y: [
-                Math.random() * window.innerHeight,
-                Math.random() * window.innerHeight,
-                Math.random() * window.innerHeight,
+                window.innerHeight * 0.6 + Math.random() * (window.innerHeight * 0.4),
+                window.innerHeight * 0.6 + Math.random() * (window.innerHeight * 0.4),
+                window.innerHeight * 0.6 + Math.random() * (window.innerHeight * 0.4),
               ],
               scale: [1, 1.5, 1],
               opacity: [0.2, 0.8, 0.2],
@@ -334,7 +334,7 @@ export default function DynamicBackground() {
         ))}
       </div>
 
-      {/* Hexagonal grid pattern */}
+      {/* Hexagonal grid pattern - moved to bottom area */}
       <div className="absolute inset-0">
         {Array.from({ length: 6 }).map((_, i) => (
           <motion.div
@@ -342,8 +342,8 @@ export default function DynamicBackground() {
             className="absolute w-24 h-24 border border-red-400/8"
             style={{
               clipPath: "polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)",
-              left: `${20 + i * 15}%`,
-              top: `${10 + (i % 2) * 30}%`,
+              left: `${10 + i * 15}%`,
+              top: `${65 + (i % 2) * 15}%`,
             }}
             animate={{
               rotate: [0, 360],
