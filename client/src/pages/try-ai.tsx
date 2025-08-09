@@ -129,21 +129,21 @@ export default function TryAI() {
     <div className="min-h-screen bg-gradient-to-br from-navy via-navy/95 to-navy/90">
       <Navigation />
       {/* Hero Section */}
-      <section className="relative py-20 px-4 mt-20">
+      <section className="relative py-12 sm:py-20 px-4 mt-16 sm:mt-20">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl font-black uppercase tracking-wider mb-6 text-white">
+            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-wider mb-6 text-white">
               Try Our
               <span className="block bg-clip-text bg-gradient-to-r from-dxm-orange to-dxm-gold text-[#ee9d2b]">
                 AI Systems
               </span>
               <div className="h-2 bg-gradient-to-r from-dxm-orange to-dxm-gold rounded-full mt-4 mx-auto max-w-md"></div>
             </h1>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
               Experience the power of AI automation with our live demonstration tools. 
               See how artificial intelligence can transform your construction business operations.
             </p>
@@ -151,21 +151,21 @@ export default function TryAI() {
         </div>
       </section>
       {/* AI Showcase Tabs */}
-      <section className="py-16 px-4">
+      <section className="py-8 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <Tabs defaultValue="text-analysis" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="text-analysis" className="text-sm font-semibold">
-                <MessageSquare className="w-4 h-4 mr-2" />
-                Customer Support Agent
+            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0 mb-8 h-auto">
+              <TabsTrigger value="text-analysis" className="text-xs sm:text-sm font-semibold p-3 h-auto flex-col sm:flex-row">
+                <MessageSquare className="w-4 h-4 mb-1 sm:mb-0 sm:mr-2" />
+                <span className="text-center sm:text-left">Customer Support</span>
               </TabsTrigger>
-              <TabsTrigger value="content-generation" className="text-sm font-semibold">
-                <PenTool className="w-4 h-4 mr-2" />
-                Appointment Setting Agent
+              <TabsTrigger value="content-generation" className="text-xs sm:text-sm font-semibold p-3 h-auto flex-col sm:flex-row">
+                <PenTool className="w-4 h-4 mb-1 sm:mb-0 sm:mr-2" />
+                <span className="text-center sm:text-left">Appointment Setting</span>
               </TabsTrigger>
-              <TabsTrigger value="business-analysis" className="text-sm font-semibold">
-                <BarChart3 className="w-4 h-4 mr-2" />
-                Lead Capture & CRM Integration
+              <TabsTrigger value="business-analysis" className="text-xs sm:text-sm font-semibold p-3 h-auto flex-col sm:flex-row">
+                <BarChart3 className="w-4 h-4 mb-1 sm:mb-0 sm:mr-2" />
+                <span className="text-center sm:text-left">Lead Capture & CRM</span>
               </TabsTrigger>
             </TabsList>
 
@@ -196,7 +196,7 @@ export default function TryAI() {
                   <Button 
                     onClick={handleTextAnalysis}
                     disabled={textAnalysisMutation.isPending || !textAnalysisInput.trim()}
-                    className="bg-dxm-orange hover:bg-dxm-orange/90"
+                    className="bg-dxm-orange hover:bg-dxm-orange/90 w-full sm:w-auto"
                   >
                     {textAnalysisMutation.isPending ? (
                       <>
@@ -266,8 +266,8 @@ export default function TryAI() {
                     </div>
                     <div 
                       id="voiceflow-embedded-chat" 
-                      className="min-h-[400px] w-full border border-gray-200 rounded-lg bg-white relative"
-                      style={{ minHeight: '400px', width: '100%' }}
+                      className="min-h-[300px] sm:min-h-[400px] w-full border border-gray-200 rounded-lg bg-white relative"
+                      style={{ minHeight: '300px', width: '100%' }}
                     >
                       <div className="absolute inset-0 flex items-center justify-center text-gray-500">
                         <div className="text-center">
@@ -308,7 +308,7 @@ export default function TryAI() {
                   <Button 
                     onClick={handleBusinessAnalysis}
                     disabled={businessAnalysisMutation.isPending || !businessAnalysisInput.trim()}
-                    className="bg-dxm-orange hover:bg-dxm-orange/90"
+                    className="bg-dxm-orange hover:bg-dxm-orange/90 w-full sm:w-auto"
                   >
                     {businessAnalysisMutation.isPending ? (
                       <>
