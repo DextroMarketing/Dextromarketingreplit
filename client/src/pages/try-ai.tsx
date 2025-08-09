@@ -32,17 +32,40 @@ export default function TryAI() {
   useEffect(() => {
     // Wait for Voiceflow to load and then initialize embedded mode
     const checkVoiceflow = () => {
-      if (window.voiceflow?.chat && document.getElementById('voiceflow-embedded-chat')) {
-        // Voiceflow is loaded and target element exists
-        console.log('Voiceflow embedded chat is ready');
+      const targetElement = document.getElementById('voiceflow-embedded-chat');
+      if (window.voiceflow?.chat && targetElement) {
+        console.log('Voiceflow embedded chat is ready, target element found');
+        
+        // Force re-initialization in embedded mode
+        try {
+          window.voiceflow.chat.load({
+            verify: { projectID: '689626f8f609a76db4c08096' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production',
+            voice: {
+              url: "https://runtime-api.voiceflow.com"
+            },
+            render: {
+              mode: 'embedded',
+              target: targetElement
+            }
+          });
+          console.log('Voiceflow embedded chat initialized successfully');
+        } catch (error) {
+          console.error('Error initializing Voiceflow embedded chat:', error);
+        }
       } else {
+        console.log('Waiting for Voiceflow or target element...', {
+          voiceflow: !!window.voiceflow?.chat,
+          targetElement: !!targetElement
+        });
         // Check again in a short while
-        setTimeout(checkVoiceflow, 100);
+        setTimeout(checkVoiceflow, 500);
       }
     };
     
     // Start checking after a brief delay to ensure DOM is ready
-    setTimeout(checkVoiceflow, 200);
+    setTimeout(checkVoiceflow, 1000);
   }, []);
 
   // Text Analysis Mutation
@@ -243,9 +266,16 @@ export default function TryAI() {
                     </div>
                     <div 
                       id="voiceflow-embedded-chat" 
-                      className="min-h-[400px] w-full border border-gray-200 rounded-lg bg-gray-50"
-                      style={{ minHeight: '400px' }}
-                    ></div>
+                      className="min-h-[400px] w-full border border-gray-200 rounded-lg bg-white relative"
+                      style={{ minHeight: '400px', width: '100%' }}
+                    >
+                      <div className="absolute inset-0 flex items-center justify-center text-gray-500">
+                        <div className="text-center">
+                          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-2" />
+                          <p className="text-sm">Loading appointment assistant...</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="border-t pt-4">
