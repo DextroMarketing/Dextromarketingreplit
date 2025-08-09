@@ -277,54 +277,6 @@ export default function TryAI() {
                       </div>
                     </div>
                   </div>
-
-                  <div className="border-t pt-4">
-                    <p className="text-sm text-gray-500 mb-4">Alternative: Test the appointment logic directly</p>
-                    <div className="space-y-2">
-                      <Label htmlFor="content-prompt">Appointment request details</Label>
-                      <Input
-                        id="content-prompt"
-                        placeholder="e.g., 'Schedule kitchen renovation consultation for next Tuesday' or 'Available for roofing quote this week?'..."
-                        value={contentGenerationInput}
-                        onChange={(e) => setContentGenerationInput(e.target.value)}
-                      />
-                    </div>
-                    <Button 
-                      onClick={handleContentGeneration}
-                      disabled={contentGenerationMutation.isPending || !contentGenerationInput.trim()}
-                      className="bg-dxm-orange hover:bg-dxm-orange/90 mt-2"
-                    >
-                      {contentGenerationMutation.isPending ? (
-                        <>
-                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                          Generating...
-                        </>
-                      ) : (
-                        'Test Appointment Logic'
-                      )}
-                    </Button>
-                  </div>
-
-                  {contentGenerationMutation.data && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="mt-6 p-4 bg-gray-50 rounded-lg"
-                    >
-                      <h4 className="font-semibold mb-3">Appointment Response:</h4>
-                      <div className="prose max-w-none">
-                        <p className="text-gray-700 whitespace-pre-wrap">{contentGenerationMutation.data.content}</p>
-                      </div>
-                    </motion.div>
-                  )}
-
-                  {contentGenerationMutation.error && (
-                    <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-                      <p className="text-red-700">
-                        Content generation failed. Please try a different prompt.
-                      </p>
-                    </div>
-                  )}
                 </CardContent>
               </Card>
             </TabsContent>
