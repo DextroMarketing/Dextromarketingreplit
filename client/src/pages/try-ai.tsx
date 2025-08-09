@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,22 +12,10 @@ import { useMutation } from "@tanstack/react-query";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 
-// TypeScript declaration for Voiceflow
-declare global {
-  interface Window {
-    voiceflow: {
-      chat: {
-        load: (config: any) => void;
-      };
-    };
-  }
-}
-
 export default function TryAI() {
   const [textAnalysisInput, setTextAnalysisInput] = useState("");
   const [contentGenerationInput, setContentGenerationInput] = useState("");
   const [businessAnalysisInput, setBusinessAnalysisInput] = useState("");
-  const [voiceflowLoaded, setVoiceflowLoaded] = useState(false);
 
   // Text Analysis Mutation
   const textAnalysisMutation = useMutation({
@@ -85,43 +73,6 @@ export default function TryAI() {
       businessAnalysisMutation.mutate(businessAnalysisInput);
     }
   };
-
-  // Load Voiceflow script
-  useEffect(() => {
-    const loadVoiceflowScript = () => {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
-      script.onload = () => {
-        if (window.voiceflow) {
-          window.voiceflow.chat.load({
-            verify: { projectID: '689626f8f609a76db4c08096' },
-            url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production',
-            voice: {
-              url: "https://runtime-api.voiceflow.com"
-            },
-            render: {
-              mode: 'embedded',
-              target: document.getElementById('voiceflow-widget')
-            }
-          });
-          setVoiceflowLoaded(true);
-        }
-      };
-      document.head.appendChild(script);
-    };
-
-    loadVoiceflowScript();
-
-    return () => {
-      // Cleanup if needed
-      const existingScript = document.querySelector('script[src="https://cdn.voiceflow.com/widget-next/bundle.mjs"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-navy via-navy/95 to-navy/90">
@@ -243,7 +194,7 @@ export default function TryAI() {
               </Card>
             </TabsContent>
 
-            {/* Content Generation Tab - Now with Voiceflow Customer Support Agent */}
+            {/* Content Generation Tab */}
             <TabsContent value="content-generation">
               <Card className="bg-white/95 backdrop-blur-sm">
                 <CardHeader>
@@ -252,44 +203,55 @@ export default function TryAI() {
                     Appointment Setting Agent
                   </CardTitle>
                   <CardDescription>
-                    Experience our live customer support agent powered by Voiceflow AI. 
-                    This interactive demo handles appointment scheduling, enquiries, and customer support 
-                    for construction businesses in real-time.
+                    Automated appointment scheduling that manages your calendar, handles booking requests, 
+                    and coordinates site visits with potential construction clients.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="space-y-4">
-                    <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                      <h4 className="font-semibold text-blue-900 mb-2">Live Customer Support Agent Demo</h4>
-                      <p className="text-blue-700 text-sm">
-                        Try asking about appointment scheduling, service enquiries, pricing information, 
-                        or any construction-related questions. The AI agent will respond in real-time.
+                  <div className="space-y-2">
+                    <Label htmlFor="content-prompt">Appointment request details</Label>
+                    <Input
+                      id="content-prompt"
+                      placeholder="e.g., 'Schedule kitchen renovation consultation for next Tuesday' or 'Available for roofing quote this week?'..."
+                      value={contentGenerationInput}
+                      onChange={(e) => setContentGenerationInput(e.target.value)}
+                    />
+                  </div>
+                  <Button 
+                    onClick={handleContentGeneration}
+                    disabled={contentGenerationMutation.isPending || !contentGenerationInput.trim()}
+                    className="bg-dxm-orange hover:bg-dxm-orange/90"
+                  >
+                    {contentGenerationMutation.isPending ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Generating...
+                      </>
+                    ) : (
+                      'Schedule Appointment'
+                    )}
+                  </Button>
+
+                  {contentGenerationMutation.data && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-6 p-4 bg-gray-50 rounded-lg"
+                    >
+                      <h4 className="font-semibold mb-3">Appointment Response:</h4>
+                      <div className="prose max-w-none">
+                        <p className="text-gray-700 whitespace-pre-wrap">{contentGenerationMutation.data.content}</p>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {contentGenerationMutation.error && (
+                    <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-700">
+                        Content generation failed. Please try a different prompt.
                       </p>
                     </div>
-                    
-                    {/* Voiceflow Widget Container */}
-                    <div className="border rounded-lg bg-white min-h-[400px] relative">
-                      {!voiceflowLoaded && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-center">
-                            <Loader2 className="w-8 h-8 animate-spin text-dxm-orange mx-auto mb-2" />
-                            <p className="text-gray-600">Loading Customer Support Agent...</p>
-                          </div>
-                        </div>
-                      )}
-                      <div id="voiceflow-widget" className="w-full h-full min-h-[400px]"></div>
-                    </div>
-
-                    <div className="text-sm text-gray-600 space-y-2">
-                      <p><strong>Try asking:</strong></p>
-                      <ul className="list-disc list-inside space-y-1 ml-4">
-                        <li>"I need a quote for kitchen renovation"</li>
-                        <li>"Can you schedule an appointment for next week?"</li>
-                        <li>"What services do you offer for bathroom remodelling?"</li>
-                        <li>"How much does roofing repair typically cost?"</li>
-                      </ul>
-                    </div>
-                  </div>
+                  )}
                 </CardContent>
               </Card>
             </TabsContent>
