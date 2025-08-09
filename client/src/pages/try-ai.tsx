@@ -249,7 +249,7 @@ export default function TryAI() {
             <TabsContent value="content-generation">
               <Card className="bg-white/95 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-center">
                     <PenTool className="w-5 h-5 text-dxm-orange" />
                     Appointment Setting Agent
                   </CardTitle>
