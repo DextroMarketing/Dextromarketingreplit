@@ -61,14 +61,12 @@ export default function ServicesSection() {
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.div 
-                  className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  className="w-16 h-16 from-dxm-orange to-dxm-gold rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-[#f9af3c]"
                 >
                   <IconComponent className="w-8 h-8 text-white" />
                 </motion.div>
-                
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
                 <p className="text-gray-800 mb-6 font-medium">{service.description}</p>
-                
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-gray-800 font-medium">
@@ -77,7 +75,6 @@ export default function ServicesSection() {
                     </li>
                   ))}
                 </ul>
-                
                 <Button 
                   className="w-full bg-navy text-white hover:bg-dxm-orange transition-colors duration-300"
                 >
