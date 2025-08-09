@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,10 +12,36 @@ import { useMutation } from "@tanstack/react-query";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 
+// Extend window type for Voiceflow
+declare global {
+  interface Window {
+    voiceflow?: {
+      chat?: {
+        load: (config: any) => void;
+      };
+    };
+  }
+}
+
 export default function TryAI() {
   const [textAnalysisInput, setTextAnalysisInput] = useState("");
   const [contentGenerationInput, setContentGenerationInput] = useState("");
   const [businessAnalysisInput, setBusinessAnalysisInput] = useState("");
+
+  // Initialize Voiceflow chat widget when component mounts
+  useEffect(() => {
+    // Wait for Voiceflow to load if not already loaded
+    const checkVoiceflow = () => {
+      if (window.voiceflow?.chat) {
+        // Voiceflow is loaded, no need to reinitialize
+        console.log('Voiceflow chat is ready');
+      } else {
+        // Check again in a short while
+        setTimeout(checkVoiceflow, 100);
+      }
+    };
+    checkVoiceflow();
+  }, []);
 
   // Text Analysis Mutation
   const textAnalysisMutation = useMutation({
@@ -208,29 +234,40 @@ export default function TryAI() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="content-prompt">Appointment request details</Label>
-                    <Input
-                      id="content-prompt"
-                      placeholder="e.g., 'Schedule kitchen renovation consultation for next Tuesday' or 'Available for roofing quote this week?'..."
-                      value={contentGenerationInput}
-                      onChange={(e) => setContentGenerationInput(e.target.value)}
-                    />
+                  {/* Voiceflow Chatbot Integration */}
+                  <div className="mb-6">
+                    <div className="text-sm text-gray-600 mb-4">
+                      Try our interactive appointment booking assistant below. Click the chat icon to start scheduling your consultation:
+                    </div>
+                    <div id="voiceflow-widget" className="min-h-[50px]"></div>
                   </div>
-                  <Button 
-                    onClick={handleContentGeneration}
-                    disabled={contentGenerationMutation.isPending || !contentGenerationInput.trim()}
-                    className="bg-dxm-orange hover:bg-dxm-orange/90"
-                  >
-                    {contentGenerationMutation.isPending ? (
-                      <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                        Generating...
-                      </>
-                    ) : (
-                      'Schedule Appointment'
-                    )}
-                  </Button>
+
+                  <div className="border-t pt-4">
+                    <p className="text-sm text-gray-500 mb-4">Alternative: Test the appointment logic directly</p>
+                    <div className="space-y-2">
+                      <Label htmlFor="content-prompt">Appointment request details</Label>
+                      <Input
+                        id="content-prompt"
+                        placeholder="e.g., 'Schedule kitchen renovation consultation for next Tuesday' or 'Available for roofing quote this week?'..."
+                        value={contentGenerationInput}
+                        onChange={(e) => setContentGenerationInput(e.target.value)}
+                      />
+                    </div>
+                    <Button 
+                      onClick={handleContentGeneration}
+                      disabled={contentGenerationMutation.isPending || !contentGenerationInput.trim()}
+                      className="bg-dxm-orange hover:bg-dxm-orange/90 mt-2"
+                    >
+                      {contentGenerationMutation.isPending ? (
+                        <>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                          Generating...
+                        </>
+                      ) : (
+                        'Test Appointment Logic'
+                      )}
+                    </Button>
+                  </div>
 
                   {contentGenerationMutation.data && (
                     <motion.div

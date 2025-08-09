@@ -62,8 +62,6 @@ export default function HeroSection() {
               transition={{ delay: 0.8 }}
             >
               <p className="text-white text-sm mb-4 drop-shadow-sm">Trusted by 200+ construction and home improvement businesses</p>
-              <div className="flex items-center space-x-8">
-              </div>
             </motion.div>
           </motion.div>
 
