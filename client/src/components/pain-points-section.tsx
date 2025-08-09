@@ -139,7 +139,6 @@ export default function PainPointsSection() {
             <div className="text-center mb-6">
               <p className="text-sm text-gray-500 mb-2">Value Stack:</p>
               <div className="text-sm text-gray-600 space-y-1">
-                <div>✓ Comprehensive business analysis (Value: $500)</div>
                 <div>✓ Custom automation strategy (Value: $750)</div>
                 <div>✓ Competitor analysis report (Value: $300)</div>
                 <div>✓ 30-minute strategy session (Value: $200)</div>
