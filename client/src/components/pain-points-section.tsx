@@ -139,11 +139,11 @@ export default function PainPointsSection() {
             <div className="text-center mb-6">
               <p className="text-sm text-gray-500 mb-2">Value Stack:</p>
               <div className="text-sm text-gray-600 space-y-1">
-                <div>✓ Custom automation strategy (Value: $750)</div>
-                <div>✓ Competitor analysis report (Value: $300)</div>
-                <div>✓ 30-minute strategy session (Value: $200)</div>
+                <div>✓ Custom automation strategy (Value: £750)</div>
+                <div>✓ Competitor analysis report (Value: £300)</div>
+                <div>✓ 30-minute strategy session (Value: £200)</div>
               </div>
-              <div className="text-lg font-bold text-dxm-orange mt-2">Total Value: $1,750 — Yours Free</div>
+              <div className="text-lg font-bold text-dxm-orange mt-2">Total Value:£1,250 — Yours Free</div>
             </div>
             
             <Button 
