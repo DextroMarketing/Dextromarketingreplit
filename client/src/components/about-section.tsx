@@ -54,9 +54,7 @@ export default function AboutSection() {
             {...fadeInLeft}
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">About Dextro Marketing</h2>
-            <p className="text-xl text-gray-600 mb-6">
-              We're a specialized team of digital marketing experts who exclusively serve construction and home improvement businesses. We understand the unique challenges contractors face in generating quality leads and building trust online.
-            </p>
+            <p className="text-xl text-gray-600 mb-6">We're a specialised team of digital marketing experts who exclusively serve construction and home improvement businesses. We understand the unique challenges contractors face in generating quality leads and building trust online.</p>
             <p className="text-gray-600 mb-8">
               Founded in 2020 with a focus on the construction industry, we've helped over 200 contractors dominate their local markets by combining proven marketing strategies with cutting-edge technology designed specifically for construction businesses.
             </p>
