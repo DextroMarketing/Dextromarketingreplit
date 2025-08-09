@@ -6,7 +6,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import DynamicBackground from "@/components/dynamic-background";
 import Home from "@/pages/home";
 import Services from "@/pages/services";
-import Portfolio from "@/pages/portfolio";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import TryAI from "@/pages/try-ai";
@@ -17,7 +16,6 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/services" component={Services} />
-      <Route path="/portfolio" component={Portfolio} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/try-ai" component={TryAI} />

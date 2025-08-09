@@ -4,6 +4,8 @@ Dextro Marketing is a specialized digital marketing agency website focused exclu
 
 ## Recent Changes
 
+- **Portfolio Page Removal**: Removed portfolio page completely from website navigation and routing
+- **British English Spelling**: Comprehensive conversion from American to British English spellings (analyse vs analyze, optimisation vs optimization)
 - **Try Our AI Page**: Added comprehensive AI demonstration page with interactive features including text analysis, content generation, and business intelligence tools
 - **OpenAI Integration**: Integrated OpenAI GPT-4o for real-time AI capabilities showcase
 - **Navigation Update**: Added "Try AI" link in main navigation between About and Contact pages
@@ -46,7 +48,7 @@ The application uses a flexible storage architecture:
 ## Component Organization
 The frontend follows a well-structured component hierarchy:
 
-- **Pages**: Top-level route components (Home, Services, Portfolio, About, Contact)
+- **Pages**: Top-level route components (Home, Services, About, Contact, Try AI)
 - **Sections**: Reusable page sections (Hero, Services, Portfolio, Testimonials, etc.)
 - **UI Components**: Base design system components built on shadcn/ui
 - **Shared Components**: Common components like Navigation and Footer
