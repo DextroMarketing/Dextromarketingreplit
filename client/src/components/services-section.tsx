@@ -61,7 +61,7 @@ export default function ServicesSection() {
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.div 
-                  className="w-16 h-16 from-dxm-orange to-dxm-gold rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-[#f9af3c]"
+                  className="w-16 h-16 from-dxm-orange to-dxm-gold rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-[#ee9d2b]"
                 >
                   <IconComponent className="w-8 h-8 text-white" />
                 </motion.div>
