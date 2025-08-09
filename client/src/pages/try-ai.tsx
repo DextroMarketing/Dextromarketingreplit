@@ -28,19 +28,21 @@ export default function TryAI() {
   const [contentGenerationInput, setContentGenerationInput] = useState("");
   const [businessAnalysisInput, setBusinessAnalysisInput] = useState("");
 
-  // Initialize Voiceflow chat widget when component mounts
+  // Initialize Voiceflow embedded chat widget when component mounts
   useEffect(() => {
-    // Wait for Voiceflow to load if not already loaded
+    // Wait for Voiceflow to load and then initialize embedded mode
     const checkVoiceflow = () => {
-      if (window.voiceflow?.chat) {
-        // Voiceflow is loaded, no need to reinitialize
-        console.log('Voiceflow chat is ready');
+      if (window.voiceflow?.chat && document.getElementById('voiceflow-embedded-chat')) {
+        // Voiceflow is loaded and target element exists
+        console.log('Voiceflow embedded chat is ready');
       } else {
         // Check again in a short while
         setTimeout(checkVoiceflow, 100);
       }
     };
-    checkVoiceflow();
+    
+    // Start checking after a brief delay to ensure DOM is ready
+    setTimeout(checkVoiceflow, 200);
   }, []);
 
   // Text Analysis Mutation
@@ -234,12 +236,16 @@ export default function TryAI() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {/* Voiceflow Chatbot Integration */}
+                  {/* Voiceflow Embedded Chatbot */}
                   <div className="mb-6">
                     <div className="text-sm text-gray-600 mb-4">
-                      Try our interactive appointment booking assistant below. Click the chat icon to start scheduling your consultation:
+                      Try our interactive appointment booking assistant. Start a conversation to schedule your consultation:
                     </div>
-                    <div id="voiceflow-widget" className="min-h-[50px]"></div>
+                    <div 
+                      id="voiceflow-embedded-chat" 
+                      className="min-h-[400px] w-full border border-gray-200 rounded-lg bg-gray-50"
+                      style={{ minHeight: '400px' }}
+                    ></div>
                   </div>
 
                   <div className="border-t pt-4">
