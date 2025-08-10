@@ -145,7 +145,7 @@ export default function TryAI() {
             </h1>
             <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
               Experience the power of AI automation with our live demonstration tools. 
-              See how artificial intelligence can transform your construction business operations.
+              See how artificial intelligence can transform your trade and service business operations.
             </p>
           </motion.div>
         </div>
@@ -179,7 +179,7 @@ export default function TryAI() {
                   </CardTitle>
                   <CardDescription>
                     AI-powered customer support that handles enquiries, provides instant responses, 
-                    and maintains professional communication with your construction clients 24/7.
+                    and maintains professional communication with your trade and service clients 24/7.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -187,7 +187,7 @@ export default function TryAI() {
                     <Label htmlFor="text-analysis-input">Customer enquiry or message</Label>
                     <Textarea
                       id="text-analysis-input"
-                      placeholder="Type a customer enquiry like: 'I need a quote for roofing repair' or 'When can you start my kitchen renovation?'..."
+                      placeholder="Type a customer enquiry like: 'I need a quote for service call' or 'When can you start my heating repair?'..."
                       value={textAnalysisInput}
                       onChange={(e) => setTextAnalysisInput(e.target.value)}
                       className="min-h-[120px]"
@@ -255,7 +255,7 @@ export default function TryAI() {
                   </CardTitle>
                   <CardDescription>
                     Automated appointment scheduling that manages your calendar, handles booking requests, 
-                    and coordinates site visits with potential construction clients.
+                    and coordinates service calls with potential trade and service clients.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -291,7 +291,7 @@ export default function TryAI() {
                   </CardTitle>
                   <CardDescription>
                     Intelligent lead capture system that automatically identifies potential clients, 
-                    qualifies leads, and integrates seamlessly with your CRM for construction projects.
+                    qualifies leads, and integrates seamlessly with your CRM for trade and service projects.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -299,7 +299,7 @@ export default function TryAI() {
                     <Label htmlFor="business-input">Lead information and requirements</Label>
                     <Textarea
                       id="business-input"
-                      placeholder="e.g., 'Potential client interested in bathroom renovation, budget £15k' or 'Lead from website form: kitchen extension enquiry, family of 4'..."
+                      placeholder="e.g., 'Potential client interested in heating system upgrade, budget £8k' or 'Lead from website form: emergency plumbing enquiry, elderly couple'..."
                       value={businessAnalysisInput}
                       onChange={(e) => setBusinessAnalysisInput(e.target.value)}
                       className="min-h-[120px]"
@@ -376,7 +376,7 @@ export default function TryAI() {
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Customer Support Agent</h3>
               <p className="text-gray-300">
-                AI-powered customer support that handles enquiries, provides instant responses, and maintains professional communication with your construction clients 24/7.
+                AI-powered customer support that handles enquiries, provides instant responses, and maintains professional communication with your trade and service clients 24/7.
               </p>
             </motion.div>
 
@@ -391,7 +391,7 @@ export default function TryAI() {
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Appointment Setting Agent</h3>
               <p className="text-gray-300">
-                Automated appointment scheduling that manages your calendar, handles booking requests, and coordinates site visits with potential construction clients.
+                Automated appointment scheduling that manages your calendar, handles booking requests, and coordinates service calls with potential trade and service clients.
               </p>
             </motion.div>
 
@@ -406,7 +406,7 @@ export default function TryAI() {
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Lead Capture & CRM Integration</h3>
               <p className="text-gray-300">
-                Intelligent lead capture system that automatically identifies potential clients, qualifies leads, and integrates seamlessly with your CRM for construction projects.
+                Intelligent lead capture system that automatically identifies potential clients, qualifies leads, and integrates seamlessly with your CRM for trade and service projects.
               </p>
             </motion.div>
           </div>
