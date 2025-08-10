@@ -3,25 +3,7 @@ import Footer from "@/components/footer";
 import ContactSection from "@/components/contact-section";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/animations";
-import { CheckCircle, ArrowRight, Users, Clock, TrendingUp } from "lucide-react";
-
-const benefits = [
-  {
-    icon: Users,
-    title: "Dedicated Support Team",
-    description: "Work directly with our experienced team of digital marketing specialists focused on trade and service businesses."
-  },
-  {
-    icon: Clock,
-    title: "Quick Implementation",
-    description: "See results within 30 days with our proven systems and AI automation tools designed for your industry."
-  },
-  {
-    icon: TrendingUp,
-    title: "Guaranteed Growth",
-    description: "Our data-driven approach ensures measurable improvements in lead generation and conversion rates."
-  }
-];
+import { CheckCircle, ArrowRight } from "lucide-react";
 
 const process = [
   {
@@ -73,43 +55,7 @@ export default function GetStarted() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Why Choose Dextro Marketing?
-            </h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              We specialise in helping trade and service businesses dominate their local markets with cutting-edge digital solutions.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center"
-              >
-                <div className="bg-dxm-orange/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <benefit.icon className="w-8 h-8 text-dxm-orange" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                <p className="text-gray-300">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       
 
