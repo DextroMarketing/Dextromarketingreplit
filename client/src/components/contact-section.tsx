@@ -192,11 +192,10 @@ export default function ContactSection() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="website">New Website</SelectItem>
-                            <SelectItem value="local-seo">Local SEO</SelectItem>
-                            <SelectItem value="lead-generation">Lead Generation</SelectItem>
-                            <SelectItem value="emergency-service">Emergency Service Setup</SelectItem>
-                            <SelectItem value="complete">Complete Marketing Solution</SelectItem>
+                            <SelectItem value="website-design">Website Design</SelectItem>
+                            <SelectItem value="appointment-setting">Appointment Setting Agent</SelectItem>
+                            <SelectItem value="customer-support">Customer Support Ticket Management</SelectItem>
+                            <SelectItem value="lead-capture">Lead Capture & CRM Integration</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -238,7 +237,7 @@ export default function ContactSection() {
                       <FormControl>
                         <Textarea
                           rows={4}
-                          placeholder="Tell us about your construction business, service area, and biggest lead generation challenges..."
+                          placeholder="Tell us about your trade or service business, service area, and biggest operational challenges..."
                           className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange resize-none"
                           {...field}
                         />
