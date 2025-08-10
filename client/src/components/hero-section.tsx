@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
-
+import { Link } from "wouter";
 import { fadeInUp, fadeInLeft, fadeInRight, floatAnimation } from "@/lib/animations";
 
 export default function HeroSection() {
@@ -39,12 +39,14 @@ export default function HeroSection() {
               {...fadeInUp}
               transition={{ delay: 0.6 }}
             >
-              <Button 
-                size="lg"
-                className="bg-dxm-orange text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-dxm-gold hover:text-navy transition-all duration-300 hover:scale-105 transform"
-              >
-                Get Your Free Digital Assessment
-              </Button>
+              <Link href="/get-started">
+                <Button 
+                  size="lg"
+                  className="bg-dxm-orange text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-dxm-gold hover:text-navy transition-all duration-300 hover:scale-105 transform"
+                >
+                  Get Your Free Digital Assessment
+                </Button>
+              </Link>
               <Button 
                 variant="outline"
                 size="lg"

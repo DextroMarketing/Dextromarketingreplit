@@ -105,7 +105,7 @@ export default function ContactSection() {
             Ready to Dominate Your Local Market?
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
-            Let's discuss how we can help your construction business generate more qualified leads and convert more estimates into signed contracts.
+            Let's discuss how we can help your trade or service business generate more qualified leads and convert more enquiries into signed contracts.
           </p>
         </motion.div>
 

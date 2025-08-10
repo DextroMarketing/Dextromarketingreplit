@@ -58,7 +58,7 @@ export default function Navigation() {
             {navItems.map((item) => (
               <NavLink key={item.href} href={item.href} label={item.label} />
             ))}
-            <Link href="/contact">
+            <Link href="/get-started">
               <Button className="bg-navy text-white hover:bg-dxm-orange transition-all duration-300 hover:scale-105">
                 Get Started
               </Button>
@@ -77,7 +77,7 @@ export default function Navigation() {
                 {navItems.map((item) => (
                   <NavLink key={item.href} href={item.href} label={item.label} mobile />
                 ))}
-                <Link href="/contact">
+                <Link href="/get-started">
                   <Button className="w-full bg-navy text-white hover:bg-dxm-orange transition-all duration-300" onClick={() => setIsOpen(false)}>
                     Get Started
                   </Button>

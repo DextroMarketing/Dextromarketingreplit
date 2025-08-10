@@ -168,9 +168,11 @@ export default function Services() {
                       </div>
                     </div>
                     
-                    <Button size="lg" className="bg-navy text-white hover:bg-electric">
-                      Get Started with {service.title}
-                    </Button>
+                    <Link href="/get-started">
+                      <Button size="lg" className="bg-navy text-white hover:bg-electric">
+                        Get Started with {service.title}
+                      </Button>
+                    </Link>
                   </div>
                   {/* Process Card */}
                   <div className={isEven ? '' : 'lg:col-start-1 lg:row-start-1'}>
@@ -214,7 +216,7 @@ export default function Services() {
             <p className="text-xl text-black font-bold mb-8">
               Let's discuss how our services can transform your digital presence and drive real business results.
             </p>
-            <Link href="/contact#contact-form">
+            <Link href="/get-started">
               <Button size="lg" className="text-navy hover:bg-navy hover:text-white px-8 py-4 text-lg bg-[#ee9d2b]">
                 Schedule Free Consultation
               </Button>
