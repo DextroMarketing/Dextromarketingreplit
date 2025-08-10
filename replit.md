@@ -13,7 +13,6 @@ Dextro Marketing is a specialized digital marketing agency website focused exclu
 - **Interactive Background**: Enhanced with mouse force field effect that pushes particles away from cursor
 - **Voiceflow Integration**: Embedded Voiceflow appointment booking agent into Try AI page appointment setting section
 - **Mobile Optimization**: Comprehensive mobile responsive improvements for Try AI page including stacked tab navigation, responsive typography, optimized touch targets, and full-width buttons on mobile
-- **Navigation Updates**: Changed all "Get Started" and consultation buttons to link to Try AI page instead of contact form, providing better user experience with hands-on AI demonstrations
 
 # User Preferences
 
