@@ -16,7 +16,7 @@ Dextro Marketing is a specialized digital marketing agency website focused exclu
 - **Get Started Page**: Created dedicated get-started page with process overview and benefits, streamlined by removing redundant sections for cleaner UX
 - **CTA Button Linking**: Updated all call-to-action buttons across the site to link to the new get-started page
 - **Trade/Service Focus**: Updated copy throughout to focus on trades and service businesses rather than construction-specific language
-- **Contact Form Updates**: Updated project type options to focus on core AI services: Website Design, Appointment Setting Agent, Customer Support Ticket Management, Lead Capture & CRM Integration
+- **Contact Form Updates**: Updated project type options to focus on core AI services: Website Design, AI Appointment Setting Agent, AI Customer Support Ticket Management, AI Lead Capture & CRM Integration
 
 # User Preferences
 

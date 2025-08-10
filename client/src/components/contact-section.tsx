@@ -193,9 +193,9 @@ export default function ContactSection() {
                           </FormControl>
                           <SelectContent>
                             <SelectItem value="website-design">Website Design</SelectItem>
-                            <SelectItem value="appointment-setting">Appointment Setting Agent</SelectItem>
-                            <SelectItem value="customer-support">Customer Support Ticket Management</SelectItem>
-                            <SelectItem value="lead-capture">Lead Capture & CRM Integration</SelectItem>
+                            <SelectItem value="appointment-setting">AI Appointment Setting Agent</SelectItem>
+                            <SelectItem value="customer-support">AI Customer Support Ticket Management</SelectItem>
+                            <SelectItem value="lead-capture">AI Lead Capture & CRM Integration</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
