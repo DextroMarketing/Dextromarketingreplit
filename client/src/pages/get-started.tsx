@@ -111,48 +111,7 @@ export default function GetStarted() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16 px-4 bg-white/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Our Proven Process
-            </h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              From initial consultation to ongoing growth, we guide you through every step of your digital transformation.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="bg-dxm-orange text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  {step.step}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-gray-300 text-sm">{step.description}</p>
-                {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-full">
-                    <ArrowRight className="w-6 h-6 text-dxm-orange mx-auto" />
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Contact Form Section */}
       <ContactSection />
