@@ -95,7 +95,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact-form" className="py-20 text-white relative overflow-hidden bg-black/20 backdrop-blur-sm">
+    <section className="py-20 text-white relative overflow-hidden bg-black/20 backdrop-blur-sm">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -112,7 +112,9 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
           <motion.div
+            id="contact-form"
             className="bg-white/95 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-gray-200"
+            style={{ scrollMarginTop: '100px' }}
             {...fadeInLeft}
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Consultation</h3>
