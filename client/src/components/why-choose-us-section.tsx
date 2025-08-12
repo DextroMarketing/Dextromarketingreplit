@@ -45,7 +45,7 @@ export default function WhyChooseUsSection() {
             Why Choose <span className="gradient-text">Dextro Marketing</span>?
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
-            We're the only digital marketing agency that exclusively serves construction businesses. We understand your industry, your challenges, and how to get you results.
+            We're the only digital marketing agency that exclusively serves trades and service businesses. We understand your industry, your challenges, and how to get you results.
           </p>
         </motion.div>
 
