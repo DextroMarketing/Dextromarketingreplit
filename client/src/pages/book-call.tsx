@@ -79,7 +79,6 @@ export default function BookCall() {
           backgroundSize: '60px 60px'
         }} />
       </div>
-
       <div className="relative z-10">
         {/* Header */}
         <motion.div 
@@ -277,7 +276,7 @@ export default function BookCall() {
                       name="additionalInfo"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-white font-medium">Additional Information</FormLabel>
+                          <FormLabel className="text-white font-medium">Additional Information (optional)</FormLabel>
                           <FormControl>
                             <Textarea
                               rows={3}
