@@ -1,5 +1,15 @@
-import { type User, type InsertUser, type ContactSubmission, type InsertContactSubmission, type BookCallSubmission, type InsertBookCallSubmission } from "@shared/schema";
+import { drizzle } from "drizzle-orm/neon-serverless";
+import { neon } from "@neondatabase/serverless";
+import { eq, desc } from "drizzle-orm";
+import { users, contactSubmissions, bookCallSubmissions, type InsertUser, type User, type InsertContactSubmission, type ContactSubmission, type InsertBookCallSubmission, type BookCallSubmission } from "@shared/schema";
 import { randomUUID } from "crypto";
+
+// Initialize database connection only if DATABASE_URL is provided
+let db: ReturnType<typeof drizzle> | null = null;
+if (process.env.DATABASE_URL) {
+  const sql = neon(process.env.DATABASE_URL);
+  db = drizzle({ client: sql });
+}
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
@@ -80,4 +90,47 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+// Database storage implementation
+export class DatabaseStorage implements IStorage {
+  constructor() {
+    if (!db) {
+      throw new Error("Database connection not initialized. Ensure DATABASE_URL is set.");
+    }
+  }
+
+  async getUser(id: string): Promise<User | undefined> {
+    const result = await db!.select().from(users).where(eq(users.id, id)).limit(1);
+    return result[0];
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const result = await db!.select().from(users).where(eq(users.username, username)).limit(1);
+    return result[0];
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const result = await db!.insert(users).values(insertUser).returning();
+    return result[0];
+  }
+
+  async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
+    const result = await db!.insert(contactSubmissions).values(submission).returning();
+    return result[0];
+  }
+
+  async getContactSubmissions(): Promise<ContactSubmission[]> {
+    return await db!.select().from(contactSubmissions).orderBy(desc(contactSubmissions.createdAt));
+  }
+
+  async createBookCallSubmission(submission: InsertBookCallSubmission): Promise<BookCallSubmission> {
+    const result = await db!.insert(bookCallSubmissions).values(submission).returning();
+    return result[0];
+  }
+
+  async getBookCallSubmissions(): Promise<BookCallSubmission[]> {
+    return await db!.select().from(bookCallSubmissions).orderBy(desc(bookCallSubmissions.submittedAt));
+  }
+}
+
+// Use database storage in production, memory storage for development
+export const storage = process.env.DATABASE_URL ? new DatabaseStorage() : new MemStorage();

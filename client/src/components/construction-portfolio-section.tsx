@@ -223,8 +223,7 @@ export default function ConstructionPortfolioSection() {
           {...fadeInUp}
           transition={{ delay: 0.4 }}
         >
-          <h3 className="text-2xl font-bold text-navy mb-4">Ready to Join These Success Stories?</h3>
-          
+          <h3 className="text-2xl font-bold text-navy mb-8">Ready to Join These Success Stories?</h3>
           <Button 
             size="lg"
             className="bg-dxm-orange text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-dxm-gold hover:text-navy transition-all duration-300 hover:scale-105"
