@@ -129,9 +129,6 @@ export default function ContactSection() {
             </div>
           </motion.div>
         </div>
-
-          
-        </div>
       </div>
     </section>
   );
