@@ -19,7 +19,6 @@ const contactFormSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   company: z.string().optional(),
   projectType: z.string().optional(),
-  budget: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
@@ -66,7 +65,6 @@ export default function ContactSection() {
       email: "",
       company: "",
       projectType: "",
-      budget: "",
       message: "",
     },
   });
@@ -204,29 +202,7 @@ export default function ContactSection() {
                   />
                 </div>
 
-                <FormField
-                  control={form.control}
-                  name="budget"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-gray-900 font-medium">Budget Range</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger className="bg-white border-gray-300 text-gray-900 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange">
-                            <SelectValue placeholder="Select budget range" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="2k-5k">$2,000 - $5,000/month</SelectItem>
-                          <SelectItem value="5k-10k">$5,000 - $10,000/month</SelectItem>
-                          <SelectItem value="10k-20k">$10,000 - $20,000/month</SelectItem>
-                          <SelectItem value="20k+">$20,000+/month</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                
 
                 <FormField
                   control={form.control}
