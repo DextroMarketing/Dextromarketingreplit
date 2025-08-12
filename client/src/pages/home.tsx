@@ -6,7 +6,7 @@ import ConstructionPortfolioSection from "@/components/construction-portfolio-se
 import WhyChooseUsSection from "@/components/why-choose-us-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import AboutSection from "@/components/about-section";
-import ContactSection from "@/components/contact-section";
+import CTASection from "@/components/cta-section";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <WhyChooseUsSection />
       <TestimonialsSection />
       <AboutSection />
-      <ContactSection />
+      <CTASection />
       <Footer />
     </div>
   );
