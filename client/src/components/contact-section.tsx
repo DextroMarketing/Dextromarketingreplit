@@ -107,7 +107,7 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid gap-16">
           {/* Contact Form */}
           <motion.div
             id="contact-form"
