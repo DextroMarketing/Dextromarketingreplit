@@ -182,7 +182,7 @@ export default function ContactSection() {
                     name="projectType"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-900 font-medium">Project Type</FormLabel>
+                        <FormLabel className="text-gray-900 font-medium">Service</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger className="bg-white border-gray-300 text-gray-900 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange">
