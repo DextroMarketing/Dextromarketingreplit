@@ -115,46 +115,7 @@ export default function PainPointsSection() {
             See exactly how much time and money you're losing to manual processes — and how AI can fix it.
           </p>
           
-          <div className="bg-white rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
-            <h4 className="text-2xl font-bold text-navy mb-4">Our free Digital Business Assessment reveals:</h4>
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center justify-start">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Which leads you're losing and why</span>
-              </div>
-              <div className="flex items-center justify-start">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Where your competitors are beating you online</span>
-              </div>
-              <div className="flex items-center justify-start">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Specific AI solutions for your trade and market</span>
-              </div>
-              <div className="flex items-center justify-start">
-                <Check className="w-5 h-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Expected ROI within 90 days</span>
-              </div>
-            </div>
-            
-            <div className="text-center mb-6">
-              <p className="text-sm text-gray-500 mb-2">Value Stack:</p>
-              <div className="text-sm text-gray-600 space-y-1">
-                <div>✓ Custom automation strategy</div>
-                <div>✓ Competitor analysis report</div>
-                <div>✓ 30-minute strategy session</div>
-              </div>
-              <div className="text-lg font-bold text-dxm-orange mt-2">Yours Free</div>
-            </div>
-            
-            <Button 
-              size="lg"
-              className="bg-dxm-orange text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-dxm-gold hover:text-navy transition-all duration-300 hover:scale-105 w-full"
-            >
-              Claim Your Free Assessment
-            </Button>
-            
-            <p className="text-sm text-gray-500 mt-4">No sales pressure. No long-term contracts. Just actionable insights you can use immediately.</p>
-          </div>
+          
         </motion.div>
       </div>
     </section>
