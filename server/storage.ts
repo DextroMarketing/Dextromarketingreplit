@@ -1,14 +1,28 @@
-import { drizzle } from "drizzle-orm/neon-serverless";
-import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
 import { eq, desc } from "drizzle-orm";
 import { users, contactSubmissions, bookCallSubmissions, type InsertUser, type User, type InsertContactSubmission, type ContactSubmission, type InsertBookCallSubmission, type BookCallSubmission } from "@shared/schema";
 import { randomUUID } from "crypto";
 
-// Initialize database connection only if DATABASE_URL is provided
+// Set DATABASE_URL if not already set (for Supabase connection)
+if (!process.env.DATABASE_URL) {
+  process.env.DATABASE_URL = "postgresql://postgres.gdjkpkqfrwxlfxonjuxd:pgbj4DfWkgt2dbs13!!@aws-0-eu-west-2.pooler.supabase.com:6543/postgres";
+}
+
+// Initialize database connection with postgres.js
 let db: ReturnType<typeof drizzle> | null = null;
 if (process.env.DATABASE_URL) {
-  const sql = neon(process.env.DATABASE_URL);
-  db = drizzle({ client: sql });
+  try {
+    const sql = postgres(process.env.DATABASE_URL, {
+      ssl: 'require',
+      max: 1, // Limit connection pool for development
+    });
+    db = drizzle(sql);
+    console.log('Database connection initialized successfully with postgres.js');
+  } catch (error) {
+    console.error('Database connection failed:', error);
+    db = null;
+  }
 }
 
 export interface IStorage {
@@ -131,6 +145,8 @@ export class DatabaseStorage implements IStorage {
     return await db!.select().from(bookCallSubmissions).orderBy(desc(bookCallSubmissions.submittedAt));
   }
 }
+
+
 
 // Use database storage in production, memory storage for development
 export const storage = process.env.DATABASE_URL ? new DatabaseStorage() : new MemStorage();
