@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { z } from "zod";
-import { insertContactSubmissionSchema } from "@shared/schema";
+import { insertContactSubmissionSchema, insertBookCallSubmissionSchema } from "@shared/schema";
 import { storage } from "./storage";
 import { analyseText, generateContent, analyseBusinessScenario } from "./ai";
 
@@ -135,6 +135,52 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ 
         success: false, 
         error: error.message || "Failed to analyse business scenario" 
+      });
+    }
+  });
+
+  // Book Call submission endpoint
+  app.post("/api/book-call", async (req, res) => {
+    try {
+      const validatedData = insertBookCallSubmissionSchema.parse(req.body);
+      const submission = await storage.createBookCallSubmission(validatedData);
+      
+      // Here you could integrate with email service like Nodemailer
+      // For now, we'll just return success
+      console.log("New book call submission:", submission);
+      
+      res.json({ 
+        success: true, 
+        message: "Call booking submitted successfully",
+        submissionId: submission.id 
+      });
+    } catch (error) {
+      console.error("Book call submission error:", error);
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ 
+          success: false, 
+          message: "Invalid form data", 
+          errors: error.errors 
+        });
+      } else {
+        res.status(500).json({ 
+          success: false, 
+          message: "Internal server error" 
+        });
+      }
+    }
+  });
+
+  // Get book call submissions (for admin purposes)
+  app.get("/api/book-call/submissions", async (req, res) => {
+    try {
+      const submissions = await storage.getBookCallSubmissions();
+      res.json({ success: true, data: submissions });
+    } catch (error) {
+      console.error("Error fetching book call submissions:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Internal server error" 
       });
     }
   });

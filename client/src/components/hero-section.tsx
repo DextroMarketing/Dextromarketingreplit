@@ -39,12 +39,12 @@ export default function HeroSection() {
               {...fadeInUp}
               transition={{ delay: 0.6 }}
             >
-              <Link href="/get-started">
+              <Link href="/book-call">
                 <Button 
                   size="lg"
                   className="bg-dxm-orange text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-dxm-gold hover:text-navy transition-all duration-300 hover:scale-105 transform"
                 >
-                  Get Your Free Digital Assessment
+                  Book Your Free Strategy Call
                 </Button>
               </Link>
               <Button 

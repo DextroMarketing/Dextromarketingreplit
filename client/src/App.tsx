@@ -10,6 +10,7 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import TryAI from "@/pages/try-ai";
 import GetStarted from "@/pages/get-started";
+import BookCall from "@/pages/book-call";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/try-ai" component={TryAI} />
       <Route path="/get-started" component={GetStarted} />
+      <Route path="/book-call" component={BookCall} />
       <Route component={NotFound} />
     </Switch>
   );

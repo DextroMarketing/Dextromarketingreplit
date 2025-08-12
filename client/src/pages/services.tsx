@@ -168,9 +168,9 @@ export default function Services() {
                       </div>
                     </div>
                     
-                    <Link href="/get-started">
+                    <Link href="/book-call">
                       <Button size="lg" className="bg-navy text-white hover:bg-electric">
-                        Get Started with {service.title}
+                        Book a Call for {service.title}
                       </Button>
                     </Link>
                   </div>
@@ -216,7 +216,7 @@ export default function Services() {
             <p className="text-xl text-black font-bold mb-8">
               Let's discuss how our services can transform your digital presence and drive real business results.
             </p>
-            <Link href="/get-started">
+            <Link href="/book-call">
               <Button size="lg" className="text-navy hover:bg-navy hover:text-white px-8 py-4 text-lg bg-[#ee9d2b]">
                 Schedule Free Consultation
               </Button>

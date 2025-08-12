@@ -17,6 +17,9 @@ Dextro Marketing is a specialized digital marketing agency website focused exclu
 - **CTA Button Linking**: Updated all call-to-action buttons across the site to link to the new get-started page
 - **Trade/Service Focus**: Updated copy throughout to focus on trades and service businesses rather than construction-specific language
 - **Contact Form Updates**: Updated project type options to focus on core AI services: Website Design, AI Appointment Setting Agent, AI Customer Support Ticket Management, AI Lead Capture & CRM Integration
+- **Book a Call Page**: Created dedicated book-call page with comprehensive form for AI automation services including name, email, company, selected service, problems, and additional information
+- **Button Linking Strategy**: Updated all primary CTA buttons to link to /book-call instead of /get-started for streamlined conversion flow
+- **Backend API**: Added book-call submission API endpoint with schema validation and storage for processing strategy call requests
 
 # User Preferences
 
