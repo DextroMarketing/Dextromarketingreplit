@@ -4,7 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import DynamicBackground from "@/components/dynamic-background";
-import { VapiWidget } from "@/components/vapi-widget";
+import { VapiWidget } from "@vapi-ai/client-sdk-react";
 import Home from "@/pages/home";
 import Services from "@/pages/services";
 import About from "@/pages/about";
@@ -40,24 +40,12 @@ function App() {
           publicKey="36530774-8f0e-467f-8c57-1700b2e778ae"
           assistantId="4050a1a9-8faf-4234-8ac3-b75203b1abb2"
           mode="voice"
-          theme="dark"
-          baseBgColor="#000000"
-          accentColor="#004fff"
-          ctaButtonColor="#000000"
-          ctaButtonTextColor="#ffffff"
-          borderRadius="large"
-          size="full"
           position="bottom-left"
+          theme="dark"
+          accentColor="#004fff"
           title="TALK WITH AI"
-          startButtonText="Start"
-          endButtonText="End Call"
-          chatFirstMessage="Hey, How can I help you today?"
-          chatPlaceholder="Type your message..."
-          voiceShowTranscript={true}
-          consentRequired={true}
-          consentTitle="Terms and conditions"
-          consentContent="By clicking 'Agree,' and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as otherwise described in our Terms of Service."
-          consentStorageKey="vapi_widget_consent"
+          showTranscript={true}
+          size="full"
         />
       </TooltipProvider>
     </QueryClientProvider>
