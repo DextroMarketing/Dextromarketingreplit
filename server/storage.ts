@@ -1,7 +1,7 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import { eq, desc } from "drizzle-orm";
-import { users, contactSubmissions, bookCallSubmissions, type InsertUser, type User, type InsertContactSubmission, type ContactSubmission, type InsertBookCallSubmission, type BookCallSubmission } from "@shared/schema";
+import { users, contactSubmissions, bookCallSubmissions, dxmNumbers, type InsertUser, type User, type InsertContactSubmission, type ContactSubmission, type InsertBookCallSubmission, type BookCallSubmission, type InsertDxmNumber, type DxmNumber } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 // Set DATABASE_URL if not already set (for Supabase connection)
@@ -33,6 +33,8 @@ export interface IStorage {
   getContactSubmissions(): Promise<ContactSubmission[]>;
   createBookCallSubmission(submission: InsertBookCallSubmission): Promise<BookCallSubmission>;
   getBookCallSubmissions(): Promise<BookCallSubmission[]>;
+  createDxmNumber(submission: InsertDxmNumber): Promise<DxmNumber>;
+  getDxmNumbers(): Promise<DxmNumber[]>;
 }
 
 export class MemStorage implements IStorage {

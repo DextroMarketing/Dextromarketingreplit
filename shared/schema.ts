@@ -53,3 +53,17 @@ export const insertBookCallSubmissionSchema = createInsertSchema(bookCallSubmiss
 });
 export type InsertBookCallSubmission = z.infer<typeof insertBookCallSubmissionSchema>;
 export type BookCallSubmission = typeof bookCallSubmissions.$inferSelect;
+
+// DXM Numbers Table for Vapi phone submissions
+export const dxmNumbers = pgTable("DXM_Numbers", {
+  id: serial("id").primaryKey(),
+  phoneNumber: text("phone_number").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const insertDxmNumberSchema = createInsertSchema(dxmNumbers).omit({
+  id: true,
+  createdAt: true,
+});
+export type InsertDxmNumber = z.infer<typeof insertDxmNumberSchema>;
+export type DxmNumber = typeof dxmNumbers.$inferSelect;
