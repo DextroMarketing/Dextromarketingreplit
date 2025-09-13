@@ -35,6 +35,8 @@ export default function CustomVapiWidget() {
   const [vapi, setVapi] = useState<any>(null);
 
   useEffect(() => {
+    let cleanupFunction: (() => void) | null = null;
+
     // Initialize Vapi client
     const initVapi = async () => {
       try {
@@ -68,8 +70,8 @@ export default function CustomVapiWidget() {
 
         setVapi(vapiInstance);
 
-        // Cleanup function
-        return () => {
+        // Store cleanup function
+        cleanupFunction = () => {
           vapiInstance.off('call-start', handleCallStart);
           vapiInstance.off('call-end', handleCallEnd);
           vapiInstance.off('error', handleError);
@@ -79,12 +81,12 @@ export default function CustomVapiWidget() {
       }
     };
 
-    const cleanup = initVapi();
+    initVapi();
     
     // Return cleanup function
     return () => {
-      if (cleanup && typeof cleanup === 'function') {
-        cleanup();
+      if (cleanupFunction) {
+        cleanupFunction();
       }
     };
   }, []);
