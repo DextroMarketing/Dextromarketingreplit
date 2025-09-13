@@ -64,6 +64,8 @@ export const dxmNumbers = pgTable("DXM_Numbers", {
 export const insertDxmNumberSchema = createInsertSchema(dxmNumbers).omit({
   id: true,
   createdAt: true,
+}).extend({
+  phoneNumber: z.string().regex(/^\+[1-9]\d{1,14}$/, "Phone number must be in E.164 format (e.g., +44123456789)")
 });
 export type InsertDxmNumber = z.infer<typeof insertDxmNumberSchema>;
 export type DxmNumber = typeof dxmNumbers.$inferSelect;

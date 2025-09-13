@@ -4,10 +4,8 @@ import { eq, desc } from "drizzle-orm";
 import { users, contactSubmissions, bookCallSubmissions, dxmNumbers, type InsertUser, type User, type InsertContactSubmission, type ContactSubmission, type InsertBookCallSubmission, type BookCallSubmission, type InsertDxmNumber, type DxmNumber } from "@shared/schema";
 import { randomUUID } from "crypto";
 
-// Set DATABASE_URL if not already set (for Supabase connection)
-if (!process.env.DATABASE_URL) {
-  process.env.DATABASE_URL = "postgresql://postgres.yimcgpskhhzazuyeiykf:pgbj4DfWkgt2@aws-1-eu-west-2.pooler.supabase.com:6543/postgres";
-}
+// DATABASE_URL should be set as an environment variable
+// Do not set credentials in code - this is a security risk
 
 // Initialize database connection with postgres.js
 let db: ReturnType<typeof drizzle> | null = null;

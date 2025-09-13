@@ -97,6 +97,31 @@ export default function CustomVapiWidget() {
     try {
       setCallState('connecting');
       
+      // Save phone number to DXM_Numbers table if provided
+      if (phoneNumber && phoneNumber.trim()) {
+        try {
+          const fullPhoneNumber = countryCode + phoneNumber;
+          const response = await fetch('/api/dxm-number', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              phoneNumber: fullPhoneNumber
+            }),
+          });
+
+          const result = await response.json();
+          if (result.success) {
+            console.log('Phone number saved successfully:', result.submissionId);
+          } else {
+            console.error('Failed to save phone number:', result.message);
+          }
+        } catch (saveError) {
+          console.error('Error saving phone number:', saveError);
+        }
+      }
+      
       // Start browser-based voice call with the assistant ID
       // Note: This is a browser voice call, not a phone call to the entered number
       await vapi.start('4050a1a9-8faf-4234-8ac3-b75203b1abb2', {
