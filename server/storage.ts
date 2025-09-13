@@ -41,13 +41,17 @@ export class MemStorage implements IStorage {
   private users: Map<string, User>;
   private contactSubmissions: Map<string, ContactSubmission>;
   private bookCallSubmissions: Map<number, BookCallSubmission>;
+  private dxmNumbers: Map<number, DxmNumber>;
   private nextBookCallId: number;
+  private nextDxmNumberId: number;
 
   constructor() {
     this.users = new Map();
     this.contactSubmissions = new Map();
     this.bookCallSubmissions = new Map();
+    this.dxmNumbers = new Map();
     this.nextBookCallId = 1;
+    this.nextDxmNumberId = 1;
   }
 
   async getUser(id: string): Promise<User | undefined> {
@@ -104,6 +108,23 @@ export class MemStorage implements IStorage {
       (a, b) => (b.submittedAt?.getTime() || 0) - (a.submittedAt?.getTime() || 0)
     );
   }
+
+  async createDxmNumber(submission: InsertDxmNumber): Promise<DxmNumber> {
+    const id = this.nextDxmNumberId++;
+    const dxmNumber: DxmNumber = {
+      ...submission,
+      id,
+      createdAt: new Date(),
+    };
+    this.dxmNumbers.set(id, dxmNumber);
+    return dxmNumber;
+  }
+
+  async getDxmNumbers(): Promise<DxmNumber[]> {
+    return Array.from(this.dxmNumbers.values()).sort(
+      (a, b) => (b.createdAt?.getTime() || 0) - (a.createdAt?.getTime() || 0)
+    );
+  }
 }
 
 // Database storage implementation
@@ -145,6 +166,15 @@ export class DatabaseStorage implements IStorage {
 
   async getBookCallSubmissions(): Promise<BookCallSubmission[]> {
     return await db!.select().from(bookCallSubmissions).orderBy(desc(bookCallSubmissions.submittedAt));
+  }
+
+  async createDxmNumber(submission: InsertDxmNumber): Promise<DxmNumber> {
+    const result = await db!.insert(dxmNumbers).values(submission).returning();
+    return result[0];
+  }
+
+  async getDxmNumbers(): Promise<DxmNumber[]> {
+    return await db!.select().from(dxmNumbers).orderBy(desc(dxmNumbers.createdAt));
   }
 }
 

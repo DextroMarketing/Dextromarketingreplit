@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { z } from "zod";
-import { insertContactSubmissionSchema, insertBookCallSubmissionSchema } from "@shared/schema";
+import { insertContactSubmissionSchema, insertBookCallSubmissionSchema, insertDxmNumberSchema } from "@shared/schema";
 import { storage } from "./storage";
 import { analyseText, generateContent, analyseBusinessScenario } from "./ai";
 
@@ -178,6 +178,50 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({ success: true, data: submissions });
     } catch (error) {
       console.error("Error fetching book call submissions:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Internal server error" 
+      });
+    }
+  });
+
+  // DXM Numbers submission endpoint for Vapi phone numbers
+  app.post("/api/dxm-number", async (req, res) => {
+    try {
+      const validatedData = insertDxmNumberSchema.parse(req.body);
+      const submission = await storage.createDxmNumber(validatedData);
+      
+      console.log("New DXM number submission:", submission);
+      
+      res.json({ 
+        success: true, 
+        message: "Phone number saved successfully",
+        submissionId: submission.id 
+      });
+    } catch (error) {
+      console.error("DXM number submission error:", error);
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ 
+          success: false, 
+          message: "Invalid phone number data", 
+          errors: error.errors 
+        });
+      } else {
+        res.status(500).json({ 
+          success: false, 
+          message: "Internal server error" 
+        });
+      }
+    }
+  });
+
+  // Get DXM numbers (for admin purposes)
+  app.get("/api/dxm-number/submissions", async (req, res) => {
+    try {
+      const submissions = await storage.getDxmNumbers();
+      res.json({ success: true, data: submissions });
+    } catch (error) {
+      console.error("Error fetching DXM number submissions:", error);
       res.status(500).json({ 
         success: false, 
         message: "Internal server error" 
