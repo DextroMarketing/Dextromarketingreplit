@@ -6,7 +6,7 @@ import { randomUUID } from "crypto";
 
 // Set DATABASE_URL if not already set (for Supabase connection)
 if (!process.env.DATABASE_URL) {
-  process.env.DATABASE_URL = "postgresql://postgres.gdjkpkqfrwxlfxonjuxd:pgbj4DfWkgt2dbs13!!@aws-0-eu-west-2.pooler.supabase.com:6543/postgres";
+  process.env.DATABASE_URL = "postgresql://postgres.yimcgpskhhzazuyeiykf:pgbj4DfWkgt2@aws-1-eu-west-2.pooler.supabase.com:6543/postgres";
 }
 
 // Initialize database connection with postgres.js
