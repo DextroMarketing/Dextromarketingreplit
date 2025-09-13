@@ -4,7 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import DynamicBackground from "@/components/dynamic-background";
-import { VapiWidget } from "@vapi-ai/client-sdk-react";
+import CustomVapiWidget from "./components/custom-vapi-widget";
 import Home from "@/pages/home";
 import Services from "@/pages/services";
 import About from "@/pages/about";
@@ -36,17 +36,7 @@ function App() {
         <DynamicBackground />
         <Toaster />
         <Router />
-        <VapiWidget
-          publicKey="36530774-8f0e-467f-8c57-1700b2e778ae"
-          assistantId="4050a1a9-8faf-4234-8ac3-b75203b1abb2"
-          mode="voice"
-          position="bottom-left"
-          theme="dark"
-          accentColor="#004fff"
-          title="TALK WITH AI"
-          showTranscript={true}
-          size="full"
-        />
+        <CustomVapiWidget />
       </TooltipProvider>
     </QueryClientProvider>
   );
