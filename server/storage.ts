@@ -1,5 +1,5 @@
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
+import { drizzle } from "drizzle-orm/node-postgres";
+import pg from "pg";
 import { eq, desc } from "drizzle-orm";
 import { users, contactSubmissions, bookCallSubmissions, dxmNumbers, type InsertUser, type User, type InsertContactSubmission, type ContactSubmission, type InsertBookCallSubmission, type BookCallSubmission, type InsertDxmNumber, type DxmNumber } from "@shared/schema";
 import { randomUUID } from "crypto";
@@ -7,16 +7,20 @@ import { randomUUID } from "crypto";
 // DATABASE_URL should be set as an environment variable
 // Do not set credentials in code - this is a security risk
 
-// Initialize database connection with postgres.js
+// Initialize database connection with node-postgres (pg)
 let db: ReturnType<typeof drizzle> | null = null;
 if (process.env.DATABASE_URL) {
   try {
-    const sql = postgres(process.env.DATABASE_URL, {
-      ssl: 'require',
-      max: 1, // Limit connection pool for development
+    const pool = new pg.Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+      max: 1,
+      statement_timeout: 10000,
+      connectionTimeoutMillis: 10000,
+      idleTimeoutMillis: 20000
     });
-    db = drizzle(sql);
-    console.log('Database connection initialized successfully with postgres.js');
+    db = drizzle(pool);
+    console.log('Database connection initialized successfully with node-postgres (pg)');
   } catch (error) {
     console.error('Database connection failed:', error);
     db = null;

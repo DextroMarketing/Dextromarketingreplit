@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Phone, PhoneCall, X } from 'lucide-react';
+import { useState } from 'react';
+import { Phone, Send, X, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -19,125 +19,51 @@ const countryCodes = [
   { code: '+91', country: 'India', flag: '🇮🇳' },
 ];
 
-type CallState = 'idle' | 'setup' | 'connecting' | 'active' | 'ended';
-
-declare global {
-  interface Window {
-    Vapi: any;
-  }
-}
+type SubmissionState = 'idle' | 'submitting' | 'success' | 'error';
 
 export default function CustomVapiWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [callState, setCallState] = useState<CallState>('idle');
+  const [submissionState, setSubmissionState] = useState<SubmissionState>('idle');
   const [countryCode, setCountryCode] = useState('+44');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [vapi, setVapi] = useState<any>(null);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  useEffect(() => {
-    let cleanupFunction: (() => void) | null = null;
-
-    // Initialize Vapi client
-    const initVapi = async () => {
-      try {
-        // Import Vapi from the web package
-        const { default: Vapi } = await import('@vapi-ai/web');
-        const vapiInstance = new Vapi('36530774-8f0e-467f-8c57-1700b2e778ae');
-        
-        // Set up event listeners
-        const handleCallStart = () => {
-          console.log('Call started');
-          setCallState('active');
-        };
-
-        const handleCallEnd = () => {
-          console.log('Call ended');
-          setCallState('ended');
-          setTimeout(() => {
-            setCallState('idle');
-            setIsOpen(false);
-          }, 2000);
-        };
-
-        const handleError = (error: any) => {
-          console.error('Vapi error:', error);
-          setCallState('idle');
-        };
-
-        vapiInstance.on('call-start', handleCallStart);
-        vapiInstance.on('call-end', handleCallEnd);
-        vapiInstance.on('error', handleError);
-
-        setVapi(vapiInstance);
-
-        // Store cleanup function
-        cleanupFunction = () => {
-          vapiInstance.off('call-start', handleCallStart);
-          vapiInstance.off('call-end', handleCallEnd);
-          vapiInstance.off('error', handleError);
-        };
-      } catch (error) {
-        console.error('Failed to initialize Vapi:', error);
-      }
-    };
-
-    initVapi();
-    
-    // Return cleanup function
-    return () => {
-      if (cleanupFunction) {
-        cleanupFunction();
-      }
-    };
-  }, []);
-
-  const startCall = async () => {
-    if (!vapi) return;
+  const submitPhoneNumber = async () => {
+    if (!phoneNumber.trim()) return;
 
     try {
-      setCallState('connecting');
+      setSubmissionState('submitting');
+      setErrorMessage('');
       
-      // Save phone number to DXM_Numbers table if provided
-      if (phoneNumber && phoneNumber.trim()) {
-        try {
-          const fullPhoneNumber = countryCode + phoneNumber;
-          const response = await fetch('/api/dxm-number', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              phoneNumber: fullPhoneNumber
-            }),
-          });
-
-          const result = await response.json();
-          if (result.success) {
-            console.log('Phone number saved successfully:', result.submissionId);
-          } else {
-            console.error('Failed to save phone number:', result.message);
-          }
-        } catch (saveError) {
-          console.error('Error saving phone number:', saveError);
-        }
-      }
-      
-      // Start browser-based voice call with the assistant ID
-      // Note: This is a browser voice call, not a phone call to the entered number
-      await vapi.start('4050a1a9-8faf-4234-8ac3-b75203b1abb2', {
-        variableValues: {
-          userPhoneNumber: phoneNumber ? countryCode + phoneNumber : undefined
-        }
+      const fullPhoneNumber = countryCode + phoneNumber.trim();
+      const response = await fetch('/api/dxm-number', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          phoneNumber: fullPhoneNumber
+        }),
       });
-    } catch (error) {
-      console.error('Failed to start call:', error);
-      setCallState('idle');
-    }
-  };
 
-  const endCall = () => {
-    if (vapi && callState === 'active') {
-      vapi.stop();
+      const result = await response.json();
+      if (result.success) {
+        console.log('Phone number saved successfully:', result.submissionId);
+        setSubmissionState('success');
+        setPhoneNumber('');
+        setTimeout(() => {
+          setSubmissionState('idle');
+          setIsOpen(false);
+        }, 2000);
+      } else {
+        console.error('Failed to save phone number:', result.message);
+        setErrorMessage(result.message || 'Failed to save phone number');
+        setSubmissionState('error');
+      }
+    } catch (saveError) {
+      console.error('Error saving phone number:', saveError);
+      setErrorMessage('Network error. Please try again.');
+      setSubmissionState('error');
     }
   };
 
@@ -159,21 +85,25 @@ export default function CustomVapiWidget() {
     <div className="fixed bottom-4 left-4 z-50">
       <Card className="w-80 bg-white dark:bg-gray-800 shadow-xl border-0">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-lg font-semibold">Talk with AI</CardTitle>
+          <CardTitle className="text-lg font-semibold">Request Callback</CardTitle>
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false);
+              setSubmissionState('idle');
+              setErrorMessage('');
+            }}
             data-testid="button-close-vapi-widget"
           >
             <X className="w-4 h-4" />
           </Button>
         </CardHeader>
         <CardContent className="space-y-4">
-          {callState === 'idle' && (
+          {submissionState === 'idle' && (
             <>
               <div className="text-sm text-gray-600 dark:text-gray-300">
-                Enter your phone number to start a voice call with our AI assistant.
+                Enter your phone number and we'll contact you to discuss how our AI can help your business.
               </div>
               
               <div className="space-y-3">
@@ -205,51 +135,53 @@ export default function CustomVapiWidget() {
                 </div>
                 
                 <Button
-                  onClick={startCall}
+                  onClick={submitPhoneNumber}
                   disabled={!phoneNumber.trim()}
                   className="w-full bg-blue-600 hover:bg-blue-700"
-                  data-testid="button-start-call"
+                  data-testid="button-submit-phone"
                 >
-                  <PhoneCall className="w-4 h-4 mr-2" />
-                  Start Call
+                  <Send className="w-4 h-4 mr-2" />
+                  Request Callback
                 </Button>
               </div>
             </>
           )}
 
-          {callState === 'connecting' && (
+          {submissionState === 'submitting' && (
             <div className="text-center py-4">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
               <div className="text-sm text-gray-600 dark:text-gray-300">
-                Connecting your call...
+                Saving your details...
               </div>
             </div>
           )}
 
-          {callState === 'active' && (
+          {submissionState === 'success' && (
             <div className="text-center py-4">
               <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
-                <PhoneCall className="w-8 h-8 text-green-600 dark:text-green-400" />
+                <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400" />
               </div>
-              <div className="text-sm font-medium mb-2">Call Active</div>
-              <div className="text-xs text-gray-600 dark:text-gray-300 mb-4">
-                Connected to {countryCode} {phoneNumber}
+              <div className="text-sm font-medium mb-2">Success!</div>
+              <div className="text-xs text-gray-600 dark:text-gray-300">
+                We've received your number and will contact you soon.
               </div>
-              <Button
-                onClick={endCall}
-                variant="destructive"
-                size="sm"
-                data-testid="button-end-call"
-              >
-                End Call
-              </Button>
             </div>
           )}
 
-          {callState === 'ended' && (
-            <div className="text-center py-4">
-              <div className="text-sm text-gray-600 dark:text-gray-300">
-                Call ended. Thank you for using our AI assistant!
+          {submissionState === 'error' && (
+            <div className="space-y-3">
+              <div className="text-center py-2">
+                <div className="text-sm text-red-600 dark:text-red-400 mb-2">
+                  {errorMessage}
+                </div>
+                <Button
+                  onClick={() => setSubmissionState('idle')}
+                  variant="outline"
+                  size="sm"
+                  data-testid="button-try-again"
+                >
+                  Try Again
+                </Button>
               </div>
             </div>
           )}
