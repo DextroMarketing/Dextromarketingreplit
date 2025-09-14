@@ -6,6 +6,13 @@ import { storage } from "./storage";
 import { analyseText, generateContent, analyseBusinessScenario } from "./ai";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Debug endpoint to check environment variables
+  app.get('/api/debug-env', (req, res) => {
+    res.json({
+      hasDatabaseUrl: !!process.env.DATABASE_URL,
+      databaseUrlPrefix: process.env.DATABASE_URL ? process.env.DATABASE_URL.substring(0, 30) + '...' : 'undefined'
+    });
+  });
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
     try {
