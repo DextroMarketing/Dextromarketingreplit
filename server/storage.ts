@@ -1,31 +1,7 @@
-import { drizzle } from "drizzle-orm/node-postgres";
-import pg from "pg";
 import { eq, desc } from "drizzle-orm";
 import { users, contactSubmissions, bookCallSubmissions, dxmNumbers, type InsertUser, type User, type InsertContactSubmission, type ContactSubmission, type InsertBookCallSubmission, type BookCallSubmission, type InsertDxmNumber, type DxmNumber } from "@shared/schema";
 import { randomUUID } from "crypto";
-
-// DATABASE_URL should be set as an environment variable
-// Do not set credentials in code - this is a security risk
-
-// Initialize database connection with node-postgres (pg)
-let db: ReturnType<typeof drizzle> | null = null;
-if (process.env.DATABASE_URL) {
-  try {
-    const pool = new pg.Pool({
-      connectionString: process.env.DATABASE_URL,
-      ssl: { rejectUnauthorized: false },
-      max: 1,
-      statement_timeout: 10000,
-      connectionTimeoutMillis: 10000,
-      idleTimeoutMillis: 20000
-    });
-    db = drizzle(pool);
-    console.log('Database connection initialized successfully with node-postgres (pg)');
-  } catch (error) {
-    console.error('Database connection failed:', error);
-    db = null;
-  }
-}
+import { db } from "./db";
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
@@ -131,56 +107,50 @@ export class MemStorage implements IStorage {
 
 // Database storage implementation
 export class DatabaseStorage implements IStorage {
-  constructor() {
-    if (!db) {
-      throw new Error("Database connection not initialized. Ensure DATABASE_URL is set.");
-    }
-  }
-
   async getUser(id: string): Promise<User | undefined> {
-    const result = await db!.select().from(users).where(eq(users.id, id)).limit(1);
+    const result = await db.select().from(users).where(eq(users.id, id)).limit(1);
     return result[0];
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    const result = await db!.select().from(users).where(eq(users.username, username)).limit(1);
+    const result = await db.select().from(users).where(eq(users.username, username)).limit(1);
     return result[0];
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const result = await db!.insert(users).values(insertUser).returning();
+    const result = await db.insert(users).values(insertUser).returning();
     return result[0];
   }
 
   async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
-    const result = await db!.insert(contactSubmissions).values(submission).returning();
+    const result = await db.insert(contactSubmissions).values(submission).returning();
     return result[0];
   }
 
   async getContactSubmissions(): Promise<ContactSubmission[]> {
-    return await db!.select().from(contactSubmissions).orderBy(desc(contactSubmissions.createdAt));
+    return await db.select().from(contactSubmissions).orderBy(desc(contactSubmissions.createdAt));
   }
 
   async createBookCallSubmission(submission: InsertBookCallSubmission): Promise<BookCallSubmission> {
-    const result = await db!.insert(bookCallSubmissions).values(submission).returning();
+    const result = await db.insert(bookCallSubmissions).values(submission).returning();
     return result[0];
   }
 
   async getBookCallSubmissions(): Promise<BookCallSubmission[]> {
-    return await db!.select().from(bookCallSubmissions).orderBy(desc(bookCallSubmissions.submittedAt));
+    return await db.select().from(bookCallSubmissions).orderBy(desc(bookCallSubmissions.submittedAt));
   }
 
   async createDxmNumber(submission: InsertDxmNumber): Promise<DxmNumber> {
-    const result = await db!.insert(dxmNumbers).values(submission).returning();
+    const result = await db.insert(dxmNumbers).values(submission).returning();
     return result[0];
   }
 
   async getDxmNumbers(): Promise<DxmNumber[]> {
-    return await db!.select().from(dxmNumbers).orderBy(desc(dxmNumbers.createdAt));
+    return await db.select().from(dxmNumbers).orderBy(desc(dxmNumbers.createdAt));
   }
 }
 
 
 
-// Use database storage in production, memory storage for development
-export const storage = process.env.DATABASE_URL ? new DatabaseStorage() : new MemStorage();
+// Use database storage now that we have a Neon PostgreSQL database set up
+export const storage = new DatabaseStorage();
