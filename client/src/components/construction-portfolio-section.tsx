@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, CheckCircle } from "lucide-react";
 import { fadeInUp, staggerChildren } from "@/lib/animations";
+import roofingImage from "@/assets/Budgeting-for-a-Metal-Roof-How-to-Plan-for-Your-Roofing-Project.png";
 
 const projects = [
   {
     id: "1",
     title: "Premier Roofing Company",
     description: "How we generated 150+ qualified leads in 90 days",
-    image: "client/src/assets/Budgeting-for-a-Metal-Roof-How-to-Plan-for-Your-Roofing-Project.png",
+    image: roofingImage,
     categories: ["ai-automation", "lead-generation"],
     technologies: ["AI Lead Capture", "Automated Responses", "Lead Nurturing"],
     challenge: "Seasonal business, intense local competition",
