@@ -29,6 +29,8 @@
   --dxm-orange: hsl(35, 85%, 55%);
   --dxm-gold: hsl(40, 90%, 60%);
   --dark: hsl(210, 60%, 10%);
+  --electric: hsl(196, 100%, 50%);
+  --purple: hsl(270, 50%, 40%);
 }
 
 .dark {
@@ -107,3 +109,9 @@
 .bg-dark { background-color: var(--dark); }
 .border-dxm-orange { border-color: var(--dxm-orange); }
 .border-dxm-gold { border-color: var(--dxm-gold); }
+.text-electric { color: var(--electric); }
+.text-purple { color: var(--purple); }
+.bg-electric { background-color: var(--electric); }
+.bg-purple { background-color: var(--purple); }
+.border-electric { border-color: var(--electric); }
+.border-purple { border-color: var(--purple); }

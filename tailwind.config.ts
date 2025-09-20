@@ -61,6 +61,13 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        // Custom Dextro Marketing colors
+        navy: "var(--navy)",
+        "dxm-orange": "var(--dxm-orange)",
+        "dxm-gold": "var(--dxm-gold)",
+        dark: "var(--dark)",
+        electric: "var(--electric)",
+        purple: "var(--purple)",
       },
       keyframes: {
         "accordion-down": {
