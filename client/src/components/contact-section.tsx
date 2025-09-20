@@ -7,12 +7,38 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Dribbble } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Github,
+  Dribbble,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { fadeInUp, fadeInLeft, fadeInRight, floatAnimation } from "@/lib/animations";
+import {
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  floatAnimation,
+} from "@/lib/animations";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -31,34 +57,34 @@ const contactInfo = [
     title: "Email Us",
     value: "hello@dextromarketing.com",
     description: "We respond within 4 hours",
-    color: "bg-dxm-orange"
+    color: "bg-dxm-orange",
   },
   {
     icon: Phone,
     title: "Call Us",
     value: "+1 (555) 123-4567",
     description: "Mon-Fri 9AM-6PM PST",
-    color: "bg-dxm-gold"
+    color: "bg-dxm-gold",
   },
   {
     icon: MapPin,
     title: "Visit Us",
     value: "123 Innovation Street\nSan Francisco, CA 94102",
     description: "By appointment only",
-    color: "bg-dxm-orange"
-  }
+    color: "bg-dxm-orange",
+  },
 ];
 
 const socialLinks = [
   { icon: Linkedin, href: "#", label: "LinkedIn" },
   { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Github, href: "#", label: "GitHub" },
-  { icon: Dribbble, href: "#", label: "Dribbble" }
+  { icon: Dribbble, href: "#", label: "Dribbble" },
 ];
 
 export default function ContactSection() {
   const { toast } = useToast();
-  
+
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -72,7 +98,7 @@ export default function ContactSection() {
   });
 
   const submitMutation = useMutation({
-    mutationFn: (data: ContactFormData) => 
+    mutationFn: (data: ContactFormData) =>
       apiRequest("POST", "/api/contact", data),
     onSuccess: () => {
       toast({
@@ -97,15 +123,14 @@ export default function ContactSection() {
   return (
     <section className="py-20 text-white relative overflow-hidden bg-black/20 backdrop-blur-sm">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          className="text-center mb-16"
-          {...fadeInUp}
-        >
+        <motion.div className="text-center mb-16" {...fadeInUp}>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 drop-shadow-lg">
             Ready to Dominate Your Local Market?
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
-            Let's discuss how we can help your trade or service business generate more qualified leads and convert more enquiries into signed contracts.
+            Let's discuss how we can help your trade or service business
+            generate more qualified leads and convert more enquiries into signed
+            contracts.
           </p>
         </motion.div>
 
@@ -114,20 +139,27 @@ export default function ContactSection() {
           <motion.div
             id="contact-form"
             className="bg-white/95 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-gray-200"
-            style={{ scrollMarginTop: '100px' }}
+            style={{ scrollMarginTop: "100px" }}
             {...fadeInLeft}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Consultation</h3>
-            
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              Get Your Free Consultation
+            </h3>
+
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-6"
+              >
                 <div className="grid md:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-900 font-medium">Name *</FormLabel>
+                        <FormLabel className="text-gray-900 font-medium">
+                          Name *
+                        </FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Your full name"
@@ -139,13 +171,15 @@ export default function ContactSection() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-900 font-medium">Email *</FormLabel>
+                        <FormLabel className="text-gray-900 font-medium">
+                          Email *
+                        </FormLabel>
                         <FormControl>
                           <Input
                             type="email"
@@ -166,7 +200,9 @@ export default function ContactSection() {
                     name="company"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-900 font-medium">Company</FormLabel>
+                        <FormLabel className="text-gray-900 font-medium">
+                          Company
+                        </FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Your company name"
@@ -178,24 +214,37 @@ export default function ContactSection() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="projectType"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-900 font-medium">Service</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormLabel className="text-gray-900 font-medium">
+                          Service
+                        </FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
                           <FormControl>
                             <SelectTrigger className="bg-white border-gray-300 text-gray-900 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange">
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="website-design">Website Design</SelectItem>
-                            <SelectItem value="appointment-setting">AI Appointment Setting Agent</SelectItem>
-                            <SelectItem value="customer-support">AI Customer Support Ticket Management</SelectItem>
-                            <SelectItem value="lead-capture">AI Lead Capture & CRM Integration</SelectItem>
+                            <SelectItem value="website-design">
+                              Website Design
+                            </SelectItem>
+                            <SelectItem value="appointment-setting">
+                              AI Appointment Setting Agent
+                            </SelectItem>
+                            <SelectItem value="customer-support">
+                              AI Customer Support Ticket Management
+                            </SelectItem>
+                            <SelectItem value="lead-capture">
+                              AI Lead Capture & CRM Integration
+                            </SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -208,19 +257,34 @@ export default function ContactSection() {
                     name="budget"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-gray-900 font-medium">Budget Range</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormLabel className="text-gray-900 font-medium">
+                          Budget Range
+                        </FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
                           <FormControl>
                             <SelectTrigger className="bg-white border-gray-300 text-gray-900 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange">
                               <SelectValue placeholder="Select budget range" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="under-5k">Under $5,000</SelectItem>
-                            <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
-                            <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
-                            <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
-                            <SelectItem value="over-50k">Over $50,000</SelectItem>
+                            <SelectItem value="under-5k">
+                              Under $5,000
+                            </SelectItem>
+                            <SelectItem value="5k-10k">
+                              $5,000 - $10,000
+                            </SelectItem>
+                            <SelectItem value="10k-25k">
+                              $10,000 - $25,000
+                            </SelectItem>
+                            <SelectItem value="25k-50k">
+                              $25,000 - $50,000
+                            </SelectItem>
+                            <SelectItem value="over-50k">
+                              Over $50,000
+                            </SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -229,14 +293,14 @@ export default function ContactSection() {
                   />
                 </div>
 
-                
-
                 <FormField
                   control={form.control}
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-gray-900 font-medium">Project Details</FormLabel>
+                      <FormLabel className="text-gray-900 font-medium">
+                        Project Details
+                      </FormLabel>
                       <FormControl>
                         <Textarea
                           rows={4}
@@ -255,7 +319,9 @@ export default function ContactSection() {
                   disabled={submitMutation.isPending}
                   className="w-full bg-dxm-orange text-white py-4 rounded-lg font-bold text-lg hover:bg-dxm-gold hover:text-navy transition-all duration-300 hover:scale-105 transform"
                 >
-                  {submitMutation.isPending ? "Sending..." : "Get My Free Consultation"}
+                  {submitMutation.isPending
+                    ? "Sending..."
+                    : "Get My Free Consultation"}
                 </Button>
 
                 <p className="text-gray-600 text-sm text-center">
@@ -264,8 +330,6 @@ export default function ContactSection() {
               </form>
             </Form>
           </motion.div>
-
-          
         </div>
       </div>
     </section>
