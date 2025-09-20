@@ -1,7 +1,6 @@
 import { eq, desc } from "drizzle-orm";
 import { users, contactSubmissions, bookCallSubmissions, dxmNumbers, type InsertUser, type User, type InsertContactSubmission, type ContactSubmission, type InsertBookCallSubmission, type BookCallSubmission, type InsertDxmNumber, type DxmNumber } from "@shared/schema";
 import { randomUUID } from "crypto";
-import { db } from "./db";
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
@@ -105,52 +104,8 @@ export class MemStorage implements IStorage {
   }
 }
 
-// Database storage implementation
-export class DatabaseStorage implements IStorage {
-  async getUser(id: string): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.id, id)).limit(1);
-    return result[0];
-  }
-
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.username, username)).limit(1);
-    return result[0];
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const result = await db.insert(users).values(insertUser).returning();
-    return result[0];
-  }
-
-  async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
-    const result = await db.insert(contactSubmissions).values(submission).returning();
-    return result[0];
-  }
-
-  async getContactSubmissions(): Promise<ContactSubmission[]> {
-    return await db.select().from(contactSubmissions).orderBy(desc(contactSubmissions.createdAt));
-  }
-
-  async createBookCallSubmission(submission: InsertBookCallSubmission): Promise<BookCallSubmission> {
-    const result = await db.insert(bookCallSubmissions).values(submission).returning();
-    return result[0];
-  }
-
-  async getBookCallSubmissions(): Promise<BookCallSubmission[]> {
-    return await db.select().from(bookCallSubmissions).orderBy(desc(bookCallSubmissions.submittedAt));
-  }
-
-  async createDxmNumber(submission: InsertDxmNumber): Promise<DxmNumber> {
-    const result = await db.insert(dxmNumbers).values(submission).returning();
-    return result[0];
-  }
-
-  async getDxmNumbers(): Promise<DxmNumber[]> {
-    return await db.select().from(dxmNumbers).orderBy(desc(dxmNumbers.createdAt));
-  }
-}
 
 
 
-// Use database storage now that we have a Neon PostgreSQL database set up
-export const storage = new DatabaseStorage();
+// Use in-memory storage instead of database
+export const storage = new MemStorage();
