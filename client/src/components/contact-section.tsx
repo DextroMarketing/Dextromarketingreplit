@@ -19,6 +19,7 @@ const contactFormSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   company: z.string().optional(),
   projectType: z.string().optional(),
+  budget: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
@@ -65,6 +66,7 @@ export default function ContactSection() {
       email: "",
       company: "",
       projectType: "",
+      budget: "",
       message: "",
     },
   });
@@ -194,6 +196,31 @@ export default function ContactSection() {
                             <SelectItem value="appointment-setting">AI Appointment Setting Agent</SelectItem>
                             <SelectItem value="customer-support">AI Customer Support Ticket Management</SelectItem>
                             <SelectItem value="lead-capture">AI Lead Capture & CRM Integration</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="budget"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-900 font-medium">Budget Range</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="bg-white border-gray-300 text-gray-900 focus:border-dxm-orange focus:ring-1 focus:ring-dxm-orange">
+                              <SelectValue placeholder="Select budget range" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="under-5k">Under $5,000</SelectItem>
+                            <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
+                            <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
+                            <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
+                            <SelectItem value="over-50k">Over $50,000</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
