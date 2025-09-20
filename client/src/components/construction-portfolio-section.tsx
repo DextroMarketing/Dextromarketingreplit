@@ -10,7 +10,7 @@ const projects = [
     id: "1",
     title: "Premier Roofing Company",
     description: "How we generated 150+ qualified leads in 90 days",
-    image: "/src/assets/image.png",
+    image: "/src/assets/roofing-project.jpg",
     categories: ["ai-automation", "lead-generation"],
     technologies: ["AI Lead Capture", "Automated Responses", "Lead Nurturing"],
     challenge: "Seasonal business, intense local competition",
